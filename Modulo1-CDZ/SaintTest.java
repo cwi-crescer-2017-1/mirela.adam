@@ -30,4 +30,27 @@ public class SaintTest {
         Saint shaka = new Saint("Shaka", virgem);
         assertEquals(Genero.NAO_INFORMADO, shaka.getGenero());
     }
+    
+    @Test 
+    public void aoCriarSaintStatusDaVidaEVivo(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        assertEquals(StatusVida.VIVO, shaka.getStatusVida());
+    
+    }
+    
+    @Test
+    public void aoCriarSaintQuantidadeVidaEIgualACem(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        assertEquals(100, shaka.getVidaAtual(), 0);
+    }
+    
+    @Test
+    public void perderVidaSubtraiValorDoParametroDoAtributoVidaAtualDoSaint(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        shaka.perderVida(8);
+        assertEquals(92, shaka.getVidaAtual(), 0);
+    }
 }

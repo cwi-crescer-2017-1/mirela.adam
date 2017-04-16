@@ -35,7 +35,7 @@ public class SaintTest {
     public void aoCriarSaintStatusDaVidaEVivo(){
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
-        assertEquals(StatusVida.VIVO, shaka.getStatusVida());
+        assertEquals(Status.VIVO, shaka.getStatus());
     
     }
     

@@ -53,4 +53,40 @@ public class SaintTest {
         shaka.perderVida(8);
         assertEquals(92, shaka.getVidaAtual(), 0);
     }
+    
+    @Test
+    public void perderVidaSubtraiVidaAtualDeCadaSaintCriadoQueInvocarOMetodo(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        Armadura cisne =  new Armadura("Cisne", Categoria.BRONZE);
+        Saint hyoga = new Saint("Hyoga", cisne);
+        Armadura escorpiao = new Armadura("Escorpião", Categoria.OURO);
+        Saint milo = new Saint("Milo", escorpiao);
+        
+        shaka.perderVida(90);
+        hyoga.perderVida(18);
+        milo.perderVida(77);
+       
+        assertEquals(10, shaka.getVidaAtual(), 0);
+        assertEquals(82, hyoga.getVidaAtual(), 0);
+        assertEquals(23, milo.getVidaAtual(), 0);
+    }
+    
+    @Test
+    public void saintDeveTerPontosDeVidaSubtraidosACadaChamadaDoMetodoPerderVida(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        
+        shaka.perderVida(10);
+        assertEquals(90, shaka.getVidaAtual(), 0);
+        shaka.perderVida(22);
+        assertEquals(68, shaka.getVidaAtual(), 0);
+        shaka.perderVida(18);
+        assertEquals(50, shaka.getVidaAtual(), 0);
+        shaka.perderVida(33);
+        assertEquals(17, shaka.getVidaAtual(), 0);
+    }
+    
+    
+    
 }

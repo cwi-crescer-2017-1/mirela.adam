@@ -119,4 +119,10 @@ public class SaintTest {
         jabu.setGenero(Genero.FEMININO);
         assertEquals(Genero.FEMININO, jabu.getGenero());
     }  
+    
+    @Test
+    public void criarSaintNasceCom4SentidosDespertados(){
+        Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.BRONZE));
+        assertEquals(5, seiya.getQtdSentidosDespertados());
+    }
 }

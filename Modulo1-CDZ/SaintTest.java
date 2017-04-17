@@ -88,13 +88,35 @@ public class SaintTest {
     }
     
     @Test
+    public void perderDanoComValor100(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        shaka.perderVida(100);
+        assertEquals(0, shaka.getVida(), 0);
+    }
+    
+    @Test
+    public void perderDanoComValor1000(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        shaka.perderVida(1000);
+        assertEquals(-900, shaka.getVida(), 0);
+    }
+    
+    @Test
+    public void perderDanoComValorMenos1000(){
+        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
+        Saint shaka = new Saint("Shaka", virgem);
+        shaka.perderVida(-1000);
+        assertEquals(1100, shaka.getVida(), 0);
+    }
+    
+    @Test
     public void deveSerPossivelAlterarOGenero(){
         Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         jabu.setGenero(Genero.MASCULINO);
         assertEquals(Genero.MASCULINO, jabu.getGenero());
         jabu.setGenero(Genero.FEMININO);
         assertEquals(Genero.FEMININO, jabu.getGenero());
-    }
-    
-    
+    }  
 }

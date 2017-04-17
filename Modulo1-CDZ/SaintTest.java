@@ -121,8 +121,20 @@ public class SaintTest {
     }  
     
     @Test
-    public void criarSaintNasceCom4SentidosDespertados(){
+    public void criarSaintBronzeNasceCom5SentidosDespertados(){
         Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test
+    public void criarSaintPrataNasceCom6SentidosDespertados(){
+        Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.PRATA));
+        assertEquals(6, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test
+    public void criarSaintOuroNasceCom7SentidosDespertados(){
+        Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.OURO));
+        assertEquals(7, seiya.getQtdSentidosDespertados());
     }
 }

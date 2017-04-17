@@ -122,7 +122,7 @@ public class SaintTest {
     
     @Test
     public void criarSaintBronzeNasceCom5SentidosDespertados() throws Exception {
-        Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.BRONZE));
+        Saint seiya = new BronzeSaint("Seiya", new Armadura("Pégaso", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
     

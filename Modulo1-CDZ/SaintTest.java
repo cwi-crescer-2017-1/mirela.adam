@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class SaintTest {
     @Test
-    public void vestirArmaduraDeixaArmaduraVestida(){
+    public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
         // AAA
         // 1. Arrange - Montagem dos dados de teste
         Armadura escorpiao = new Armadura("Escorpião", Categoria.OURO);
@@ -18,21 +18,21 @@ public class SaintTest {
     }
     
     @Test
-    public void naoVestirArmaduraDeixaArmaduraNaoVestida(){
+    public void naoVestirArmaduraDeixaArmaduraNaoVestida() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura("Cisne", Categoria.BRONZE));
         assertEquals(false, hyoga.getArmaduraVestida());
     
     }
     
     @Test
-    public void aoCriarSaintGeneroENaoInformado(){
+    public void aoCriarSaintGeneroENaoInformado() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         assertEquals(Genero.NAO_INFORMADO, shaka.getGenero());
     }
     
     @Test 
-    public void aoCriarSaintStatusDaVidaEVivo(){
+    public void aoCriarSaintStatusDaVidaEVivo() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         assertEquals(Status.VIVO, shaka.getStatus());
@@ -40,14 +40,14 @@ public class SaintTest {
     }
     
     @Test
-    public void aoCriarSaintQuantidadeVidaEIgualACem(){
+    public void aoCriarSaintQuantidadeVidaEIgualACem() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         assertEquals(100, shaka.getVida(), 0);
     }
     
     @Test
-    public void perderVidaSubtraiValorDoParametroDoAtributoVidaAtualDoSaint(){
+    public void perderVidaSubtraiValorDoParametroDoAtributoVidaAtualDoSaint() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(8);
@@ -55,7 +55,7 @@ public class SaintTest {
     }
     
     @Test
-    public void perderVidaSubtraiVidaAtualDeCadaSaintCriadoQueInvocarOMetodo(){
+    public void perderVidaSubtraiVidaAtualDeCadaSaintCriadoQueInvocarOMetodo() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         Armadura cisne =  new Armadura("Cisne", Categoria.BRONZE);
@@ -73,7 +73,7 @@ public class SaintTest {
     }
     
     @Test
-    public void saintDeveTerPontosDeVidaSubtraidosACadaChamadaDoMetodoPerderVida(){
+    public void saintDeveTerPontosDeVidaSubtraidosACadaChamadaDoMetodoPerderVida() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         
@@ -88,7 +88,7 @@ public class SaintTest {
     }
     
     @Test
-    public void perderDanoComValor100(){
+    public void perderDanoComValor100() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(100);
@@ -96,7 +96,7 @@ public class SaintTest {
     }
     
     @Test
-    public void perderDanoComValor1000(){
+    public void perderDanoComValor1000() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(1000);
@@ -104,7 +104,7 @@ public class SaintTest {
     }
     
     @Test
-    public void perderDanoComValorMenos1000(){
+    public void perderDanoComValorMenos1000() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(-1000);
@@ -112,7 +112,7 @@ public class SaintTest {
     }
     
     @Test
-    public void deveSerPossivelAlterarOGenero(){
+    public void deveSerPossivelAlterarOGenero() throws Exception {
         Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         jabu.setGenero(Genero.MASCULINO);
         assertEquals(Genero.MASCULINO, jabu.getGenero());
@@ -121,20 +121,25 @@ public class SaintTest {
     }  
     
     @Test
-    public void criarSaintBronzeNasceCom5SentidosDespertados(){
+    public void criarSaintBronzeNasceCom5SentidosDespertados() throws Exception {
         Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
     
     @Test
-    public void criarSaintPrataNasceCom6SentidosDespertados(){
+    public void criarSaintPrataNasceCom6SentidosDespertados() throws Exception {
         Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.PRATA));
         assertEquals(6, seiya.getQtdSentidosDespertados());
     }
     
     @Test
-    public void criarSaintOuroNasceCom7SentidosDespertados(){
-        Saint seiya = new Saint("Seiya", new Armadura("Pégaso", Categoria.OURO));
+    public void criarSaintOuroNasceCom7SentidosDespertados() throws Exception {
+        Saint seiya = new Saint("Seiya", new Armadura("Escorpião", Categoria.OURO));
         assertEquals(7, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test(expected=Exception.class)
+    public void constelacaoInvalidaDeOuroDeveLancarErro() throws Exception {
+        new Saint("Mirela", new Armadura("Café", Categoria.OURO));
     }
 }

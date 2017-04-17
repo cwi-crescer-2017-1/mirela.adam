@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class BatalhaTest {
    @Test
-   public void aoIniciarBatalhaDeSaintsComCategoriasDeArmaduraIguaisSaint2DevePerderVida(){
+   public void aoIniciarBatalhaDeSaintsComCategoriasDeArmaduraIguaisSaint2DevePerderVida() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         
@@ -20,7 +20,7 @@ public class BatalhaTest {
     }
     
     @Test
-    public void primeiroSaintComCategoriaInferiorDevePerderVida(){
+    public void primeiroSaintComCategoriaInferiorDevePerderVida() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.BRONZE);
         Saint shaka = new Saint("Shaka", virgem);
         
@@ -35,7 +35,7 @@ public class BatalhaTest {
     }
     
     @Test
-    public void segundoSaintComCategoriaInferiorDevePerderVida(){
+    public void segundoSaintComCategoriaInferiorDevePerderVida() throws Exception {
         Armadura virgem = new Armadura("Virgem", Categoria.PRATA);
         Saint shaka = new Saint("Shaka", virgem);
         

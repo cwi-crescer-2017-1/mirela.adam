@@ -87,6 +87,14 @@ public class SaintTest {
         assertEquals(17, shaka.getVidaAtual(), 0);
     }
     
+    @Test
+    public void deveSerPossivelAlterarOGenero(){
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
+        jabu.setGenero(Genero.MASCULINO);
+        assertEquals(Genero.MASCULINO, jabu.getGenero());
+        jabu.setGenero(Genero.FEMININO);
+        assertEquals(Genero.FEMININO, jabu.getGenero());
+    }
     
     
 }

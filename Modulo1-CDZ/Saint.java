@@ -4,7 +4,7 @@ public class Saint {
     private boolean armaduraVestida;
     private Genero genero = Genero.NAO_INFORMADO;
     private Status status = Status.VIVO;
-    private double vidaAtual = 100;
+    private double vida = 100.0;
     
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;
@@ -32,12 +32,12 @@ public class Saint {
         return this.status;
     }
     
-    public double getVidaAtual(){
-        return this.vidaAtual;
+    public double getVida(){
+        return this.vida;
     }
     
-    public void perderVida(double qtdd){
-        this.vidaAtual = this.vidaAtual - qtdd;
+    public void perderVida(double dano){
+        this.vida = this.vida - dano;
     }
     
     public Armadura getArmadura(){

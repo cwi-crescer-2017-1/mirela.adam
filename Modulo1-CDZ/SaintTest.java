@@ -43,7 +43,7 @@ public class SaintTest {
     public void aoCriarSaintQuantidadeVidaEIgualACem(){
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
-        assertEquals(100, shaka.getVidaAtual(), 0);
+        assertEquals(100, shaka.getVida(), 0);
     }
     
     @Test
@@ -51,7 +51,7 @@ public class SaintTest {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(8);
-        assertEquals(92, shaka.getVidaAtual(), 0);
+        assertEquals(92, shaka.getVida(), 0);
     }
     
     @Test
@@ -67,9 +67,9 @@ public class SaintTest {
         hyoga.perderVida(18);
         milo.perderVida(77);
        
-        assertEquals(10, shaka.getVidaAtual(), 0);
-        assertEquals(82, hyoga.getVidaAtual(), 0);
-        assertEquals(23, milo.getVidaAtual(), 0);
+        assertEquals(10, shaka.getVida(), 0);
+        assertEquals(82, hyoga.getVida(), 0);
+        assertEquals(23, milo.getVida(), 0);
     }
     
     @Test
@@ -78,13 +78,13 @@ public class SaintTest {
         Saint shaka = new Saint("Shaka", virgem);
         
         shaka.perderVida(10);
-        assertEquals(90, shaka.getVidaAtual(), 0);
+        assertEquals(90, shaka.getVida(), 0);
         shaka.perderVida(22);
-        assertEquals(68, shaka.getVidaAtual(), 0);
+        assertEquals(68, shaka.getVida(), 0);
         shaka.perderVida(18);
-        assertEquals(50, shaka.getVidaAtual(), 0);
+        assertEquals(50, shaka.getVida(), 0);
         shaka.perderVida(33);
-        assertEquals(17, shaka.getVidaAtual(), 0);
+        assertEquals(17, shaka.getVida(), 0);
     }
     
     @Test

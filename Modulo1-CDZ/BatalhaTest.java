@@ -15,7 +15,7 @@ public class BatalhaTest {
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
         
-        assertEquals(90, milo.getVidaAtual(), 0);
+        assertEquals(90, milo.getVida(), 0);
     }
     
     @Test
@@ -29,7 +29,7 @@ public class BatalhaTest {
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
         
-        assertEquals(90, shaka.getVidaAtual(), 0);
+        assertEquals(90, shaka.getVida(), 0);
     }
     
     @Test
@@ -43,6 +43,6 @@ public class BatalhaTest {
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
         
-        assertEquals(90, milo.getVidaAtual(), 0);
+        assertEquals(90, milo.getVida(), 0);
     }
 }

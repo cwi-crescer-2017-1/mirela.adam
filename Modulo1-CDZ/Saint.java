@@ -51,7 +51,7 @@ public class Saint {
                }
            }
        } else {
-           throw new InvalidParameterException("Parâmetro dano com valor inválido");
+           throw new InvalidParameterException("Parâmetro dano com valor negativo.");
        }
     }   
     

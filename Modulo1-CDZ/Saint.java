@@ -1,3 +1,5 @@
+import java.security.InvalidParameterException; 
+
 public class Saint {
     private String nome;
     private Armadura armadura;
@@ -37,15 +39,20 @@ public class Saint {
         return this.vida;
     }
     
-    public void perderVida(double dano){
-       if(this.status != (Status.MORTO)){
-        this.vida = this.vida - dano;
+    public void perderVida(double dano) throws InvalidParameterException {
+       if(dano >=0 ){
+           if(this.status != (Status.MORTO)){
+               this.vida = this.vida - dano;
         
-           if(this.vida < 1){
-                this.status = Status.MORTO;
-            }
-        }
-    }
+               if(this.vida < 1){
+                   this.status = Status.MORTO;
+                   this.vida = 0;
+               }
+           }
+       } else {
+           throw new InvalidParameterException("Parâmetro dano com valor inválido");
+       }
+    }   
     
     public Armadura getArmadura(){
         return this.armadura;

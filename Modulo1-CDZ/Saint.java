@@ -9,6 +9,7 @@ public class Saint {
     private double vida = 100.0;
     protected int qtdSentidosDespertados;
     private int proximoGolpe = -1;
+    //private int acumuladorProximoGolpe = 0;
     
     public Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
@@ -67,21 +68,31 @@ public class Saint {
         return this.getArmadura().getConstelacao().getGolpes();
     }
     
+    public Constelacao getConstelacao(){
+        return this.armadura.getConstelacao();
+    }
+    
     public void aprenderGolpe(Golpe golpe) throws Exception{
-        this.getArmadura().getConstelacao().adicionarGolpe(golpe);
+        this.getConstelacao().adicionarGolpe(golpe);
     }
     
     public Golpe getProximoGolpe(){
+        /*Golpe[] golpes = getGolpes(); 
+        int posicao = this.acumuladorProximoGolpe % golpes.length; 
+        this.acumuladorProximoGolpe++; 
+        return golpes[posicao]; */
+        
         if(proximoGolpe == 2) {
             proximoGolpe = -1;
         }
+        
         proximoGolpe++;
         
         if(this.getArmadura().getConstelacao().getGolpes()[proximoGolpe] != null) {
-            return this.getArmadura().getConstelacao().getGolpes()[proximoGolpe];
+            return this.getConstelacao().getGolpes()[proximoGolpe];
         } else {
             proximoGolpe = 0;
-            return this.getArmadura().getConstelacao().getGolpes()[proximoGolpe];
+            return this.getConstelacao().getGolpes()[proximoGolpe];
         }
        
     }

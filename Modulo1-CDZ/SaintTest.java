@@ -142,4 +142,11 @@ public class SaintTest {
     public void constelacaoInvalidaDeOuroDeveLancarErro() throws Exception {
         new GoldSaint("Mirela", new Armadura("Café", Categoria.OURO));
     }
+    
+    @Test
+    public void alteraStatusParaMortoSeVidaMenorQueUm() throws Exception{
+        Saint mirela = new GoldSaint("Mirela", new Armadura("Escorpião", Categoria.OURO));
+        mirela.perderVida(110);
+        assertEquals(Status.MORTO, mirela.getStatus());
+    }
 }

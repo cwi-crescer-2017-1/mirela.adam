@@ -38,7 +38,13 @@ public class Saint {
     }
     
     public void perderVida(double dano){
+       if(this.status != (Status.MORTO)){
         this.vida = this.vida - dano;
+        
+           if(this.vida < 1){
+                this.status = Status.MORTO;
+            }
+        }
     }
     
     public Armadura getArmadura(){

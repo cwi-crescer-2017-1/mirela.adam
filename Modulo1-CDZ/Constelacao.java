@@ -6,13 +6,14 @@ public class Constelacao {
        this.nome = nome;
    }
    
-   public void adicionarGolpe(Golpe golpe) throws Exception{            
-           for (int indice = 0; indice < 3; indice++) {
-
-               if(this.golpes[indice] == null){
-                   this.golpes[indice] = golpe;
+   public void adicionarGolpe(Golpe golpe) throws Exception{  
+       
+           // golpes[ultimaPosicaoPreenchida++] = golpe; 
+           for (int i = 0; i < this.golpes.length; i++) {
+               if(this.golpes[i] == null){
+                   this.golpes[i] = golpe;
                    break;
-                } else if (indice == 2) {
+                } else if (i == 2) {
                    throw new Exception("Impossível adicionar mais de três golpes à esta Constelação");
                 }   
                 

@@ -8,9 +8,9 @@ public class ConstelacaoTest {
     public void constelacaoSemGolpesPossuiIndicesComValoresNulos() throws Exception {
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
 
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[0]);
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[1]);
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[2]);
+        assertNull(constelacaoEscorpiao.getGolpes()[0]);
+        assertNull(constelacaoEscorpiao.getGolpes()[1]);
+        assertNull(constelacaoEscorpiao.getGolpes()[2]);
 
     }
 
@@ -37,19 +37,18 @@ public class ConstelacaoTest {
 
         assertEquals("Chute", constelacaoEscorpiao.getGolpes()[0].getNome());
         assertEquals("Soco", constelacaoEscorpiao.getGolpes()[1].getNome());
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[2]);
+        assertNull(constelacaoEscorpiao.getGolpes()[2]);
 
     }
 
     @Test
     public void adicionaUmGolpeParaConstelacao() throws Exception{
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
-
         constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
 
         assertEquals("Chute", constelacaoEscorpiao.getGolpes()[0].getNome());
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[1]);
-        assertEquals(null, constelacaoEscorpiao.getGolpes()[2]);
+        assertNull(constelacaoEscorpiao.getGolpes()[1]);
+        assertNull(constelacaoEscorpiao.getGolpes()[2]);
 
     }
 

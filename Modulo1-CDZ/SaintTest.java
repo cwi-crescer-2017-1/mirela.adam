@@ -147,11 +147,108 @@ public class SaintTest {
     }
     
     @Test
-    public void alteraStatusParaMortoSeVidaMenorQueUm() throws Exception{
+    public void alteraStatusParaMortoSeVidaMenorQueUm() throws Exception {
         Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
         mirela.perderVida(110);
         assertEquals(Status.MORTO, mirela.getStatus());
     }
     
+    @Test
+    public void verificaMetodoGetGolpesDoSaintComTresGolpes() throws Exception {
+        Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Soco", 15));
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Rasteira", 12));
+        
+        Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
+        
+        assertEquals("Chute", mirela.getGolpes()[0].getNome());
+        assertEquals("Soco", mirela.getGolpes()[1].getNome());
+        assertEquals("Rasteira", mirela.getGolpes()[2].getNome());
+        
+    }
     
+    @Test
+    public void verificaMetodoGetGolpesDoSaintComDoisGolpes() throws Exception {
+        Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Soco", 15));        
+        Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
+        
+        assertEquals("Chute", mirela.getGolpes()[0].getNome());
+        assertEquals("Soco", mirela.getGolpes()[1].getNome());
+        assertEquals(null, mirela.getGolpes()[2]);
+        
+    }
+    
+    @Test
+    public void verificaMetodoGetGolpesDoSaintComUmGolpe() throws Exception {
+        Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
+        Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
+        
+        assertEquals("Chute", mirela.getGolpes()[0].getNome());
+        assertEquals(null, mirela.getGolpes()[1]);
+        assertEquals(null, mirela.getGolpes()[2]);
+        
+    }
+    
+    @Test
+    public void insereGolpeNaConstelacaoDoSaint() throws Exception {
+        Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
+        
+        mirela.aprenderGolpe(new Golpe("Narizada",19));
+        mirela.aprenderGolpe(new Golpe("Testada",20));
+        mirela.aprenderGolpe(new Golpe("Joelhada",15));
+        
+        assertEquals("Narizada", mirela.getGolpes()[0].getNome());
+        assertEquals("Testada", mirela.getGolpes()[1].getNome());
+        assertEquals("Joelhada", mirela.getGolpes()[2].getNome());
+    
+    }  
+    
+    @Test(expected=Exception.class)
+    public void inserirMaisDeTresGolpesNaConstelacaoDoSaintDeveLancarException() throws Exception {
+        Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
+        mirela.aprenderGolpe(new Golpe("Narizada",19));
+        mirela.aprenderGolpe(new Golpe("Testada",20));
+        mirela.aprenderGolpe(new Golpe("Joelhada",15));
+        mirela.aprenderGolpe(new Golpe("Unhada",15));
+    }
+    
+    @Test
+    public void verificaMetodoProximoGolpeQuandoPossuiTresGolpes() throws Exception {
+        Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
+        mirela.aprenderGolpe(new Golpe("Narizada",19));
+        mirela.aprenderGolpe(new Golpe("Testada",20));
+        mirela.aprenderGolpe(new Golpe("Joelhada",15));
+        
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Testada", mirela.getProximoGolpe().getNome());
+        assertEquals("Joelhada", mirela.getProximoGolpe().getNome());
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+    }
+    
+    @Test
+    public void verificaMetodoProximoGolpeQuandoPossuiDoisGolpes() throws Exception {
+        Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
+        mirela.aprenderGolpe(new Golpe("Narizada",19));
+        mirela.aprenderGolpe(new Golpe("Testada",20));
+        
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Testada", mirela.getProximoGolpe().getNome());
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Testada", mirela.getProximoGolpe().getNome());
+    }
+    
+    @Test
+    public void verificaMetodoProximoGolpeQuandoPossuiUmGolpe() throws Exception {
+        Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
+        mirela.aprenderGolpe(new Golpe("Narizada",19));
+        
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+        assertEquals("Narizada", mirela.getProximoGolpe().getNome());
+    }
 }

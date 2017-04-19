@@ -65,5 +65,10 @@ public class ConstelacaoTest {
         constelacaoEscorpiao.adicionarGolpe(new Golpe("Cabelada", 2));
         
         assertEquals(5, constelacaoEscorpiao.getGolpes().size());
+        assertEquals(new Golpe("Chute", 13), constelacaoEscorpiao.getGolpes().get(0));
+        assertEquals(new Golpe("Soco", 15), constelacaoEscorpiao.getGolpes().get(1));
+        assertEquals(new Golpe("Rasteira", 10), constelacaoEscorpiao.getGolpes().get(2));
+        assertEquals(new Golpe("Voadora", 16), constelacaoEscorpiao.getGolpes().get(3));
+        assertEquals(new Golpe("Cabelada", 2), constelacaoEscorpiao.getGolpes().get(4));
     }
 }

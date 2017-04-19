@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.stream.*;
+import java.util.stream.Collectors;
 
 public class ListaSaints {
     private ArrayList<Saint> listaSaint = new ArrayList<>();
-    
+
     public void adicionar(Saint saint){
         this.listaSaint.add(saint);
     }
@@ -18,7 +20,7 @@ public class ListaSaints {
     public void remover(Saint saint){
         this.listaSaint.remove(saint);       
     }
-    
+
     public Saint buscarPorNome(String nome){
         for(Saint s : listaSaint){
             if(s.getNome().equals(nome)){
@@ -26,17 +28,26 @@ public class ListaSaints {
             }
         }
         return null;
+        /*
+        return this.listaSaint.stream()
+        .filter(s -> s.getNome().equals(nome))
+        .findFirst()
+        .orElse(null);
+         */
     }
-    
+
     public ArrayList<Saint> buscaPorCategoria(Categoria categoria){
         ArrayList<Saint> saintsCategorizados = new ArrayList<>();
-        
-         for(Saint s : listaSaint){
-            if(s.getArmadura().getCategoria() == categoria){
-                saintsCategorizados.add(s);
-            }
-         }
-        return saintsCategorizados;
+        /*
+        for(Saint s : listaSaint){
+        if(s.getArmadura().getCategoria().equals(categoria)){
+        saintsCategorizados.add(s);
+        }
+        }
+        return saintsCategorizados;*/
+        return (ArrayList<Saint>)this.listaSaint.stream()
+        .filter(s -> s.getArmadura().getCategoria().equals(categoria))
+        .collect(Collectors.toList());
     }
 
     public ArrayList<Saint> buscaPorStatus(Status status){
@@ -48,27 +59,48 @@ public class ListaSaints {
         }
         return saintsPorStatus;
     }
-    
+
     public Saint getSaintMaiorVida(){
+
+        if(listaSaint.isEmpty()){
+            return null;
+        }
+
         Saint maior = this.listaSaint.get(0);
-        for(Saint s : listaSaint){
-            if(s.getVida() > maior.getVida()){
-               maior = s;
+        /*  for(Saint s : listaSaint){
+        if(s.getVida() > maior.getVida()){
+        maior = s;
+        }
+        } */
+
+        for(int i = 1; i < this.listaSaint.size(); i++){
+            Saint saint = this.listaSaint.get(i);
+            boolean encontreiMaior = saint.getVida() > maior.getVida();
+
+            if(encontreiMaior){
+                maior = saint;
             }
         }
+
         return maior;
     } 
-    
+
     public Saint getSaintMenorVida(){
-    Saint menor = this.listaSaint.get(0);
-        for(Saint s : listaSaint){
-            if(s.getVida() < menor.getVida()){
-               menor = s;
+        if(listaSaint.isEmpty()){
+            return null;
+        }
+        Saint menor = this.listaSaint.get(0);
+        for(int i = 1; i < this.listaSaint.size(); i++){
+            Saint saint = this.listaSaint.get(i);
+            boolean encontreiMenor = saint.getVida() < menor.getVida();
+
+            if(encontreiMenor){
+                menor = saint;
             }
         }
         return menor;
     }
-    
+
     public void ordenar(){
         Saint aux;
         for(int i = 0; i < listaSaint.size(); i++){
@@ -77,8 +109,8 @@ public class ListaSaints {
                     aux = this.listaSaint.get(j);
                     this.listaSaint.set(j, listaSaint.get(j+1));
                     this.listaSaint.set(j+1, aux);
-			    }
-		    }
+                }
+            }
         }
     }
 }

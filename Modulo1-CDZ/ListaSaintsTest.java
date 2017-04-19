@@ -182,6 +182,13 @@ public class ListaSaintsTest {
         Saint maiorVida = listaSaints.getSaintMaiorVida();
         assertEquals(null, maiorVida);
     }
+    
+    @Test
+    public void getSaintMenorVidaComListaVazia(){
+        ListaSaints listaSaints = new ListaSaints();
+        Saint menorVida = listaSaints.getSaintMenorVida();
+        assertEquals(null, menorVida);
+    }
 
     
     @Test

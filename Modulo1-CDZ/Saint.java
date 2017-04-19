@@ -1,4 +1,5 @@
 import java.security.InvalidParameterException; 
+import java.util.ArrayList;
 
 public class Saint {
     private String nome;
@@ -8,8 +9,7 @@ public class Saint {
     private Status status = Status.VIVO;
     private double vida = 100.0;
     protected int qtdSentidosDespertados;
-    private int proximoGolpe = -1;
-    //private int acumuladorProximoGolpe = 0;
+    private int acumuladorProximoGolpe = 0;
     
     public Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
@@ -29,9 +29,9 @@ public class Saint {
         return this.genero;
     }
 
-	public String getNome(){
-		return this.nome;	
-	}
+    public String getNome(){
+        return this.nome;   
+    }
     
     public void setGenero(Genero genero){
         this.genero = genero;
@@ -68,7 +68,7 @@ public class Saint {
         return this.qtdSentidosDespertados;
     }
     
-    public Golpe[] getGolpes(){
+    public ArrayList<Golpe> getGolpes(){
         return this.getArmadura().getConstelacao().getGolpes();
     }
     
@@ -81,23 +81,10 @@ public class Saint {
     }
     
     public Golpe getProximoGolpe(){
-        /*Golpe[] golpes = getGolpes(); 
-        int posicao = this.acumuladorProximoGolpe % golpes.length; 
+        ArrayList<Golpe> golpes = getGolpes(); 
+        int posicao = this.acumuladorProximoGolpe % golpes.size(); 
         this.acumuladorProximoGolpe++; 
-        return golpes[posicao]; */
-        
-        if(proximoGolpe == 2) {
-            proximoGolpe = -1;
-        }
-        
-        proximoGolpe++;
-        
-        if(this.getArmadura().getConstelacao().getGolpes()[proximoGolpe] != null) {
-            return this.getConstelacao().getGolpes()[proximoGolpe];
-        } else {
-            proximoGolpe = 0;
-            return this.getConstelacao().getGolpes()[proximoGolpe];
-        }
+        return golpes.get(posicao); 
        
     }
   

@@ -5,60 +5,65 @@ import org.junit.Test;
 
 public class ConstelacaoTest {
     @Test
-    public void constelacaoSemGolpesPossuiIndicesComValoresNulos() throws Exception {
+    public void constelacaoSemGolpesPossuiArrayVazio() throws Exception {
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
-
-        assertNull(constelacaoEscorpiao.getGolpes()[0]);
-        assertNull(constelacaoEscorpiao.getGolpes()[1]);
-        assertNull(constelacaoEscorpiao.getGolpes()[2]);
+        assertEquals(0, constelacaoEscorpiao.getGolpes().size());
 
     }
 
     @Test
     public void adicionaTresGolpesParaConstelacao()throws Exception{
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        Golpe chute = new Golpe("Chute", 13);
+        Golpe soco = new Golpe("Soco", 15);
+        Golpe rasteira = new Golpe("Rasteira", 10);
+        
+        constelacaoEscorpiao.adicionarGolpe(chute);
+        constelacaoEscorpiao.adicionarGolpe(soco);
+        constelacaoEscorpiao.adicionarGolpe(rasteira);
 
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Soco", 15));
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Rasteira", 10));
-
-        assertEquals("Chute", constelacaoEscorpiao.getGolpes()[0].getNome());
-        assertEquals("Soco", constelacaoEscorpiao.getGolpes()[1].getNome());
-        assertEquals("Rasteira", constelacaoEscorpiao.getGolpes()[2].getNome());
-
+        assertEquals(chute, constelacaoEscorpiao.getGolpes().get(0));
+        assertEquals(soco, constelacaoEscorpiao.getGolpes().get(1));
+        assertEquals(rasteira, constelacaoEscorpiao.getGolpes().get(2));
     }
 
     @Test
     public void adicionaDoisGolpesParaConstelacao() throws Exception{
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        Golpe chute = new Golpe("Chute", 13);
+        Golpe soco = new Golpe("Soco", 15);
+        
+        constelacaoEscorpiao.adicionarGolpe(chute);
+        constelacaoEscorpiao.adicionarGolpe(soco);
 
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Soco", 15));
-
-        assertEquals("Chute", constelacaoEscorpiao.getGolpes()[0].getNome());
-        assertEquals("Soco", constelacaoEscorpiao.getGolpes()[1].getNome());
-        assertNull(constelacaoEscorpiao.getGolpes()[2]);
+        assertEquals(chute, constelacaoEscorpiao.getGolpes().get(0));
+        assertEquals(soco, constelacaoEscorpiao.getGolpes().get(1));
+        assertEquals(2, constelacaoEscorpiao.getGolpes().size());
 
     }
 
     @Test
     public void adicionaUmGolpeParaConstelacao() throws Exception{
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
+        Golpe chute = new Golpe("Chute", 13);
+        
+        constelacaoEscorpiao.adicionarGolpe(chute);
 
-        assertEquals("Chute", constelacaoEscorpiao.getGolpes()[0].getNome());
-        assertNull(constelacaoEscorpiao.getGolpes()[1]);
-        assertNull(constelacaoEscorpiao.getGolpes()[2]);
+        assertEquals(chute, constelacaoEscorpiao.getGolpes().get(0));
+        assertEquals(1, constelacaoEscorpiao.getGolpes().size());
 
     }
 
-    @Test(expected=Exception.class)
-    public void aoAdicionarMaisDeTresGolpesAUmaConstelacaoDeveLancarException() throws Exception{
+    @Test
+    public void aplicacaoDevePermitirAdicionarMaisDeTresGolpes() throws Exception{
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
 
         constelacaoEscorpiao.adicionarGolpe(new Golpe("Chute", 13));
         constelacaoEscorpiao.adicionarGolpe(new Golpe("Soco", 15));
         constelacaoEscorpiao.adicionarGolpe(new Golpe("Rasteira", 10));
-        constelacaoEscorpiao.adicionarGolpe(new Golpe("Voadora", 10));
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Voadora", 16));
+        constelacaoEscorpiao.adicionarGolpe(new Golpe("Cabelada", 2));
+        
+        assertEquals(5, constelacaoEscorpiao.getGolpes().size());
     }
 }

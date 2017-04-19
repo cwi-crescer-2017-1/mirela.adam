@@ -134,4 +134,24 @@ public class ListaSaintsTest {
         assertEquals(vivos, lista.buscaPorStatus(Status.VIVO));
         assertEquals(mortos, lista.buscaPorStatus(Status.MORTO));
     }
+    
+    @Test
+    public void testarGetSaintMaiorVida() throws Exception {
+        ListaSaints lista = new ListaSaints();
+        Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
+        Saint arthur = new SilverSaint("Arthur", new Armadura(constelacaoEscorpiao, Categoria.PRATA));
+        Saint carlos = new BronzeSaint("Carlos", new Armadura(constelacaoEscorpiao, Categoria.BRONZE));
+        
+        mirela.perderVida(190);
+        arthur.perderVida(50);
+        carlos.perderVida(50);
+        
+        lista.adicionar(mirela);
+        lista.adicionar(arthur);
+        lista.adicionar(carlos);
+        
+        assertEquals(arthur, lista.getSaintMaiorVida());    
+    }
+   
 }

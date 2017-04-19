@@ -103,14 +103,22 @@ public class ListaSaints {
 
     public void ordenar(){
         Saint aux;
-        for(int i = 0; i < listaSaint.size(); i++){
-            for(int j = 0; j < listaSaint.size()-1; j++){
-                if(this.listaSaint.get(j).getVida() > this.listaSaint.get(j + 1).getVida()){
-                    aux = this.listaSaint.get(j);
-                    this.listaSaint.set(j, listaSaint.get(j+1));
-                    this.listaSaint.set(j+1, aux);
+        boolean posicoesSendoTrocadas;
+
+        do{
+			posicoesSendoTrocadas=false;
+                for(int i = 0; i < this.listaSaint.size()-1; i++){
+               		Saint atual = this.listaSaint.get(i);
+               		Saint proximo = this.listaSaint.get(i+1); 
+
+					boolean precisaTrocar = atual.getVida() > proximo.getVida();
+					if(precisaTrocar){
+						this.listaSaint.set(i, proximo);
+                        this.listaSaint.set(i+1, atual);
+						posicoesSendoTrocadas = true;
+					}              
                 }
-            }
-        }
+        } while(posicoesSendoTrocadas);
+
     }
 }

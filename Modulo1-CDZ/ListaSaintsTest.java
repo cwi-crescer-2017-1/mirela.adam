@@ -174,4 +174,26 @@ public class ListaSaintsTest {
         assertEquals(mirela, lista.getSaintMenorVida());    
     }
    
+    @Test 
+    public void testarMétodoOrdenar() throws Exception{
+        ListaSaints lista = new ListaSaints();
+        Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
+        Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
+        Saint arthur = new SilverSaint("Arthur", new Armadura(constelacaoEscorpiao, Categoria.PRATA));
+        Saint carlos = new BronzeSaint("Carlos", new Armadura(constelacaoEscorpiao, Categoria.BRONZE));
+        
+        mirela.perderVida(10);
+        arthur.perderVida(97);
+        carlos.perderVida(25);
+        lista.adicionar(mirela);
+        lista.adicionar(arthur);
+        lista.adicionar(carlos);            
+        
+        ArrayList<Saint> listaOrdenada = new ArrayList<>();
+        listaOrdenada.add(arthur);
+        listaOrdenada.add(carlos);
+        listaOrdenada.add(mirela);
+        lista.ordenar();
+        assertEquals(listaOrdenada, lista.todos());
+    }
 }

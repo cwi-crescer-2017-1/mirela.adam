@@ -525,7 +525,7 @@ public class ListaSaintsTest {
         String csv = lista.getCSV();
         assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\nDohko,10.0,,OURO,VIVO,NAO_INFORMADO,true\n",csv);
     }
-    
+
     @Test
     public void retornoGetCsvComListaVaziaDeveRetornarNull() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -533,4 +533,87 @@ public class ListaSaintsTest {
         assertNull(csv);
     }
 
+    @Test
+    public void unirDuasListas() throws Exception {
+        ListaSaints lista1 = new ListaSaints();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        lista1.adicionar(shun); 
+        lista1.adicionar(misty); 
+        lista1.adicionar(june); 
+
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint carlos = new SilverSaint("Carlos", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint arthur = new Saint("Arthur", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        lista2.add(mirela); 
+        lista2.add(carlos); 
+        lista2.add(arthur); 
+
+        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+
+        listaEsperada.add(mirela);
+        listaEsperada.add(carlos);
+        listaEsperada.add(arthur);
+        listaEsperada.add(shun);
+        listaEsperada.add(misty);
+        listaEsperada.add(june);
+        assertEquals(listaEsperada, lista3Unida);        
+        assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
+    }
+
+    @Test
+    public void unirListasQuandoAtualNaoPossuiElementos() throws Exception {
+        ListaSaints lista1 = new ListaSaints();
+
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint carlos = new SilverSaint("Carlos", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint arthur = new Saint("Arthur", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        lista2.add(mirela); 
+        lista2.add(carlos); 
+        lista2.add(arthur); 
+
+        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+
+        listaEsperada.add(mirela);
+        listaEsperada.add(carlos);
+        listaEsperada.add(arthur);
+
+        assertEquals(listaEsperada, lista3Unida); 
+        assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
+    }
+
+    @Test
+    public void unirListasQuandoListaDoParametroNaoPossuiElementos() throws Exception{
+        ListaSaints lista1 = new ListaSaints();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        lista1.adicionar(shun); 
+        lista1.adicionar(misty); 
+        lista1.adicionar(june); 
+
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+
+        listaEsperada.add(shun);
+        listaEsperada.add(misty);
+        listaEsperada.add(june);
+
+        assertEquals(listaEsperada, lista3Unida); 
+        assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
+    }
+    
+    @Test
+    public void retornarNuloQuandoParametroEListaAtualEstiveremVazios(){
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
+        assertNull(lista3Unida);
+    }
 }

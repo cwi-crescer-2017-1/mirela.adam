@@ -162,8 +162,15 @@ public class ListaSaints {
 
     public ArrayList<Saint> unir(ArrayList<Saint> lista1){
         ArrayList<Saint> listaUnida = new ArrayList<>();
-
+        
+        if(!this.listaSaint.isEmpty() || !lista1.isEmpty()){
+        listaUnida.addAll(lista1);
+        listaUnida.addAll(listaSaint);
+        
         return listaUnida;
+        } else {
+            return null;
+        }
     }
 
     public ArrayList<Saint> diff(ArrayList<Saint> lista1){

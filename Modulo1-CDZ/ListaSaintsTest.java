@@ -598,14 +598,13 @@ public class ListaSaintsTest {
         lista1.adicionar(june); 
 
         ArrayList<Saint> lista2 = new ArrayList<>();
-        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
         ArrayList<Saint> listaEsperada = new ArrayList<>();
 
         listaEsperada.add(shun);
         listaEsperada.add(misty);
         listaEsperada.add(june);
 
-        assertEquals(listaEsperada, lista3Unida); 
+        assertEquals(listaEsperada, lista1.unir(lista2)); 
         assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
     }
     
@@ -615,5 +614,58 @@ public class ListaSaintsTest {
         ArrayList<Saint> lista2 = new ArrayList<>();
         ArrayList<Saint> lista3Unida = lista1.unir(lista2);
         assertNull(lista3Unida);
+    }
+    
+    @Test
+    public void validarMetodoDiffComDuasListasComDados() throws Exception {
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        
+        lista1.adicionar(june);
+        lista1.adicionar(misty);
+        lista1.adicionar(shun);
+        lista2.add(misty);
+        
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+        listaEsperada.add(june);
+        listaEsperada.add(shun);
+        
+        assertEquals(listaEsperada, lista1.diff(lista2)); 
+    }
+    
+    @Test
+    public void validarMetodoDiffQuandoListaAtualNaoPossuiDadosDeveRetornarNull() throws Exception {
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        lista2.add(misty);
+        assertNull(lista1.diff(lista2));
+        
+    }
+    
+    @Test
+    public void validarMetodoDiffQuandoListaDoParametroEstaVazia() throws Exception {
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        
+        lista1.adicionar(june);
+        lista1.adicionar(misty);
+        lista1.adicionar(shun);
+        
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+        listaEsperada.add(june);
+        listaEsperada.add(misty);
+        listaEsperada.add(shun);
+        
+        assertEquals(listaEsperada, lista1.diff(lista2)); 
     }
 }

@@ -162,12 +162,12 @@ public class ListaSaints {
 
     public ArrayList<Saint> unir(ArrayList<Saint> lista1){
         ArrayList<Saint> listaUnida = new ArrayList<>();
-        
+
         if(!this.listaSaint.isEmpty() || !lista1.isEmpty()){
-        listaUnida.addAll(lista1);
-        listaUnida.addAll(listaSaint);
-        
-        return listaUnida;
+            listaUnida.addAll(lista1);
+            listaUnida.addAll(listaSaint);
+
+            return listaUnida;
         } else {
             return null;
         }
@@ -176,15 +176,38 @@ public class ListaSaints {
     public ArrayList<Saint> diff(ArrayList<Saint> lista1){
         ArrayList<Saint> listaDiff = new ArrayList<>();
 
-        return listaDiff;
+        if(!this.listaSaint.isEmpty()){
+            for(Saint saintListaAtual : listaSaint){
+                boolean encontrouSaint = false;
+                for(Saint saintParam : lista1){
+                    encontrouSaint = saintParam.equals(saintListaAtual);
+                    if(encontrouSaint){
+                        break;
+                    }
+                }
+
+                if(!encontrouSaint) {
+                    listaDiff.add(saintListaAtual);
+                }
+            }
+
+            return listaDiff;
+        }else{
+            return null;
+        }
     }
 
     public ArrayList<Saint> intersec(ArrayList<Saint> lista1){
         ArrayList<Saint> listaIntersec = new ArrayList<>();
-
+        
+        
+        
+        
+        
+        
         return listaIntersec;
     }
-    
+
     public String getCSV(){
         String csv="";
 

@@ -65,13 +65,13 @@ public class ListaSaintsTest {
         lista.adicionar(mirela2);
         assertNull(lista.buscarPorNome("Tales"));   
     }
-    
+
     @Test
     public void pesquisarPorNomeEmListaVaziaRetornaNull(){
         ListaSaints lista = new ListaSaints();
         assertNull(lista.buscarPorNome("Tales"));  
     }
-    
+
     @Test
     public void buscarPorCategoriaInexistente() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -82,7 +82,7 @@ public class ListaSaintsTest {
         lista.adicionar(arthur);
         assertEquals(new ArrayList<Saint>(), lista.buscaPorCategoria(Categoria.BRONZE));
     }
-    
+
     @Test
     public void validarBuscaPorCategoria() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -175,14 +175,14 @@ public class ListaSaintsTest {
         lista.adicionar(mirela);
         assertEquals(mirela, lista.getSaintMaiorVida());    
     }
-    
+
     @Test
     public void getSaintMaiorVidaComListaVazia(){
         ListaSaints listaSaints = new ListaSaints();
         Saint maiorVida = listaSaints.getSaintMaiorVida();
         assertEquals(null, maiorVida);
     }
-    
+
     @Test
     public void getSaintMenorVidaComListaVazia(){
         ListaSaints listaSaints = new ListaSaints();
@@ -190,7 +190,6 @@ public class ListaSaintsTest {
         assertEquals(null, menorVida);
     }
 
-    
     @Test
     public void testarGetSaintMenorVida() throws Exception {
         ListaSaints lista = new ListaSaints();
@@ -230,7 +229,7 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarPiorCaso() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -251,7 +250,7 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarComListaJaOrdenada() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -272,20 +271,20 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test
-	public void ordenarListaComApenasUmElemento() throws Exception{
-      	ListaSaints lista = new ListaSaints();
+    @Test
+    public void ordenarListaComApenasUmElemento() throws Exception{
+        ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
         Saint arthur = new GoldSaint("Arthur", new Armadura(constelacaoEscorpiao, Categoria.OURO));     
-		arthur.perderVida(20);
-		lista.adicionar(arthur);
-		lista.ordenar();
-		ArrayList<Saint> listaOrdenada = new ArrayList<>();
+        arthur.perderVida(20);
+        lista.adicionar(arthur);
+        lista.ordenar();
+        ArrayList<Saint> listaOrdenada = new ArrayList<>();
         listaOrdenada.add(arthur);
         assertEquals(listaOrdenada, lista.todos());
-	}
+    }
 
-	 @Test 
+    @Test 
     public void ordenarComListaVazia() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         listaSaints.ordenar(); 
@@ -293,7 +292,7 @@ public class ListaSaintsTest {
         assertEquals(new ArrayList<Saint>(), resultado); 
     } 
 
-	@Test 
+    @Test 
     public void ordenarComListaDeValoresIguais() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
@@ -308,7 +307,6 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1)); 
         assertEquals(june, resultado.get(2)); 
     } 
-
 
     @Test 
     public void testarMétodoOrdenarComTipoOrdenacaoAscendente() throws Exception{
@@ -331,7 +329,7 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarPiorCasoComTipoOrdenacaoAscendente() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -352,7 +350,7 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarComListaJaOrdenadaComTipoOrdenacaoAscendente() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -373,20 +371,20 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test
-	public void ordenarListaComApenasUmElementoComTipoOrdenacaoAscendente() throws Exception{
-      	ListaSaints lista = new ListaSaints();
+    @Test
+    public void ordenarListaComApenasUmElementoComTipoOrdenacaoAscendente() throws Exception{
+        ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
         Saint arthur = new GoldSaint("Arthur", new Armadura(constelacaoEscorpiao, Categoria.OURO));     
-		arthur.perderVida(20);
-		lista.adicionar(arthur);
-		lista.ordenar(TipoOrdenacao.ASCENDENTE);
-		ArrayList<Saint> listaOrdenada = new ArrayList<>();
+        arthur.perderVida(20);
+        lista.adicionar(arthur);
+        lista.ordenar(TipoOrdenacao.ASCENDENTE);
+        ArrayList<Saint> listaOrdenada = new ArrayList<>();
         listaOrdenada.add(arthur);
         assertEquals(listaOrdenada, lista.todos());
-	}
+    }
 
-	 @Test 
+    @Test 
     public void ordenarComListaVaziaComTipoOrdenacaoAscendente() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         listaSaints.ordenar(TipoOrdenacao.ASCENDENTE); 
@@ -394,7 +392,7 @@ public class ListaSaintsTest {
         assertEquals(new ArrayList<Saint>(), resultado); 
     } 
 
-	@Test 
+    @Test 
     public void ordenarComListaDeValoresIguaisComTipoOrdenacaoAscendente() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
@@ -424,15 +422,15 @@ public class ListaSaintsTest {
         lista.adicionar(arthur);
         lista.adicionar(carlos);            
         ArrayList<Saint> listaOrdenada = new ArrayList<>();
-        
+
         listaOrdenada.add(mirela);
         listaOrdenada.add(carlos);
         listaOrdenada.add(arthur);
-		lista.ordenar(TipoOrdenacao.DESCENDENTE);
+        lista.ordenar(TipoOrdenacao.DESCENDENTE);
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarPiorCasoComTipoOrdenacaoDescendente() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -453,7 +451,7 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test 
+    @Test 
     public void testarMétodoOrdenarComListaJaOrdenadaComTipoOrdenacaoDescendente() throws Exception{
         ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
@@ -474,20 +472,20 @@ public class ListaSaintsTest {
         assertEquals(listaOrdenada, lista.todos());
     }
 
-	@Test
-	public void ordenarListaComApenasUmElementoComTipoOrdenacaoDescendente() throws Exception{
-      	ListaSaints lista = new ListaSaints();
+    @Test
+    public void ordenarListaComApenasUmElementoComTipoOrdenacaoDescendente() throws Exception{
+        ListaSaints lista = new ListaSaints();
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
         Saint arthur = new GoldSaint("Arthur", new Armadura(constelacaoEscorpiao, Categoria.OURO));     
-		arthur.perderVida(20);
-		lista.adicionar(arthur);
-		lista.ordenar(TipoOrdenacao.DESCENDENTE);
-		ArrayList<Saint> listaOrdenada = new ArrayList<>();
+        arthur.perderVida(20);
+        lista.adicionar(arthur);
+        lista.ordenar(TipoOrdenacao.DESCENDENTE);
+        ArrayList<Saint> listaOrdenada = new ArrayList<>();
         listaOrdenada.add(arthur);
         assertEquals(listaOrdenada, lista.todos());
-	}
+    }
 
-	 @Test 
+    @Test 
     public void ordenarComListaVaziaComTipoOrdenacaoDescendente() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         listaSaints.ordenar(TipoOrdenacao.DESCENDENTE); 
@@ -495,7 +493,7 @@ public class ListaSaintsTest {
         assertEquals(new ArrayList<Saint>(), resultado); 
     } 
 
-	@Test 
+    @Test 
     public void ordenarComListaDeValoresIguaisComTipoOrdenacaoDescendente() throws Exception { 
         ListaSaints listaSaints = new ListaSaints(); 
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
@@ -510,5 +508,29 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1)); 
         assertEquals(june, resultado.get(2)); 
     } 
+
+    @Test
+    public void verificaRetornoGetCSV() throws Exception{
+        ListaSaints lista = new ListaSaints();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        june.setGenero(Genero.FEMININO);
+        june.perderVida(15.5);
+        lista.adicionar(june);
+
+        Saint dohko = new Saint("Dohko", new Armadura(new Constelacao(""), Categoria.OURO));
+        dohko.perderVida(90);
+        dohko.vestirArmadura();
+        lista.adicionar(dohko);
+
+        String csv = lista.getCSV();
+        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\nDohko,10.0,,OURO,VIVO,NAO_INFORMADO,true\n",csv);
+    }
+    
+    @Test
+    public void retornoGetCsvComListaVaziaDeveRetornarNull() throws Exception{
+        ListaSaints lista = new ListaSaints();
+        String csv = lista.getCSV();
+        assertNull(csv);
+    }
 
 }

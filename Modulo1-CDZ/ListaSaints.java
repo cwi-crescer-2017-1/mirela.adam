@@ -124,8 +124,8 @@ public class ListaSaints {
     public void ordenar(TipoOrdenacao tipoOrdenacao){
         Saint aux;
         boolean posicoesSendoTrocadas;
-        
-		if(tipoOrdenacao.equals(TipoOrdenacao.ASCENDENTE)){
+
+        if(tipoOrdenacao.equals(TipoOrdenacao.ASCENDENTE)){
             do{
                 posicoesSendoTrocadas=false;
                 for(int i = 0; i < this.listaSaint.size()-1; i++){
@@ -142,7 +142,7 @@ public class ListaSaints {
             } while(posicoesSendoTrocadas);
         } else { //DESCENDENTE
 
-			do{
+            do{
                 posicoesSendoTrocadas=false;
                 for(int i = this.listaSaint.size()-1; i > 0; i--){
                     Saint atual = this.listaSaint.get(i);
@@ -158,5 +158,37 @@ public class ListaSaints {
             } while(posicoesSendoTrocadas);
 
         }
+    }
+
+    public ArrayList<Saint> unir(ArrayList<Saint> lista1){
+        ArrayList<Saint> listaUnida = new ArrayList<>();
+
+        return listaUnida;
+    }
+
+    public ArrayList<Saint> diff(ArrayList<Saint> lista1){
+        ArrayList<Saint> listaDiff = new ArrayList<>();
+
+        return listaDiff;
+    }
+
+    public ArrayList<Saint> intersec(ArrayList<Saint> lista1){
+        ArrayList<Saint> listaIntersec = new ArrayList<>();
+
+        return listaIntersec;
+    }
+    
+    public String getCSV(){
+        String csv="";
+
+        if(!listaSaint.isEmpty()){
+            for(Saint s : listaSaint){
+                csv += s.getNome() + "," + s.getVida() + "," + s.getConstelacao().getNome() +  ","+ s.getArmadura().getCategoria() + "," + 
+                s.getStatus() + "," + s.getGenero() + "," + s.getArmaduraVestida() + "\n";
+            }
+        }else {
+            return null;
+        }
+        return csv;
     }
 }

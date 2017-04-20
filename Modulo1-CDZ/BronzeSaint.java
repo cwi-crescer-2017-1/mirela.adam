@@ -4,4 +4,8 @@ public class BronzeSaint extends Saint {
         this.qtdSentidosDespertados = 5;
     }
     
+    public BronzeSaint(String nome, String constelacao) throws Exception{
+        this(nome, new Armadura(new Constelacao(constelacao), Categoria.BRONZE));
+    }
+    
 }

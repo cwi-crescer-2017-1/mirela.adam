@@ -140,18 +140,18 @@ public class ListaSaints {
                     }              
                 }
             } while(posicoesSendoTrocadas);
-        } else { //DESCENDENTE
+        } else if(tipoOrdenacao.equals(TipoOrdenacao.DESCENDENTE)) { 
 
-            do{
+           do{
                 posicoesSendoTrocadas=false;
-                for(int i = this.listaSaint.size()-1; i > 0; i--){
+                for(int i = 0; i < this.listaSaint.size()-1; i++){
                     Saint atual = this.listaSaint.get(i);
-                    Saint proximo = this.listaSaint.get(i-1); 
+                    Saint proximo = this.listaSaint.get(i+1); 
 
-                    boolean precisaTrocar = atual.getVida() > proximo.getVida();
+                    boolean precisaTrocar = atual.getVida() < proximo.getVida();
                     if(precisaTrocar){
                         this.listaSaint.set(i, proximo);
-                        this.listaSaint.set(i-1, atual);
+                        this.listaSaint.set(i+1, atual);
                         posicoesSendoTrocadas = true;
                     }              
                 }

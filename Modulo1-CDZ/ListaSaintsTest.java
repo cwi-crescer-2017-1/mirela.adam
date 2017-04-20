@@ -550,8 +550,6 @@ public class ListaSaintsTest {
         lista2.add(mirela); 
         lista2.add(carlos); 
         lista2.add(arthur); 
-
-        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
         ArrayList<Saint> listaEsperada = new ArrayList<>();
 
         listaEsperada.add(mirela);
@@ -560,7 +558,7 @@ public class ListaSaintsTest {
         listaEsperada.add(shun);
         listaEsperada.add(misty);
         listaEsperada.add(june);
-        assertEquals(listaEsperada, lista3Unida);        
+        assertEquals(listaEsperada, lista1.unir(lista2));        
         assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
     }
 
@@ -607,7 +605,7 @@ public class ListaSaintsTest {
         assertEquals(listaEsperada, lista1.unir(lista2)); 
         assertEquals(listaEsperada.size(), lista1.todos().size()+lista2.size());
     }
-    
+
     @Test
     public void retornarNuloQuandoParametroEListaAtualEstiveremVazios(){
         ListaSaints lista1 = new ListaSaints();
@@ -615,7 +613,7 @@ public class ListaSaintsTest {
         ArrayList<Saint> lista3Unida = lista1.unir(lista2);
         assertNull(lista3Unida);
     }
-    
+
     @Test
     public void validarMetodoDiffComDuasListasComDados() throws Exception {
         ListaSaints lista1 = new ListaSaints();
@@ -623,19 +621,19 @@ public class ListaSaintsTest {
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
         Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
-        
+
         lista1.adicionar(june);
         lista1.adicionar(misty);
         lista1.adicionar(shun);
         lista2.add(misty);
-        
+
         ArrayList<Saint> listaEsperada = new ArrayList<>();
         listaEsperada.add(june);
         listaEsperada.add(shun);
-        
+
         assertEquals(listaEsperada, lista1.diff(lista2)); 
     }
-    
+
     @Test
     public void validarMetodoDiffQuandoListaAtualNaoPossuiDadosDeveRetornarNull() throws Exception {
         ListaSaints lista1 = new ListaSaints();
@@ -645,27 +643,100 @@ public class ListaSaintsTest {
         Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
         lista2.add(misty);
         assertNull(lista1.diff(lista2));
-        
+
     }
-    
+
     @Test
     public void validarMetodoDiffQuandoListaDoParametroEstaVazia() throws Exception {
         ListaSaints lista1 = new ListaSaints();
         ArrayList<Saint> lista2 = new ArrayList<>();
-        
+
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
         Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
-        
+
         lista1.adicionar(june);
         lista1.adicionar(misty);
         lista1.adicionar(shun);
-        
+
         ArrayList<Saint> listaEsperada = new ArrayList<>();
         listaEsperada.add(june);
         listaEsperada.add(misty);
         listaEsperada.add(shun);
-        
+
         assertEquals(listaEsperada, lista1.diff(lista2)); 
+    }
+
+    @Test
+    public void validarMetodoInterescComDuasListasComDadosQuePossuamElementosIguais() throws Exception{
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+
+        lista1.adicionar(shun); 
+        lista1.adicionar(misty); 
+        lista1.adicionar(june);      
+        lista2.add(mirela); 
+        lista2.add(june); 
+        lista2.add(misty); 
+
+        ArrayList<Saint> listaEsperada = new ArrayList<>();
+        listaEsperada.add(misty);
+        listaEsperada.add(june);
+
+        assertEquals(listaEsperada, lista1.intersec(lista2));     
+    }
+
+    @Test
+    public void validarMetodoInterescComDuasListasComDadosQueNaoPossuamElementosIguais() throws Exception{ 
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA)); 
+        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE)); 
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint arthur = new Saint("Arthur", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+
+        lista1.adicionar(shun); 
+        lista1.adicionar(misty); 
+        lista1.adicionar(june);      
+        lista2.add(mirela); 
+        lista2.add(arthur); 
+
+        assertNull(lista1.intersec(lista2));     
+    }
+
+    @Test
+    public void validarMetodoInterescQuandoListaAtualNaoPossuiElementos() throws Exception { 
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint arthur = new Saint("Arthur", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        lista2.add(mirela); 
+        lista2.add(arthur); 
+
+        assertNull(lista1.intersec(lista2));  
+    }
+
+    @Test
+    public void validarMetodoInterescQuandoListaDoParametroNaoPossuiElementos() throws Exception{ 
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        Saint mirela = new Saint("Mirela", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        Saint arthur = new Saint("Arthur", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE)); 
+        lista1.adicionar(mirela); 
+        lista1.adicionar(arthur); 
+
+        assertNull(lista1.intersec(lista2));  
+    }
+
+    @Test
+    public void validarMetodoInterescQuandoAsDuasListasEstaoVazias(){ 
+        ListaSaints lista1 = new ListaSaints();
+        ArrayList<Saint> lista2 = new ArrayList<>();
+        assertNull(lista1.intersec(lista2));  
     }
 }

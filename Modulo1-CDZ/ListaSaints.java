@@ -199,13 +199,22 @@ public class ListaSaints {
 
     public ArrayList<Saint> intersec(ArrayList<Saint> lista1){
         ArrayList<Saint> listaIntersec = new ArrayList<>();
+
+        if(!this.listaSaint.isEmpty() && !lista1.isEmpty()){
+            for(Saint saintListaAtual : listaSaint){                
+                for(Saint saintParam : lista1){
+                    if(saintListaAtual.equals(saintParam)){
+                        listaIntersec.add(saintParam);
+                    }
+                }
+            }
+        }
         
-        
-        
-        
-        
-        
-        return listaIntersec;
+        if(listaIntersec.size() > 0){
+            return listaIntersec;
+        } else {
+            return null;
+        }
     }
 
     public String getCSV(){

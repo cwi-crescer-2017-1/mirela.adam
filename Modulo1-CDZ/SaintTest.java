@@ -159,13 +159,10 @@ public class SaintTest {
         Golpe chute = new Golpe("Chute", 13);
         Golpe soco = new Golpe("Soco", 15);
         Golpe rasteira = new Golpe("Rasteira", 20);
-        
         constelacaoEscorpiao.adicionarGolpe(chute);
         constelacaoEscorpiao.adicionarGolpe(soco);
         constelacaoEscorpiao.adicionarGolpe(rasteira);
-        
         Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
-        
         assertEquals(chute, mirela.getGolpes().get(0));
         assertEquals(soco, mirela.getGolpes().get(1));
         assertEquals(rasteira, mirela.getGolpes().get(2));
@@ -178,11 +175,9 @@ public class SaintTest {
         Constelacao constelacaoEscorpiao = new Constelacao("Escorpião");
         Golpe chute = new Golpe("Chute", 13);
         Golpe soco = new Golpe("Soco", 15);
-        
         constelacaoEscorpiao.adicionarGolpe(chute);
         constelacaoEscorpiao.adicionarGolpe(soco);        
         Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
-        
         assertEquals(chute, mirela.getGolpes().get(0));
         assertEquals(soco, mirela.getGolpes().get(1));
         assertEquals(2, mirela.getGolpes().size());
@@ -195,7 +190,6 @@ public class SaintTest {
         Golpe chute = new Golpe("Chute", 13);
         constelacaoEscorpiao.adicionarGolpe(chute);
         Saint mirela = new GoldSaint("Mirela", new Armadura(constelacaoEscorpiao, Categoria.OURO));
-        
         assertEquals(chute, mirela.getGolpes().get(0));
         assertEquals(1, mirela.getGolpes().size());
         
@@ -207,11 +201,9 @@ public class SaintTest {
         Golpe narizada = new Golpe("Narizada",19);
         Golpe testada = new Golpe("Testada",20);
         Golpe joelhada = new Golpe("Joelhada",15);
-        
         mirela.aprenderGolpe(narizada);
         mirela.aprenderGolpe(testada);
         mirela.aprenderGolpe(joelhada);
-        
         assertEquals(narizada, mirela.getGolpes().get(0));
         assertEquals(testada, mirela.getGolpes().get(1));
         assertEquals(joelhada, mirela.getGolpes().get(2));
@@ -233,11 +225,9 @@ public class SaintTest {
         Golpe narizada = new Golpe("Narizada",19);
         Golpe testada = new Golpe("Testada",20);
         Golpe joelhada = new Golpe("Joelhada",15);
-       
         mirela.aprenderGolpe(narizada);
         mirela.aprenderGolpe(testada);
         mirela.aprenderGolpe(joelhada);
-        
         assertEquals(narizada, mirela.getProximoGolpe());
         assertEquals(testada, mirela.getProximoGolpe());
         assertEquals(joelhada, mirela.getProximoGolpe());
@@ -250,10 +240,8 @@ public class SaintTest {
         Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
         Golpe narizada = new Golpe("Narizada",19);
         Golpe testada = new Golpe("Testada",20);
-        
         mirela.aprenderGolpe(narizada);
         mirela.aprenderGolpe(testada);
-        
         assertEquals(narizada, mirela.getProximoGolpe());
         assertEquals(testada, mirela.getProximoGolpe());
         assertEquals(narizada, mirela.getProximoGolpe());
@@ -265,10 +253,38 @@ public class SaintTest {
         Saint mirela = new GoldSaint("Mirela", new Armadura(new Constelacao("Escorpião"), Categoria.OURO));
         Golpe narizada = new Golpe("Narizada",19);
         mirela.aprenderGolpe(narizada);
+        assertEquals(narizada, mirela.getProximoGolpe());
+        assertEquals(narizada, mirela.getProximoGolpe());
+        assertEquals(narizada, mirela.getProximoGolpe());
+        assertEquals(narizada, mirela.getProximoGolpe());
+    }
+    
+    @Test 
+    public void getCSVComArmaduraVestida() throws Exception{
+        Saint dohko = new Saint("Dohko", new Armadura(new Constelacao(""), Categoria.OURO));
+        dohko.perderVida(90);
+        dohko.vestirArmadura();
+        String esperado = "Dohko,10.0,,OURO,VIVO,NAO_INFORMADO,true";
+        assertEquals(esperado, dohko.getCSV());
         
-        assertEquals(narizada, mirela.getProximoGolpe());
-        assertEquals(narizada, mirela.getProximoGolpe());
-        assertEquals(narizada, mirela.getProximoGolpe());
-        assertEquals(narizada, mirela.getProximoGolpe());
+    }
+    
+    @Test 
+    public void getCSVSemArmaduraVestida() throws Exception{
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        june.setGenero(Genero.FEMININO);
+        june.perderVida(15.5);
+        String esperado = "June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
+        assertEquals(esperado, june.getCSV());
+    }
+    
+        
+    @Test 
+    public void getCSVComNomeNulo() throws Exception{
+        Saint june = new Saint(null, new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        june.setGenero(Genero.FEMININO);
+        june.perderVida(15.5);
+        String esperado = "null,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
+        assertEquals(esperado, june.getCSV());
     }
 }

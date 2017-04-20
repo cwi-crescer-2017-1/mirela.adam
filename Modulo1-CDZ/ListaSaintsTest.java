@@ -308,6 +308,7 @@ public class ListaSaintsTest {
         assertEquals(june, resultado.get(2)); 
     } 
 
+    //TipoOrdenacao.ASCENDENTE
     @Test 
     public void testarMétodoOrdenarComTipoOrdenacaoAscendente() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -408,6 +409,7 @@ public class ListaSaintsTest {
         assertEquals(june, resultado.get(2)); 
     } 
 
+    //TipoOrdenacao.DESCENDENTE
     @Test 
     public void testarMétodoOrdenarComTipoOrdenacaoDescendente() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -508,7 +510,8 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1)); 
         assertEquals(june, resultado.get(2)); 
     } 
-
+    
+    //getCSV
     @Test
     public void verificaRetornoGetCSV() throws Exception{
         ListaSaints lista = new ListaSaints();
@@ -532,7 +535,8 @@ public class ListaSaintsTest {
         String csv = lista.getCSV();
         assertNull(csv);
     }
-
+    
+    //unir 
     @Test
     public void unirDuasListas() throws Exception {
         ListaSaints lista1 = new ListaSaints();
@@ -610,10 +614,10 @@ public class ListaSaintsTest {
     public void retornarNuloQuandoParametroEListaAtualEstiveremVazios(){
         ListaSaints lista1 = new ListaSaints();
         ArrayList<Saint> lista2 = new ArrayList<>();
-        ArrayList<Saint> lista3Unida = lista1.unir(lista2);
-        assertNull(lista3Unida);
+        assertNull(lista1.unir(lista2));
     }
 
+    //diff
     @Test
     public void validarMetodoDiffComDuasListasComDados() throws Exception {
         ListaSaints lista1 = new ListaSaints();
@@ -667,6 +671,7 @@ public class ListaSaintsTest {
         assertEquals(listaEsperada, lista1.diff(lista2)); 
     }
 
+    //intersec
     @Test
     public void validarMetodoInterescComDuasListasComDadosQuePossuamElementosIguais() throws Exception{
         ListaSaints lista1 = new ListaSaints();

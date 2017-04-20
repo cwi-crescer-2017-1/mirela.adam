@@ -102,37 +102,21 @@ public class ListaSaints {
     }
 
     public void ordenar(){
-        Saint aux;
-        boolean posicoesSendoTrocadas;
-
-        do{
-            posicoesSendoTrocadas=false;
-            for(int i = 0; i < this.listaSaint.size()-1; i++){
-                Saint atual = this.listaSaint.get(i);
-                Saint proximo = this.listaSaint.get(i+1); 
-
-                boolean precisaTrocar = atual.getVida() > proximo.getVida();
-                if(precisaTrocar){
-                    this.listaSaint.set(i, proximo);
-                    this.listaSaint.set(i+1, atual);
-                    posicoesSendoTrocadas = true;
-                }              
-            }
-        } while(posicoesSendoTrocadas);
+       this.ordenar(TipoOrdenacao.ASCENDENTE);
     }
 
     public void ordenar(TipoOrdenacao tipoOrdenacao){
         Saint aux;
+        boolean ascendente = tipoOrdenacao == TipoOrdenacao.ASCENDENTE;
         boolean posicoesSendoTrocadas;
-
-        if(tipoOrdenacao.equals(TipoOrdenacao.ASCENDENTE)){
             do{
                 posicoesSendoTrocadas=false;
                 for(int i = 0; i < this.listaSaint.size()-1; i++){
                     Saint atual = this.listaSaint.get(i);
                     Saint proximo = this.listaSaint.get(i+1); 
 
-                    boolean precisaTrocar = atual.getVida() > proximo.getVida();
+                    boolean precisaTrocar = ascendente? atual.getVida() > proximo.getVida() : atual.getVida() < proximo.getVida();
+                    
                     if(precisaTrocar){
                         this.listaSaint.set(i, proximo);
                         this.listaSaint.set(i+1, atual);
@@ -140,24 +124,6 @@ public class ListaSaints {
                     }              
                 }
             } while(posicoesSendoTrocadas);
-        } else if(tipoOrdenacao.equals(TipoOrdenacao.DESCENDENTE)) { 
-
-           do{
-                posicoesSendoTrocadas=false;
-                for(int i = 0; i < this.listaSaint.size()-1; i++){
-                    Saint atual = this.listaSaint.get(i);
-                    Saint proximo = this.listaSaint.get(i+1); 
-
-                    boolean precisaTrocar = atual.getVida() < proximo.getVida();
-                    if(precisaTrocar){
-                        this.listaSaint.set(i, proximo);
-                        this.listaSaint.set(i+1, atual);
-                        posicoesSendoTrocadas = true;
-                    }              
-                }
-            } while(posicoesSendoTrocadas);
-
-        }
     }
 
     public ArrayList<Saint> unir(ArrayList<Saint> lista1){

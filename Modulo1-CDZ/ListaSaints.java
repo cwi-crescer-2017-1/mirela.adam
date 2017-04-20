@@ -184,16 +184,15 @@ public class ListaSaints {
     }
 
     public String getCSV(){
+        StringBuilder builder = new StringBuilder(512);
         String csv="";
-
+        String separador = System.getProperty("line.separator");
         if(!listaSaint.isEmpty()){
             for(Saint s : listaSaint){
-                csv += s.getNome() + "," + s.getVida() + "," + s.getConstelacao().getNome() +  ","+ s.getArmadura().getCategoria() + "," + 
-                s.getStatus() + "," + s.getGenero() + "," + s.getArmaduraVestida() + "\n";
+                builder.append(s.getCSV() + separador);
             }
-        }else {
-            return null;
         }
-        return csv;
+        
+        return builder.toString();
     }
 }

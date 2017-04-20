@@ -513,7 +513,7 @@ public class ListaSaintsTest {
     
     //getCSV
     @Test
-    public void verificaRetornoGetCSV() throws Exception{
+    public void verificaRetornoGetCSVComDoisSaints() throws Exception{
         ListaSaints lista = new ListaSaints();
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         june.setGenero(Genero.FEMININO);
@@ -526,14 +526,23 @@ public class ListaSaintsTest {
         lista.adicionar(dohko);
 
         String csv = lista.getCSV();
-        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\nDohko,10.0,,OURO,VIVO,NAO_INFORMADO,true\n",csv);
+        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\r\nDohko,10.0,,OURO,VIVO,NAO_INFORMADO,true\r\n",csv);
+    }
+    
+     @Test
+    public void verificaRetornoGetCSVComUmSaint() throws Exception{
+        ListaSaints lista = new ListaSaints();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        june.setGenero(Genero.FEMININO);
+        june.perderVida(15.5);
+        lista.adicionar(june);
+        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\r\n", lista.getCSV());
     }
 
     @Test
-    public void retornoGetCsvComListaVaziaDeveRetornarNull() throws Exception{
+    public void retornoGetCsvComListaVaziaDeveRetornarStringVazia() throws Exception{
         ListaSaints lista = new ListaSaints();
-        String csv = lista.getCSV();
-        assertNull(csv);
+        assertEquals("",lista.getCSV());
     }
     
     //unir 

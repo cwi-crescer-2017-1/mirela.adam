@@ -524,9 +524,8 @@ public class ListaSaintsTest {
         dohko.perderVida(90);
         dohko.vestirArmadura();
         lista.adicionar(dohko);
-
-        String csv = lista.getCSV();
-        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\r\nDohko,10.0,,OURO,VIVO,NAO_INFORMADO,true\r\n",csv);
+        String separador = System.getProperty("line.separator");
+        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false"+separador+"Dohko,10.0,,OURO,VIVO,NAO_INFORMADO,true"+separador , lista.getCSV());
     }
     
      @Test
@@ -536,7 +535,8 @@ public class ListaSaintsTest {
         june.setGenero(Genero.FEMININO);
         june.perderVida(15.5);
         lista.adicionar(june);
-        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false\r\n", lista.getCSV());
+        String separador = System.getProperty("line.separator");
+        assertEquals("June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false"+separador, lista.getCSV());
     }
 
     @Test

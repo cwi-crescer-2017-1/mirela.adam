@@ -11,8 +11,12 @@ public abstract class Saint {
     protected int qtdSentidosDespertados;
     private int acumuladorProximoGolpe = 0;
     
-    public Saint(String nome, Armadura armadura) throws Exception {
+    public Saint(String nome, String constelacao) throws Exception {
         this.nome = nome;
+//        this.armadura = new Armadura(constelacao, this.categoria);
+    }
+    
+    public void setArmadura(Armadura armadura){
         this.armadura = armadura;
     }
     

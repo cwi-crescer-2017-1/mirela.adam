@@ -10,10 +10,12 @@ public abstract class Saint {
     private double vida = 100.0;
     protected int qtdSentidosDespertados;
     private int acumuladorProximoGolpe = 0;
+    private ArrayList<Movimento> movimentos = new ArrayList<>();
+    private int acumuladorProximoMovimento = 0;
     
-    public Saint(String nome, String constelacao) throws Exception {
+    public Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
-//        this.armadura = new Armadura(constelacao, this.categoria);
+        this.armadura = armadura;
     }
     
     public void setArmadura(Armadura armadura){

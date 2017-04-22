@@ -7,11 +7,11 @@ public class BatalhaTest {
    @Test
    public void aoIniciarBatalhaDeSaintsComCategoriasDeArmaduraIguaisSaint2DevePerderVida() throws Exception {
         Saint shaka = new SilverSaint("Shaka", "Virgem");
-        Saint milo = new BronzeSaint("Milo", "Escorpião");
+        Saint milo = new SilverSaint("Milo", "Escorpião");
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
-        assertEquals(90, milo.getVida(), 0);
-        assertEquals(100, shaka.getVida(), 0);
+        assertEquals(0, milo.getVida(), 0);
+        assertEquals(10, shaka.getVida(), 0);
     }
     
     @Test
@@ -20,8 +20,8 @@ public class BatalhaTest {
         Saint milo = new GoldSaint("Milo", "Escorpião");
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
-        assertEquals(90, shaka.getVida(), 0);
-        assertEquals(100, milo.getVida(), 0);
+        assertEquals(0, shaka.getVida(), 0);
+        assertEquals(10, milo.getVida(), 0);
     }
     
     @Test
@@ -30,7 +30,7 @@ public class BatalhaTest {
         Saint milo = new BronzeSaint("Milo", "Escorpião");
         Batalha batalha = new Batalha(shaka, milo);
         batalha.iniciar();
-        assertEquals(90, milo.getVida(), 0);
-        assertEquals(100, shaka.getVida(), 0);
+        assertEquals(0, milo.getVida(), 0);
+        assertEquals(10, shaka.getVida(), 0);
     }
 }

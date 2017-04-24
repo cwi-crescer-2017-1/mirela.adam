@@ -14,14 +14,15 @@ public class Batalha
         Saint estaAtacando;
 
         if (saint1.getArmadura().getCategoria().getValor() >= saint2.getArmadura().getCategoria().getValor()) {
-            estaAtacando = saint1;
+            estaAtacando = this.saint1;
         } else {
-            estaAtacando = saint2;
+            estaAtacando = this.saint2;
         }
 
         while(!saint1.getStatus().equals(Status.MORTO) || !saint2.getStatus().equals(Status.MORTO)){
             if(estaAtacando.equals(saint1)){
-                saint2.perderVida(dano);
+                this.saint1.getProximoMovimento().executar();
+
                 if(saint2.getVida()==0){
                     break;
                 } else {
@@ -29,7 +30,7 @@ public class Batalha
                 }
 
             } else {
-                saint1.perderVida(dano);
+                this.saint2.getProximoMovimento().executar();
                 if(saint1.getVida()==0){
                     break;
                 } else {

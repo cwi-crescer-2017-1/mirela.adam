@@ -266,4 +266,16 @@ public class SaintTest {
         String esperado = "null,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
         assertEquals(esperado, june.getCSV());
     }
+    
+    @Test 
+    public void verificaMetodoGetProximoMovimento() throws Exception{
+        Saint mirela = new GoldSaint("Mirela", "Escorpião");
+        Movimento movimento1 = new VestirArmadura(new SilverSaint("Shaina", "Serpente"));
+        Movimento movimento2 = new Golpear(mirela, new SilverSaint("Tales", "Aquário"));
+        mirela.adicionarMovimento(movimento1);
+        mirela.adicionarMovimento(movimento2);
+        
+        assertEquals(movimento1, mirela.getProximoMovimento());
+        assertEquals(movimento2, mirela.getProximoMovimento());
+    }
 }

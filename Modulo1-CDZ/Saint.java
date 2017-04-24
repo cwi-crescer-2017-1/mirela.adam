@@ -98,13 +98,17 @@ public abstract class Saint {
                "%s,%s,%s,%s,%s,%s,%s",
                this.nome, this.vida, this.getConstelacao().getNome(), this.armadura.getCategoria(), this.status, this.genero, this.armaduraVestida
                );
-       /* return this.nome + "," 
-        + this.vida + "," 
-        + this.getConstelacao().getNome() + "," 
-        + this.armadura.getCategoria() + "," 
-        + this.status + "," 
-        + this.genero + "," 
-        + this.armaduraVestida; */
     }
+    
+    public void adicionarMovimento(Movimento movimento){
+        this.movimentos.add(movimento);
+    }
+    
+    public Movimento getProximoMovimento(){
+        int posicao = this.acumuladorProximoMovimento % movimentos.size(); 
+        this.acumuladorProximoMovimento++; 
+        return movimentos.get(posicao); 
+    }
+    
   
 }

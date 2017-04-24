@@ -16,39 +16,39 @@ public class SaintTest {
         boolean resultado = milo.getArmaduraVestida();
         assertEquals(true, resultado);
     }
-    
+
     @Test
     public void naoVestirArmaduraDeixaArmaduraNaoVestida() throws Exception {
         Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
         assertEquals(false, hyoga.getArmaduraVestida());
     }
-    
+
     @Test
     public void aoCriarSaintGeneroENaoInformado() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         assertEquals(Genero.NAO_INFORMADO, shaka.getGenero());
     }
-    
+
     @Test 
     public void aoCriarSaintStatusDaVidaEVivo() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         assertEquals(Status.VIVO, shaka.getStatus());
-    
+
     }
-    
+
     @Test
     public void aoCriarSaintQuantidadeVidaEIgualACem() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         assertEquals(100, shaka.getVida(), 0);
     }
-    
+
     @Test
     public void perderVidaSubtraiValorDoParametroDoAtributoVidaAtualDoSaint() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         shaka.perderVida(8);
         assertEquals(92, shaka.getVida(), 0);
     }
-    
+
     @Test
     public void perderVidaSubtraiVidaAtualDeCadaSaintCriadoQueInvocarOMetodo() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
@@ -61,7 +61,7 @@ public class SaintTest {
         assertEquals(82, hyoga.getVida(), 0);
         assertEquals(23, milo.getVida(), 0);
     }
-    
+
     @Test
     public void saintDeveTerPontosDeVidaSubtraidosACadaChamadaDoMetodoPerderVida() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
@@ -74,28 +74,28 @@ public class SaintTest {
         shaka.perderVida(33);
         assertEquals(17, shaka.getVida(), 0);
     }
-    
+
     @Test
     public void perderDanoComValor100() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         shaka.perderVida(100);
         assertEquals(0, shaka.getVida(), 0);
     }
-    
+
     @Test
     public void perderDanoComValor1000() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         shaka.perderVida(1000);
         assertEquals(0, shaka.getVida(), 0);
     }
-    
+
     @Test(expected=InvalidParameterException.class)
     public void perderDanoComValorMenos1000() throws Exception {
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         shaka.perderVida(-1000);
         assertEquals(1100, shaka.getVida(), 0);
     }
-    
+
     @Test
     public void deveSerPossivelAlterarOGenero() throws Exception {
         Saint jabu = new BronzeSaint("Jabu", "Unicórnio");
@@ -104,37 +104,37 @@ public class SaintTest {
         jabu.setGenero(Genero.FEMININO);
         assertEquals(Genero.FEMININO, jabu.getGenero());
     }  
-    
+
     @Test
     public void criarSaintBronzeNasceCom5SentidosDespertados() throws Exception {
         Saint seiya = new BronzeSaint("Seiya", "Pégaso");
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
-    
+
     @Test
     public void criarSaintPrataNasceCom6SentidosDespertados() throws Exception {
         Saint seiya = new SilverSaint("Seiya", "Pégaso");
         assertEquals(6, seiya.getQtdSentidosDespertados());
     }
-    
+
     @Test
     public void criarSaintOuroNasceCom7SentidosDespertados() throws Exception {
         Saint seiya = new GoldSaint("Seiya", "Escorpião");
         assertEquals(7, seiya.getQtdSentidosDespertados());
     }
-    
+
     @Test(expected=Exception.class)
     public void constelacaoInvalidaDeOuroDeveLancarErro() throws Exception {
         new GoldSaint("Mirela", "Café");
     }
-    
+
     @Test
     public void alteraStatusParaMortoSeVidaMenorQueUm() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
         mirela.perderVida(110);
         assertEquals(Status.MORTO, mirela.getStatus());
     }
-    
+
     @Test
     public void verificaMetodoGetGolpesDoSaintComTresGolpes() throws Exception {
         Golpe chute = new Golpe("Chute", 13);
@@ -148,9 +148,9 @@ public class SaintTest {
         assertEquals(soco, mirela.getGolpes().get(1));
         assertEquals(rasteira, mirela.getGolpes().get(2));
         assertEquals(3, mirela.getGolpes().size());
-        
+
     }
-    
+
     @Test
     public void verificaMetodoGetGolpesDoSaintComDoisGolpes() throws Exception {
         Golpe chute = new Golpe("Chute", 13);
@@ -161,9 +161,9 @@ public class SaintTest {
         assertEquals(chute, mirela.getGolpes().get(0));
         assertEquals(soco, mirela.getGolpes().get(1));
         assertEquals(2, mirela.getGolpes().size());
-        
+
     }
-    
+
     @Test
     public void verificaMetodoGetGolpesDoSaintComUmGolpe() throws Exception {
         Golpe chute = new Golpe("Chute", 13);
@@ -171,9 +171,9 @@ public class SaintTest {
         mirela.getConstelacao().adicionarGolpe(chute);
         assertEquals(chute, mirela.getGolpes().get(0));
         assertEquals(1, mirela.getGolpes().size());
-        
+
     }
-    
+
     @Test
     public void insereGolpeNaConstelacaoDoSaint() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -186,9 +186,9 @@ public class SaintTest {
         assertEquals(narizada, mirela.getGolpes().get(0));
         assertEquals(testada, mirela.getGolpes().get(1));
         assertEquals(joelhada, mirela.getGolpes().get(2));
-    
+
     }  
-    
+
     @Test
     public void inserirMaisDeTresGolpesDeveSerPermitido() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -197,7 +197,7 @@ public class SaintTest {
         mirela.aprenderGolpe(new Golpe("Joelhada",15));
         mirela.aprenderGolpe(new Golpe("Unhada",15));
     }
-    
+
     @Test
     public void verificaMetodoProximoGolpeQuandoPossuiTresGolpes() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -213,7 +213,7 @@ public class SaintTest {
         assertEquals(narizada, mirela.getProximoGolpe());
         assertEquals(testada, mirela.getProximoGolpe());
     }
-    
+
     @Test
     public void verificaMetodoProximoGolpeQuandoPossuiDoisGolpes() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -226,7 +226,7 @@ public class SaintTest {
         assertEquals(narizada, mirela.getProximoGolpe());
         assertEquals(testada, mirela.getProximoGolpe());
     }
-    
+
     @Test
     public void verificaMetodoProximoGolpeQuandoPossuiUmGolpe() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -237,7 +237,7 @@ public class SaintTest {
         assertEquals(narizada, mirela.getProximoGolpe());
         assertEquals(narizada, mirela.getProximoGolpe());
     }
-    
+
     @Test 
     public void getCSVComArmaduraVestida() throws Exception{
         Saint dohko = new GoldSaint("Dohko", "Escorpião");
@@ -245,9 +245,9 @@ public class SaintTest {
         dohko.vestirArmadura();
         String esperado = "Dohko,10.0,Escorpião,OURO,VIVO,NAO_INFORMADO,true";
         assertEquals(esperado, dohko.getCSV());
-        
+
     }
-    
+
     @Test 
     public void getCSVSemArmaduraVestida() throws Exception{
         Saint june = new BronzeSaint("June", "Camaleão");
@@ -256,8 +256,7 @@ public class SaintTest {
         String esperado = "June,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
         assertEquals(esperado, june.getCSV());
     }
-    
-        
+
     @Test 
     public void getCSVComNomeNulo() throws Exception{
         Saint june = new BronzeSaint(null, "Camaleão");
@@ -266,7 +265,7 @@ public class SaintTest {
         String esperado = "null,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
         assertEquals(esperado, june.getCSV());
     }
-    
+
     @Test 
     public void verificaMetodoGetProximoMovimento() throws Exception{
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
@@ -274,8 +273,26 @@ public class SaintTest {
         Movimento movimento2 = new Golpear(mirela, new SilverSaint("Tales", "Aquário"));
         mirela.adicionarMovimento(movimento1);
         mirela.adicionarMovimento(movimento2);
-        
+
         assertEquals(movimento1, mirela.getProximoMovimento());
         assertEquals(movimento2, mirela.getProximoMovimento());
+        assertEquals(movimento1, mirela.getProximoMovimento());        
+		assertEquals(movimento2, mirela.getProximoMovimento());
     }
+
+    @Test(expected=ArithmeticException.class)
+    public void getProximoMovimentoComListaVazia() throws Exception{
+        Saint hyoga = new BronzeSaint("Hyoga","Cisne");
+        Movimento movimento = hyoga.getProximoMovimento();
+    }
+
+    @Test 
+    public void verificaMetodoGetProximoMovimentoComApenasUmMovimento() throws Exception{
+        Saint mirela = new GoldSaint("Mirela", "Escorpião");
+        Movimento movimento1 = new VestirArmadura(mirela);
+        mirela.adicionarMovimento(movimento1);
+        assertEquals(movimento1, mirela.getProximoMovimento());
+        assertEquals(movimento1, mirela.getProximoMovimento());
+    }
+
 }

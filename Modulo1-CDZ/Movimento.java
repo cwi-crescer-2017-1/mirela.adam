@@ -1,3 +1,3 @@
 public interface Movimento {
-    public void executar();
+    void executar();
 }

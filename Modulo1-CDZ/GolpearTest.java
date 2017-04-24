@@ -139,4 +139,12 @@ public class GolpearTest {
         assertEquals(100, mirela.getVida(), 0);
         assertEquals(40, tales.getVida(), 0);       
     }
+    
+    @Test(expected=ArithmeticException.class)
+    public void naoGolpear() throws Exception {
+         Saint mirela = new GoldSaint("Mirela", "Escorpião");
+        Saint tales = new BronzeSaint("Tales", "Escorpião");
+        Golpear golpear = new Golpear(mirela, tales);
+        golpear.executar();
+    }
 }

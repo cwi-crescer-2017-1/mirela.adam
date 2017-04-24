@@ -270,7 +270,7 @@ public class SaintTest {
     @Test 
     public void verificaMetodoGetProximoMovimento() throws Exception{
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
-        Movimento movimento1 = new VestirArmadura(new SilverSaint("Shaina", "Serpente"));
+        Movimento movimento1 = new VestirArmadura(mirela);
         Movimento movimento2 = new Golpear(mirela, new SilverSaint("Tales", "Aquário"));
         mirela.adicionarMovimento(movimento1);
         mirela.adicionarMovimento(movimento2);

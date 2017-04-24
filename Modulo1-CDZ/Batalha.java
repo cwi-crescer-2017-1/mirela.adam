@@ -13,7 +13,7 @@ public class Batalha
         double dano = 10;
         Saint estaAtacando;
 
-        if (saint1.getArmadura().getCategoria().getValor() >= saint2.getArmadura().getCategoria().getValor()) {
+        if (saint1.getCategoria() >= saint2.getCategoria()) {
             estaAtacando = this.saint1;
         } else {
             estaAtacando = this.saint2;

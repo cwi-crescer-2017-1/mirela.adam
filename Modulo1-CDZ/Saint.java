@@ -82,6 +82,10 @@ public abstract class Saint {
         return this.armadura.getConstelacao();
     }
     
+    public int getCategoria(){
+        return this.armadura.getCategoria().getValor();
+    } 
+    
     public void aprenderGolpe(Golpe golpe) throws Exception{
         this.getConstelacao().adicionarGolpe(golpe);
     }

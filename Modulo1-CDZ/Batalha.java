@@ -12,14 +12,15 @@ public class Batalha
     public void iniciar(){
         double dano = 10;
         Saint estaAtacando;
+        boolean estaoVivos=true;
 
         if (saint1.getCategoria() >= saint2.getCategoria()) {
             estaAtacando = this.saint1;
         } else {
             estaAtacando = this.saint2;
         }
-
-        while(!saint1.getStatus().equals(Status.MORTO) || !saint2.getStatus().equals(Status.MORTO)){
+        
+        while(estaoVivos){
             if(estaAtacando.equals(saint1)){
                 this.saint1.getProximoMovimento().executar();
 
@@ -36,7 +37,9 @@ public class Batalha
                 } else {
                     estaAtacando = saint1;
                 }
-            }           
+            }
+            
+            estaoVivos = !(saint1.getStatus().equals(Status.MORTO)) || !(saint2.getStatus().equals(Status.MORTO));
         }
     }
 }

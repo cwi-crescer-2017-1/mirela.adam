@@ -359,4 +359,13 @@ public class SaintTest {
         Golpear golpear = new Golpear(saga, seiya); 
         assertEquals(golpear, saga.getProximoMovimento()); 
     } 
+    
+    @Test
+    public void despirArmaduraDeveSetarArmaduraVestidaIgualAFalse() throws Exception {
+        Saint saga = new GoldSaint("Saga", "Gêmeos"); 
+        saga.vestirArmadura();
+        assertTrue(saga.getArmaduraVestida());
+        saga.despirArmadura();
+        assertFalse(saga.getArmaduraVestida());
+    }
 }

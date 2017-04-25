@@ -131,4 +131,8 @@ public abstract class Saint {
     public void golpear(Saint golpeado) { 
         this.adicionarMovimento(new Golpear(this, golpeado)); 
     } 
+    
+    public void despirArmadura(){
+        this.armaduraVestida = false;
+    }
 }

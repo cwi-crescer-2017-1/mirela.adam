@@ -125,4 +125,10 @@ public abstract class Saint {
     public int getId(){
         return this.id;
     }
+    
+     // "agendando" execução do golpe no saint passado por parâmetro 
+    // o golpe de fato só será executado na batalha. 
+    public void golpear(Saint golpeado) { 
+        this.adicionarMovimento(new Golpear(this, golpeado)); 
+    } 
 }

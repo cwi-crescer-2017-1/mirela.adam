@@ -342,13 +342,21 @@ public class SaintTest {
         GoldSaint mirela3 = new GoldSaint("Mirela3", "Escorpião");
         GoldSaint mirela4 = new GoldSaint("Mirela4", "Escorpião");
         SilverSaint mirela5 = new SilverSaint("Mirela5", "Escorpião");
-
         assertEquals(mirela1.getId(), qtdSaints+1);
         assertEquals(mirela2.getId(), qtdSaints+2);
         assertEquals(mirela3.getId(), qtdSaints+3);
         assertEquals(mirela4.getId(), qtdSaints+4);
         assertEquals(mirela5.getId(), qtdSaints+5);
         assertEquals(qtdSaints+5, Saint.getQtdSaints());
-
     }
+    
+    @Test 
+    public void golpearDeveAdicionarMovimentoGolpear() throws Exception { 
+        Saint saga = new GoldSaint("Saga", "Gêmeos"); 
+        saga.aprenderGolpe(new Golpe("Outra dimensão", 10)); 
+        Saint seiya = new BronzeSaint("Seiya", "Pégaso"); 
+        saga.golpear(seiya); 
+        Golpear golpear = new Golpear(saga, seiya); 
+        assertEquals(golpear, saga.getProximoMovimento()); 
+    } 
 }

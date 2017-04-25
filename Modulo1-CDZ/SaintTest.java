@@ -358,4 +358,15 @@ public class SaintTest {
         saga.despirArmadura();
         assertFalse(saga.getArmaduraVestida());
     }
+    
+    @Test
+    public void criarSaintEDepoisLimparDeveIncrementar() throws Exception, Throwable{
+        int idAntes = Saint.getAcumuladorQtdSaints();
+        Saint hyoga = new BronzeSaint("Hyoga","Cisne");
+        hyoga = null;
+        
+        System.gc();
+        Saint miro = new GoldSaint("Miro", "Gêmeos"); 
+        assertEquals(idAntes + 2, miro.getId());
+    }
 }

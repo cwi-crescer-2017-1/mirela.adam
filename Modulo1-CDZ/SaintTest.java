@@ -239,7 +239,7 @@ public class SaintTest {
     }
 
     @Test 
-    public void getCSVComArmaduraVestida() throws Exception{
+    public void getCSVComArmaduraVestida() throws Exception {
         Saint dohko = new GoldSaint("Dohko", "Escorpião");
         dohko.perderVida(90);
         dohko.vestirArmadura();
@@ -249,7 +249,7 @@ public class SaintTest {
     }
 
     @Test 
-    public void getCSVSemArmaduraVestida() throws Exception{
+    public void getCSVSemArmaduraVestida() throws Exception {
         Saint june = new BronzeSaint("June", "Camaleão");
         june.setGenero(Genero.FEMININO);
         june.perderVida(15.5);
@@ -258,7 +258,7 @@ public class SaintTest {
     }
 
     @Test 
-    public void getCSVComNomeNulo() throws Exception{
+    public void getCSVComNomeNulo() throws Exception {
         Saint june = new BronzeSaint(null, "Camaleão");
         june.setGenero(Genero.FEMININO);
         june.perderVida(15.5);
@@ -267,27 +267,26 @@ public class SaintTest {
     }
 
     @Test 
-    public void verificaMetodoGetProximoMovimento() throws Exception{
+    public void verificaMetodoGetProximoMovimento() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
         Movimento movimento1 = new VestirArmadura(mirela);
         Movimento movimento2 = new Golpear(mirela, new SilverSaint("Tales", "Aquário"));
         mirela.adicionarMovimento(movimento1);
         mirela.adicionarMovimento(movimento2);
-
         assertEquals(movimento1, mirela.getProximoMovimento());
         assertEquals(movimento2, mirela.getProximoMovimento());
         assertEquals(movimento1, mirela.getProximoMovimento());        
-		assertEquals(movimento2, mirela.getProximoMovimento());
+        assertEquals(movimento2, mirela.getProximoMovimento());
     }
 
     @Test(expected=ArithmeticException.class)
-    public void getProximoMovimentoComListaVazia() throws Exception{
+    public void getProximoMovimentoComListaVazia() throws Exception {
         Saint hyoga = new BronzeSaint("Hyoga","Cisne");
         Movimento movimento = hyoga.getProximoMovimento();
     }
 
     @Test 
-    public void verificaMetodoGetProximoMovimentoComApenasUmMovimento() throws Exception{
+    public void verificaMetodoGetProximoMovimentoComApenasUmMovimento() throws Exception {
         Saint mirela = new GoldSaint("Mirela", "Escorpião");
         Movimento movimento1 = new VestirArmadura(mirela);
         mirela.adicionarMovimento(movimento1);
@@ -295,4 +294,36 @@ public class SaintTest {
         assertEquals(movimento1, mirela.getProximoMovimento());
     }
 
+    @Test
+    public void validarGetQtdSaints() throws Exception {
+        int qtdSaints = Saint.getQtdSaints();
+        Saint mirela = new GoldSaint("Mirela", "Escorpião");
+        assertEquals(qtdSaints+1, Saint.getQtdSaints());
+    }
+
+    @Test 
+    public void validarGetQtdSaintsCom20SaintsNovosAdicionados() throws Exception {
+        int qtdSaints = Saint.getQtdSaints();
+        GoldSaint mirela1 = new GoldSaint("Mirela1", "Escorpião");
+        BronzeSaint mirela2 = new BronzeSaint("Mirela2", "Escorpião");
+        GoldSaint mirela3 = new GoldSaint("Mirela3", "Escorpião");
+        GoldSaint mirela4 = new GoldSaint("Mirela4", "Escorpião");
+        SilverSaint mirela5 = new SilverSaint("Mirela5", "Escorpião");
+        SilverSaint mirela6 = new SilverSaint("Mirela6", "Escorpião");
+        GoldSaint mirela7 = new GoldSaint("Mirela7", "Escorpião");
+        Saint mirela8 = new BronzeSaint("Mirela8", "Escorpião");
+        Saint mirela9 = new BronzeSaint("Mirela9", "Escorpião");
+        Saint mirela10 = new BronzeSaint("Mirela10", "Escorpião");
+        GoldSaint mirela11 = new GoldSaint("Mirela11", "Escorpião");
+        SilverSaint mirela12 = new SilverSaint("Mirela12", "Escorpião");
+        Saint mirela13 = new GoldSaint("Mirela13", "Escorpião");
+        Saint mirela14 = new BronzeSaint("Mirela14", "Escorpião");
+        Saint mirela15 = new SilverSaint("Mirela15", "Escorpião");
+        Saint mirela16 = new GoldSaint("Mirela16", "Escorpião");
+        BronzeSaint mirela17 = new BronzeSaint("Mirela17", "Escorpião");
+        Saint mirela18 = new GoldSaint("Mirela18", "Escorpião");
+        Saint mirela19 = new GoldSaint("Mirela19", "Escorpião");
+        Saint mirela20 = new BronzeSaint("Mirela20", "Escorpião");
+        assertEquals(qtdSaints+20, Saint.getQtdSaints());
+    }
 }

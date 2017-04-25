@@ -326,4 +326,29 @@ public class SaintTest {
         Saint mirela20 = new BronzeSaint("Mirela20", "Escorpião");
         assertEquals(qtdSaints+20, Saint.getQtdSaints());
     }
+
+    @Test
+    public void verificaIdAtribuidoAosSaintsCriados() throws Exception {
+        int qtdSaints = Saint.getQtdSaints();
+        Saint mirela = new GoldSaint("Mirela", "Escorpião");
+        assertEquals(mirela.getId(), Saint.getQtdSaints());
+    } 
+
+    @Test 
+    public void verificaIdsAtribuidosCincoSaintsCriados() throws Exception {
+        int qtdSaints = Saint.getQtdSaints();
+        GoldSaint mirela1 = new GoldSaint("Mirela1", "Escorpião");
+        BronzeSaint mirela2 = new BronzeSaint("Mirela2", "Escorpião");
+        GoldSaint mirela3 = new GoldSaint("Mirela3", "Escorpião");
+        GoldSaint mirela4 = new GoldSaint("Mirela4", "Escorpião");
+        SilverSaint mirela5 = new SilverSaint("Mirela5", "Escorpião");
+
+        assertEquals(mirela1.getId(), qtdSaints+1);
+        assertEquals(mirela2.getId(), qtdSaints+2);
+        assertEquals(mirela3.getId(), qtdSaints+3);
+        assertEquals(mirela4.getId(), qtdSaints+4);
+        assertEquals(mirela5.getId(), qtdSaints+5);
+        assertEquals(qtdSaints+5, Saint.getQtdSaints());
+
+    }
 }

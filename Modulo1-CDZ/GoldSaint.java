@@ -19,7 +19,7 @@ public class GoldSaint extends Saint {
                 && !constelacaoArmadura.getNome().equals("Aquário")
         
                 ){
-                throw new Exception("Constelação inválida");
+                throw new ConstelacaoInvalidaException();
             } 
     }
 }

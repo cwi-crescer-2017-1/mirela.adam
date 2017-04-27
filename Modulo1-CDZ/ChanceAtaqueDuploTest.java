@@ -7,16 +7,18 @@ public class ChanceAtaqueDuploTest {
     @Test
     public void estouComSorte33Porcento(){
         Sorteador sorteador = new DadoFalso(2);
-        SorteDoDia sorte = new SorteDoDia(sorteador);
-        assertTrue(sorte.estouComSorte());
+        ChanceAtaqueDuplo chance = new ChanceAtaqueDuplo(sorteador);
+        assertTrue(chance.lancaOsDados());
     }
     
     @Test
     public void estouSemSorte66Porcento(){
-        Sorteador sorteador = new DadoFalso(1);
-        SorteDoDia sorte = new SorteDoDia(sorteador);
-        assertFalse(sorte.estouComSorte());
-        sorteador = new DadoFalso(3);
-        assertFalse(sorte.estouComSorte());
+        Sorteador sorteador1 = new DadoFalso(1);
+        ChanceAtaqueDuplo chance1 = new ChanceAtaqueDuplo(sorteador1);
+        assertTrue(chance1.lancaOsDados());
+        
+        Sorteador sorteador2 = new DadoFalso(1);
+        ChanceAtaqueDuplo chance2 = new ChanceAtaqueDuplo(sorteador2);
+        assertTrue(chance2.lancaOsDados());
     }
 }

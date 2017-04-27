@@ -11,29 +11,13 @@ public class AtaqueDuplo implements Movimento {
         ChanceAtaqueDuplo chance = new ChanceAtaqueDuplo(sorteador);
         
         if(chance.lancaOsDados()){
+            double vidaAntesDeSerGolpeado = golpeado.getVida();
             Golpear golpear = new Golpear(this.golpeador, this.golpeado);
             golpear.executar();
+            golpeado.perderVida(vidaAntesDeSerGolpeado - golpeado.getVida());
+        } else {
+            Golpear golpear = new Golpear(this.golpeador, this.golpeado);
             golpear.executar();
-        } else {
-        
         }
     }
 }
-
-/*   
-    public void executar(){
-        int fatorDano = this.golpeador.getProximoGolpe().getFatorDano();
-        if(golpeador.getArmaduraVestida()){
-            fatorDano *= 1 + this.golpeador.getCategoria();
-            this.golpeado.perderVida(fatorDano);
-        } else {
-            this.golpeado.perderVida(fatorDano);
-        }
-    }
-    
-    public boolean equals(Object outro){
-        Golpear outroGolpear = (Golpear)outro;
-        return this.golpeador.equals(outroGolpear.golpeador) && this.golpeado.equals(outroGolpear.golpeado);
-    }
-}
-*/

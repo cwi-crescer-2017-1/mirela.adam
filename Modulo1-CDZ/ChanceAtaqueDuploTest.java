@@ -15,10 +15,10 @@ public class ChanceAtaqueDuploTest {
     public void estouSemSorte66Porcento(){
         Sorteador sorteador1 = new DadoFalso(1);
         ChanceAtaqueDuplo chance1 = new ChanceAtaqueDuplo(sorteador1);
-        assertTrue(chance1.lancaOsDados());
+        assertFalse(chance1.lancaOsDados());
         
-        Sorteador sorteador2 = new DadoFalso(1);
+        Sorteador sorteador2 = new DadoFalso(3);
         ChanceAtaqueDuplo chance2 = new ChanceAtaqueDuplo(sorteador2);
-        assertTrue(chance2.lancaOsDados());
+        assertFalse(chance2.lancaOsDados());
     }
 }

@@ -7,13 +7,8 @@ public class Golpear implements Movimento{
     }
     
     public void executar(){
-        int fatorDano = this.golpeador.getProximoGolpe().getFatorDano();
-        if(golpeador.getArmaduraVestida()){
-            fatorDano *= 1 + this.golpeador.getCategoria();
-            this.golpeado.perderVida(fatorDano);
-        } else {
-            this.golpeado.perderVida(fatorDano);
-        }
+        double dano = new RegraDeDano(this.golpeador).calcular();
+        this.golpeado.perderVida(dano);
     }
     
     public boolean equals(Object outro){

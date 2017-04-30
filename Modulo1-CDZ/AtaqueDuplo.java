@@ -1,23 +1,20 @@
 public class AtaqueDuplo implements Movimento {
     private Saint golpeador, golpeado;
+    private Sorteador sorteador;
 
-     public AtaqueDuplo(Saint golpeador, Saint golpeado){
+     public AtaqueDuplo(Saint golpeador, Saint golpeado, Sorteador sorteador){
         this.golpeador = golpeador;
         this.golpeado = golpeado;
+        this.sorteador = sorteador;
     }
     
     public void executar(){
-        Sorteador sorteador = new DadoD3();
-        ChanceAtaqueDuplo chance = new ChanceAtaqueDuplo(sorteador);
-        
+        ChanceAtaqueDuplo chance = new ChanceAtaqueDuplo(this.sorteador);
+        double dano = new RegraDeDano(this.golpeador).calcular();
         if(chance.lancaOsDados()){
-            double vidaAntesDeSerGolpeado = golpeado.getVida();
-            Golpear golpear = new Golpear(this.golpeador, this.golpeado);
-            golpear.executar();
-            golpeado.perderVida(vidaAntesDeSerGolpeado - golpeado.getVida());
+            this.golpeado.perderVida(dano * 2);
         } else {
-            Golpear golpear = new Golpear(this.golpeador, this.golpeado);
-            golpear.executar();
+            this.golpeado.perderVida(dano);
         }
     }
 }

@@ -14,7 +14,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(52, tales.getVida(), 0);     
+        assertEquals(52, tales.getVida(), 0);  
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -26,7 +27,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(84, tales.getVida(), 0);     
+        assertEquals(84, tales.getVida(), 0);   
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -39,7 +41,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(36, tales.getVida(), 0);     
+        assertEquals(36, tales.getVida(), 0);  
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -51,7 +54,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(84, tales.getVida(), 0);     
+        assertEquals(84, tales.getVida(), 0);  
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -64,7 +68,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(68, tales.getVida(), 0);     
+        assertEquals(68, tales.getVida(), 0);   
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -76,7 +81,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(2);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(84, tales.getVida(), 0);     
+        assertEquals(84, tales.getVida(), 0);    
+        assertEquals(100, mirela.getVida(), 0);
     }
     
     @Test
@@ -89,7 +95,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(68, tales.getVida(), 0);     
+        assertEquals(68, tales.getVida(), 0); 
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     @Test
@@ -102,7 +109,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(76, tales.getVida(), 0);     
+        assertEquals(76, tales.getVida(), 0);  
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     @Test
@@ -115,7 +123,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(84, tales.getVida(), 0);     
+        assertEquals(84, tales.getVida(), 0);  
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     @Test
@@ -127,7 +136,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(92, tales.getVida(), 0);     
+        assertEquals(92, tales.getVida(), 0);   
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     @Test
@@ -139,7 +149,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(92, tales.getVida(), 0);     
+        assertEquals(92, tales.getVida(), 0);  
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     @Test
@@ -151,7 +162,8 @@ public class AtaqueDuploTest {
         Sorteador sorteador = new DadoFalso(1);
         Movimento ataqueDuplo = new AtaqueDuplo(mirela, tales, sorteador);
         ataqueDuplo.executar();
-        assertEquals(92, tales.getVida(), 0);     
+        assertEquals(92, tales.getVida(), 0);    
+        assertEquals(95, mirela.getVida(), 0);
     }
     
     

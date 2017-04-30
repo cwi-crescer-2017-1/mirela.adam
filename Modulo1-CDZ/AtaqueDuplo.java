@@ -14,7 +14,8 @@ public class AtaqueDuplo implements Movimento {
         if(chance.lancaOsDados()){
             this.golpeado.perderVida(dano * 2);
         } else {
-            this.golpeado.perderVida(dano);
+            this.golpeado.perderVida(dano); 
+            this.golpeador.perderVida(this.golpeador.getVida() * 0.05);
         }
     }
 }

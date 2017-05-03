@@ -6,10 +6,10 @@ PrimeiroNome	TotalOcorrencias
   Juvenita	        7
 */
 
-select substring(nome, 1, charindex(' ', nome, 1) - 1) as PrimeiroNome, count(*) as TotalOcorrencias
+select top 1 with ties substring(nome, 1, charindex(' ', nome, 1) - 1) as PrimeiroNome, count(*) as TotalOcorrencias
 from cliente
 group by substring(nome, 1, charindex(' ', nome, 1) - 1)
-order by primeironome;
+order by TotalOcorrencias desc;
 
 /* 2 
 Total do Mês

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E43D7423-06DD-9B92-AF03-65505D11C8EF" name="Cerveja">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>C42D78DA-4A69-785A-C83F-B6773717FDF8</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCerveja" id="246EADEA-6979-C7C9-643C-15F58C0C3387">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>F96FF926-D690-E69E-4F74-91BADE75A656</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="06F453F7-200D-3649-B895-29CD9271F8CB">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>DE99A7D4-4F40-FDB1-5463-02DBEBF39F7B</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorCusto" id="8FBCD90B-6069-92D1-EA12-6199C8BB6A5F">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>558C474B-F3F2-4E47-3D0E-D639ED2E1AAD</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorVenda" id="82067356-8E53-A812-EF52-09B4CFBC4DB1">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>AC9317C8-0696-DFB2-509C-DB3A33011BBD</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoCerveja_IDTipoCerveja" id="1A0663E0-6B7E-B83B-76C5-A46F6B3A7D53">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>0A0D415A-918B-098D-F74A-820DAABB77B7</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9CAA332D-2B1D-038C-1C4C-CA2131FC0087" referredColumn="AA87FD68-039E-9CF1-7347-1D1BC31D0A6B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB930A7D-17FE-5919-4453-9F289ADDD2C2" name="Cerveja_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>EFF925F5-54F7-812E-E832-5AA6E2678DE5</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="246EADEA-6979-C7C9-643C-15F58C0C3387"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A660C525-A723-AE94-684F-D296EE541E5A" name="Cerveja_TipoCerveja_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>754C2F52-3187-D032-BF8A-AF339A5803DB</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A0663E0-6B7E-B83B-76C5-A46F6B3A7D53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

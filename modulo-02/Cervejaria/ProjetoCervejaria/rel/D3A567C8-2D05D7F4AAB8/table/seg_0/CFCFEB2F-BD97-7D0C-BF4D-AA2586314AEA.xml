@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CFCFEB2F-BD97-7D0C-BF4D-AA2586314AEA" name="RECEITA_MATERIAL">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ordsAlias>fk_receitamaterial</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDReceitaMaterial" id="DF9F1624-2DF1-17DD-5119-6C0AE90810B2">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:45:37 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDReceita" id="30A3103E-84AF-5E41-694D-90C003FEED5E">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="608C74BA-80BC-A471-6BB7-B15D63F3CB2C" referredColumn="D7EE5DF2-3045-0735-E13D-94B3E96500DA"/>
+</associations>
+</Column>
+<Column name="IDMaterial" id="AD9BEB82-CFA4-6474-A9F1-E2A8B91B62D7">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D60C5646-6C66-5E71-D92A-F060AFE74FD4" referredColumn="CE6F8778-B85B-8282-5749-38427DCDB35B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CF826289-8E07-3FE9-689C-623162DA2D57" name="FK_RECEITAMATERIAL_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF9F1624-2DF1-17DD-5119-6C0AE90810B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D7F2D21-50CD-7149-77A8-60E41115E8A1" name="RECEITA_MATERIAL_Receita_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<generatorID>9879ED63-4A36-79B3-2D69-6BE816D35092</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30A3103E-84AF-5E41-694D-90C003FEED5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C6DE923-9E27-18F5-BA4D-54D1A3998CB0" name="RECEITA_MATERIAL_Material_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<generatorID>9879ED63-4A36-79B3-2D69-6BE816D35092</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD9BEB82-CFA4-6474-A9F1-E2A8B91B62D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

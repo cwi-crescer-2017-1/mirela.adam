@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E1EEAC39-F996-FFDF-7E98-1FA7BAFBB8C5" name="TipoCerveja">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:08:57 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDTipoCerveja" id="C3CBCA9C-D1F7-B3A6-5481-CDBF1D44790E">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:09:10 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="A0BDD227-64D4-599B-D683-4C75A283E2E5">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:09:28 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDReceita" id="FB4E5D94-2987-8D53-058E-3888B300EF91">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:00 UTC</createdTime>
+<generatorID>60A8EFA8-A831-B30B-B89A-CC2C0CD82F39</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<referedAttribute>488F9B15-C73C-209C-BD3E-CFF0C450C3AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="484D92B7-8CD5-CE22-D40E-91D07A506235" name="TipoCerveja PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:09:26 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C3CBCA9C-D1F7-B3A6-5481-CDBF1D44790E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

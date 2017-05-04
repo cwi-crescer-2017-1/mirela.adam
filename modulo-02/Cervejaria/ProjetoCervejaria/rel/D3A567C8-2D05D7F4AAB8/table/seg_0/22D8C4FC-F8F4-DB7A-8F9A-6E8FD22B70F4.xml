@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22D8C4FC-F8F4-DB7A-8F9A-6E8FD22B70F4" name="Locacao">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>64A2D977-5535-C687-7EF2-8A9D2CF01416</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDLocacao" id="A62254AC-EB42-5687-883E-2E40FED3F6EB">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>EEA5403D-5F1C-FE74-996E-0CA910C12BAE</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataLocacao" id="11DAAA70-537C-01C9-C926-BACD550F7616">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>92FD8FA8-5204-1D55-3EA2-4D4FA69CC50E</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorTotal" id="B4552B89-E921-B91B-540B-0D7FBFFDCBF7">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:49:32 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCliente" id="4D650E35-431C-2CB5-C77B-9B0B11945BEA">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 05:06:29 UTC</createdTime>
+<generatorID>753A8930-DCAE-B665-61EC-FEC65BF11AA4</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60DC4CE2-D3FE-3E64-C9B7-8C76E4A90A53" referredColumn="C540F3A8-DD27-9AF2-3B45-0E3E7E82FD97"/>
+</associations>
+</Column>
+<Column name="CPF" id="85A5A136-A627-2FD0-C351-AD6B6BCB0291">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 05:06:29 UTC</createdTime>
+<generatorID>27A044E4-FC34-351C-8F3A-4B3A19A7B973</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60DC4CE2-D3FE-3E64-C9B7-8C76E4A90A53" referredColumn="1F38D42D-38EF-053A-D079-AE221F6F9247"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C6223F5-64DB-B734-8B64-D59DE3803DF0" name="Locacao_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>F029839D-3A5F-3218-513E-12876E3108DB</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A62254AC-EB42-5687-883E-2E40FED3F6EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9640345-F8D6-C080-5F19-E0D1D2A6744D" name="Locacao_Cliente_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 05:06:29 UTC</createdTime>
+<generatorID>F64DDF52-A404-1358-E48D-2C845A1702EA</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D650E35-431C-2CB5-C77B-9B0B11945BEA"/>
+<colUsage columnID="85A5A136-A627-2FD0-C351-AD6B6BCB0291"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E5979633-9858-DBB6-B8D2-D21CAC815C9D" name="Venda">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:31:34 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDVenda" id="A3C62B3C-0E71-0B64-0C6A-13A586245A18">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:35:31 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataVenda" id="933B2F58-FC5E-8268-3851-BC705D4D8761">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:35:45 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ValorTotal" id="AC6BFAAB-CAD9-9B03-DFA8-924B3BFE3ED8">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:36:23 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDCliente" id="5266A594-D0A0-2FBC-464C-72FF44DB9ACA">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:36:56 UTC</createdTime>
+<generatorID>5F9EA711-8D0A-EFE5-1FB9-FDF281DAABDA</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<referedAttribute>1CDB1A72-8D37-A00D-FF92-45D71D19DA28</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CPF" id="3F33B251-E707-907E-B651-7F4B6E2B824C">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:36:56 UTC</createdTime>
+<generatorID>5F9EA711-8D0A-EFE5-1FB9-FDF281DAABDA</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<referedAttribute>C67D1D0A-E48A-B93C-EBC2-134A1F4F0974</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="44DA01E1-5434-4B14-E341-0021E451387F" name="Venda PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:35:43 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A3C62B3C-0E71-0B64-0C6A-13A586245A18</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

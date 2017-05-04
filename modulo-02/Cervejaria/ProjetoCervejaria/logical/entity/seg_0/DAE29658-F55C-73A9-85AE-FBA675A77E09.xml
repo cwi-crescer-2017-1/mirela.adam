@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DAE29658-F55C-73A9-85AE-FBA675A77E09" name="Cliente">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:26:57 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDCliente" id="1CDB1A72-8D37-A00D-FF92-45D71D19DA28">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:27:03 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CPF" id="C67D1D0A-E48A-B93C-EBC2-134A1F4F0974">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:29:04 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="455F519D-FBAA-528D-69D0-ADCC4943DFB2">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:27:14 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefone" id="425A74D3-6A6E-2F1A-EAB9-E34BC592C48C">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:29:31 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Endereco" id="A20458AB-97A9-3CB3-4E45-B612238119FA">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:29:55 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="29CF1642-7AB1-6D21-810A-5D2A362319FA" name="Cliente PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:27:12 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1CDB1A72-8D37-A00D-FF92-45D71D19DA28</attributeRef>
+<attributeRef>C67D1D0A-E48A-B93C-EBC2-134A1F4F0974</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

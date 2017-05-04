@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D078DD3B-9B91-9EEB-65DE-34193BEC7215" name="Cliente">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>DAE29658-F55C-73A9-85AE-FBA675A77E09</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCliente" id="C540F3A8-DD27-9AF2-3B45-0E3E7E82FD97">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>1CDB1A72-8D37-A00D-FF92-45D71D19DA28</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CPF" id="1F38D42D-38EF-053A-D079-AE221F6F9247">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>C67D1D0A-E48A-B93C-EBC2-134A1F4F0974</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="EFFAABA5-D9E5-F121-2891-AD0C47D33618">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>455F519D-FBAA-528D-69D0-ADCC4943DFB2</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefone" id="42AE4976-9F67-E0D0-2EAB-8F89012F8235">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>425A74D3-6A6E-2F1A-EAB9-E34BC592C48C</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Endereco" id="1605CA3A-FAC7-A6C0-84E0-5EB8A4EC3081">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>A20458AB-97A9-3CB3-4E45-B612238119FA</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="39FDA11E-4F4D-7F3C-0121-08E195B13603" name="Cliente_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>29CF1642-7AB1-6D21-810A-5D2A362319FA</generatorID>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C540F3A8-DD27-9AF2-3B45-0E3E7E82FD97"/>
+<colUsage columnID="1F38D42D-38EF-053A-D079-AE221F6F9247"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

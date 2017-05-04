@@ -3,7 +3,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>C42D78DA-4A69-785A-C83F-B6773717FDF8</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -12,7 +12,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>F96FF926-D690-E69E-4F74-91BADE75A656</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -23,7 +23,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>DE99A7D4-4F40-FDB1-5463-02DBEBF39F7B</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -35,7 +35,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>558C474B-F3F2-4E47-3D0E-D639ED2E1AAD</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -48,7 +48,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>AC9317C8-0696-DFB2-509C-DB3A33011BBD</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -61,7 +61,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>0A0D415A-918B-098D-F74A-820DAABB77B7</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -78,7 +78,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>EFF925F5-54F7-812E-E832-5AA6E2678DE5</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -90,7 +90,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:11:49 UTC</createdTime>
 <generatorID>754C2F52-3187-D032-BF8A-AF339A5803DB</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

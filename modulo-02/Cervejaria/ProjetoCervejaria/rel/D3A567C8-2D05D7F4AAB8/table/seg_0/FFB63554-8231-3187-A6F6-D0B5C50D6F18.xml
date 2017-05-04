@@ -45,6 +45,18 @@
 <colAssociation fkAssociation="5503B944-78D9-EEB0-70C3-1B64F30C78F8" referredColumn="B8B7570A-D0F5-93E2-C23B-6719C28BD8D9"/>
 </associations>
 </Column>
+<Column name="Qtdd" id="D56373E6-1469-3F14-261C-AA0D61238C42">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 14:08:14 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E3E30BE7-94BF-B21F-A1A5-26C9D11102D3" name="VENDA_OUTROPRODUTO_PK">

@@ -35,6 +35,18 @@
 <colAssociation fkAssociation="36739335-B2E9-2EA7-56EA-0CB90B0F1B18" referredColumn="770E3240-909A-10A2-9CFC-43E97C37BE0D"/>
 </associations>
 </Column>
+<Column name="QtdLitros" id="D29A2EB1-F48F-1ACD-41D1-F462123A5BB7">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 14:07:30 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="BF0CD837-053F-3BE6-E15A-246A5085E4BA" name="VENDA_CERVEJA_PK">

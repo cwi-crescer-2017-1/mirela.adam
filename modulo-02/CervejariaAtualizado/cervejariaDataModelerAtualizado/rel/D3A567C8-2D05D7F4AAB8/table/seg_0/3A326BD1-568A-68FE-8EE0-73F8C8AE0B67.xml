@@ -1,26 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCE9AF07-F99F-FE97-FF5E-C13F71767726" name="LOCACAO_CERVEJA">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3A326BD1-568A-68FE-8EE0-73F8C8AE0B67" name="VENDA_CERVEJA">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="IDLocacaoCerveja" id="D1F488DE-A6ED-73C2-E605-92CEA4876583">
-<createdBy>Mirela</createdBy>
-<createdTime>2017-05-04 04:48:42 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="IDLocacao" id="3F033B82-34D2-7D4F-13BB-7F43DB6EE041">
+<Column name="IDCerveja" id="4D7802D1-834A-17B5-51C5-5C56D76B5D09">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -28,13 +18,13 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="688AFC54-EB81-B6AD-68C1-D785B1C03F9F" referredColumn="A62254AC-EB42-5687-883E-2E40FED3F6EB"/>
+<colAssociation fkAssociation="62D2CB28-2475-B932-9D86-1FFD782A0E4D" referredColumn="246EADEA-6979-C7C9-643C-15F58C0C3387"/>
 </associations>
 </Column>
-<Column name="IDCerveja" id="EDABE45C-9449-0646-D1AF-21FA0EB55C35">
+<Column name="IDVenda" id="87645427-AA6E-8D7A-44A1-C20E5D7C8F8E">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -42,13 +32,13 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="AFDF9F6C-8670-E245-6E17-6569844BE6E4" referredColumn="246EADEA-6979-C7C9-643C-15F58C0C3387"/>
+<colAssociation fkAssociation="36739335-B2E9-2EA7-56EA-0CB90B0F1B18" referredColumn="770E3240-909A-10A2-9CFC-43E97C37BE0D"/>
 </associations>
 </Column>
-<Column name="QtdLitros" id="E269DCEA-6273-2E65-2095-D861FACD0FCE">
+<Column name="QtdLitros" id="D29A2EB1-F48F-1ACD-41D1-F462123A5BB7">
 <createdBy>Mirela</createdBy>
-<createdTime>2017-05-04 14:06:39 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<createdTime>2017-05-04 14:07:30 UTC</createdTime>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -59,37 +49,38 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="9B856ECF-9E4A-918B-CF9E-B27485242064" name="LOCACAO_CERVEJA_PK">
+<ind_PK_UK id="BF0CD837-053F-3BE6-E15A-246A5085E4BA" name="VENDA_CERVEJA_PK">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D1F488DE-A6ED-73C2-E605-92CEA4876583"/>
+<colUsage columnID="4D7802D1-834A-17B5-51C5-5C56D76B5D09"/>
+<colUsage columnID="87645427-AA6E-8D7A-44A1-C20E5D7C8F8E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E1E03094-3036-BE68-21C1-F04D7968E643" name="LOCACAO_CERVEJA_Locacao_FK">
+<ind_PK_UK id="81F4D924-EE04-4CAD-C777-C96F85FDB32C" name="VENDA_CERVEJA_Cerveja_FK">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<generatorID>3EC25D6F-AF5B-2621-6DA9-9185E9AB0DE6</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<generatorID>E9C455BE-18B9-E0E5-967A-BD618CBFA8F4</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="3F033B82-34D2-7D4F-13BB-7F43DB6EE041"/>
+<colUsage columnID="4D7802D1-834A-17B5-51C5-5C56D76B5D09"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7CC7D5E6-7E96-F5B7-5FFD-E118AD9E9BDA" name="LOCACAO_CERVEJA_Cerveja_FK">
+<ind_PK_UK id="91719E07-13EA-EDDC-74E8-7F8165039AA8" name="VENDA_CERVEJA_Venda_FK">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<generatorID>3EC25D6F-AF5B-2621-6DA9-9185E9AB0DE6</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<generatorID>E9C455BE-18B9-E0E5-967A-BD618CBFA8F4</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="EDABE45C-9449-0646-D1AF-21FA0EB55C35"/>
+<colUsage columnID="87645427-AA6E-8D7A-44A1-C20E5D7C8F8E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

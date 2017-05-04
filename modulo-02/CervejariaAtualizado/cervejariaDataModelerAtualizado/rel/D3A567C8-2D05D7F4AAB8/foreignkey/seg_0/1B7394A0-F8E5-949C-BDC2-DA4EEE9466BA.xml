@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1B7394A0-F8E5-949C-BDC2-DA4EEE9466BA" containerWithKeyObject="BFEFF818-45E1-7DC1-7512-D8D883043543" localFKIndex="6444ADBC-3220-6A87-E21E-8B6F0CFB0DC6" name="RECEITA_INGREDIENTE_Ingrediente_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<generatorID>90E52372-5830-88B6-99A6-E78F8F69114F</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<referredTableLongName>Ingrediente</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CF84713A-0E09-8DBB-B2A5-ECB49B76E063</referredTableID>
+<keyObject>77714B79-5D1F-6D44-3FB3-E56548530819</keyObject>
+<referredKeyID>77714B79-5D1F-6D44-3FB3-E56548530819</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>IDIngrediente</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

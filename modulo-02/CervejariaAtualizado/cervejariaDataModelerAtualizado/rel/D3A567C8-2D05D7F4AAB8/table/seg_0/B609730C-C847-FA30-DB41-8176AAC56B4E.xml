@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B609730C-C847-FA30-DB41-8176AAC56B4E" name="TipoCerveja">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>E1EEAC39-F996-FFDF-7E98-1FA7BAFBB8C5</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDTipoCerveja" id="AA87FD68-039E-9CF1-7347-1D1BC31D0A6B">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>C3CBCA9C-D1F7-B3A6-5481-CDBF1D44790E</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="42D523CD-A7E1-DD0E-C8B6-4D49C927AFDC">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>A0BDD227-64D4-599B-D683-4C75A283E2E5</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDReceita" id="642DD394-365C-0681-B4F8-5F2861906123">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<generatorID>FB4E5D94-2987-8D53-058E-3888B300EF91</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F439AFB6-D7F7-CD98-FB8F-FC36B878F91B" referredColumn="D7EE5DF2-3045-0735-E13D-94B3E96500DA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="35B70B35-9C60-9E6E-AA35-737BF3269921" name="TipoCerveja_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:11:49 UTC</createdTime>
+<generatorID>484D92B7-8CD5-CE22-D40E-91D07A506235</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA87FD68-039E-9CF1-7347-1D1BC31D0A6B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43C32A89-A2DC-3835-097E-19AEFB7852DD" name="TipoCerveja__IDX">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>60A8EFA8-A831-B30B-B89A-CC2C0CD82F39</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="642DD394-365C-0681-B4F8-5F2861906123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0615A9A-5777-DA34-B1A9-20BCD373E347" name="TipoCerveja_Receita_FK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:22:38 UTC</createdTime>
+<generatorID>60A8EFA8-A831-B30B-B89A-CC2C0CD82F39</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="642DD394-365C-0681-B4F8-5F2861906123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

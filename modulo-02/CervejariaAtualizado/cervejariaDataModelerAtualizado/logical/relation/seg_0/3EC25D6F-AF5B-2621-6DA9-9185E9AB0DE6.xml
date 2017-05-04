@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="LOCACAO_CERVEJA" directorySegmentName="seg_0" id="3EC25D6F-AF5B-2621-6DA9-9185E9AB0DE6">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:33:35 UTC</createdTime>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>64A2D977-5535-C687-7EF2-8A9D2CF01416</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C42D78DA-4A69-785A-C83F-B6773717FDF8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

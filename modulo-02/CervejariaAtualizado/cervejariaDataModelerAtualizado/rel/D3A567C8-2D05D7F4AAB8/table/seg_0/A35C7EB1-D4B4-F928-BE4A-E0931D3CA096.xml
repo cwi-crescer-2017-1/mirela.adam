@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A35C7EB1-D4B4-F928-BE4A-E0931D3CA096" name="OutroProduto">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>D55A6448-C9EF-17EC-E5F9-5FE1DAEB4F4E</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDOutroProduto" id="B8B7570A-D0F5-93E2-C23B-6719C28BD8D9">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>E17B3AD5-B3D2-4004-4900-DF561F86C8F1</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descricao" id="DE09662F-109F-093E-4A5B-571EE293121A">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>EB1379BF-9F90-7AF3-0FC9-2941763E3753</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QtdEstoque" id="F541A69C-0A83-5F3B-5E63-0C5F2D5E43E1">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>88C7FB02-FC5C-2856-DCE2-94D10F90F5DF</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorVenda" id="B210A856-500A-9774-3B85-D0F7CCEEA0FC">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>ECEC21E8-4040-A759-00E3-DFF30A488F23</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>18</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,18,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5D89535-3021-9630-9A80-302750BB4945" name="OutroProduto_PK">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:41:09 UTC</createdTime>
+<generatorID>FDB76A16-3B25-2C01-6ACE-DE5274837B44</generatorID>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8B7570A-D0F5-93E2-C23B-6719C28BD8D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

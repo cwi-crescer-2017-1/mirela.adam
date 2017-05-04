@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_RECEITA_INGREDIENTE" directorySegmentName="seg_0" id="90E52372-5830-88B6-99A6-E78F8F69114F">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:20:15 UTC</createdTime>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D3A567C8-2D34-79BC-38D6-2D05D7F4AAB8" value="false"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>49353505-F298-A5CA-D5AA-43BDCB990AC3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E8087388-1627-1B29-82C8-590D41EFBEB6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

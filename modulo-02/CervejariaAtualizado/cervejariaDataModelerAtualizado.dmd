@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="cervejariaDataModelerAtualizado" id="F3BAC6F2-8506-7281-92B9-38754BAA7B3A" version="3.5">
+<createdBy>Mirela</createdBy>
+<createdTime>2017-05-04 04:05:02 UTC</createdTime>
+<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F3BAC6F2-8506-7281-92B9-38754BAA7B3A</designId>
+</OSDM_Design>

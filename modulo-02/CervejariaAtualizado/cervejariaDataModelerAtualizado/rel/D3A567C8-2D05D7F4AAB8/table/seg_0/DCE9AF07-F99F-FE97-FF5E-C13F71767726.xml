@@ -2,7 +2,7 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCE9AF07-F99F-FE97-FF5E-C13F71767726" name="LOCACAO_CERVEJA">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -10,7 +10,7 @@
 <Column name="IDLocacaoCerveja" id="D1F488DE-A6ED-73C2-E605-92CEA4876583">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:48:42 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -20,7 +20,7 @@
 <Column name="IDLocacao" id="3F033B82-34D2-7D4F-13BB-7F43DB6EE041">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -34,7 +34,7 @@
 <Column name="IDCerveja" id="EDABE45C-9449-0646-D1AF-21FA0EB55C35">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -48,7 +48,7 @@
 <Column name="QtdLitros" id="E269DCEA-6273-2E65-2095-D861FACD0FCE">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 14:06:39 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -62,7 +62,7 @@
 <ind_PK_UK id="9B856ECF-9E4A-918B-CF9E-B27485242064" name="LOCACAO_CERVEJA_PK">
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
@@ -74,7 +74,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
 <generatorID>3EC25D6F-AF5B-2621-6DA9-9185E9AB0DE6</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
@@ -85,7 +85,7 @@
 <createdBy>Mirela</createdBy>
 <createdTime>2017-05-04 04:41:09 UTC</createdTime>
 <generatorID>3EC25D6F-AF5B-2621-6DA9-9185E9AB0DE6</generatorID>
-<ownerDesignName>ProjetoCervejaria</ownerDesignName>
+<ownerDesignName>cervejariaDataModelerAtualizado</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>

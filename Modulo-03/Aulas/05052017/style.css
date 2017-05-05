@@ -1,0 +1,42 @@
+h1 {
+    font-size: 50px;
+    color: red;
+}
+
+h1 + h2 {
+    color:darkred;
+}
+
+p > strong {
+    color:forestgreen;
+}
+
+p + small {
+    color: orangered;   
+}
+
+small.especificidade010 {
+    color: crimson;
+}
+
+.especificidade010 {
+    color: indigo;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#testeid {
+    color: blue;
+}
+
+p.teste#testeparagrafo {
+    color: aqua;
+    font-size: 30px;
+}
+
+em {
+    color: lime; 
+}
+
+p.teste#testeparagrafo > em {
+    color: sienna;
+}

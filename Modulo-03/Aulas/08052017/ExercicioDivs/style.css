@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.container {
+    font-size:0;
+    width: 100%;
+    height: 100vh;
+}
+
+.linhas{
+    margin: 0 auto;
+    height: 100%;
+}
+
+.linha {
+     height: 25%;
+     display: inline-block;
+     font-size: initial;
+     border: 2px solid black;
+}
+
+.um {
+    width: 25%;
+    background: red;
+}
+
+
+.dois {
+    width: 50%;
+    background: blue;
+}
+
+.tres {
+    width: 100%;
+    background: purple;
+}
+
+.quatro {
+    width: 10%;
+    background: yellow;
+}

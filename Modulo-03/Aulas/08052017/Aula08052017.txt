@@ -1,0 +1,44 @@
+05/05/2017
+HTML/CSS
+
+Não esquecer : 
+        <!DOCTYPE html>               -- 1ª linha
+        <meta charset="utf-8">        -- dentro do <head></head>
+
+<head> : determina os metadados do documento
+css: <link rel="stylesheet" href="style.css">
+
+Seletores:
+    TIPO (menos específico) Ex: ul {}                 -- especificidade 0-0-1
+    CLASSE / ATRIBUTO       Ex: .menu {} ou [title]   -- especificidade 0-1-0
+    ID (mais específico)    Ex: #itemMenu {}          -- especificidade 1-0-0
+
+Filho : ul > li
+Descendente: ul a
+Adjacente: h1 + p
+
+Outras especificidades:
+    !important: 1-0-0-0-0
+    style=""  : 0-1-0-0-0
+
+-------------------------------------------
+
+display: inline;  --> não respeita o width informado para a div, apenas o conteúdo que a div de fato ocupa.
+display: inline-block; --> respeita o width informado para a div.
+
+Height / Weight: Top, Right, Bottom, Left;
+
+Sempre que tiver width definido pode-se usar -> margin: 0 auto; para centralizar o elemento. 
+
+** pseudo elemento (after/before)
+        exemplo:
+            .container:after {
+                content: "";            --- content é sempre obrigatório em pseuelementos
+                display: block;
+                clear: both;
+            } 
+
+>>> Sempre que um 'pai' tiver um 'filho' com float, deve ser criado um 'clearfix'
+
+
+--

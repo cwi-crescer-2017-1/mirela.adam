@@ -21,7 +21,8 @@ Outras especificidades:
     !important: 1-0-0-0-0
     style=""  : 0-1-0-0-0
 
--------------------------------------------
+---------------
+08/05/2017
 
 display: inline;  --> não respeita o width informado para a div, apenas o conteúdo que a div de fato ocupa.
 display: inline-block; --> respeita o width informado para a div.
@@ -40,5 +41,63 @@ Sempre que tiver width definido pode-se usar -> margin: 0 auto; para centralizar
 
 >>> Sempre que um 'pai' tiver um 'filho' com float, deve ser criado um 'clearfix'
 
+---------------
 
---
+09/05/2017
+
+display: none;       
+visibility: hidden;  
+opacity: 0;
+
+p:first-of-type {
+    color:red;
+}
+
+p:first-child{   }
+p:lasst-child{   }
+
+p:nth-child(2){ -- informa o indice
+    color: blue;
+}
+
+p:nth-child(odd ou even){ -- impar ou par
+    color: blue;
+}
+
+
+---------------
+
+POSITION
+
+postion: relative 
+--> margin top / margin-left     - empurra conteudo
+--> top        / left            - não empurra conteúdo, apenas o elemento
+
+postion: absolute                - não ocupa "espaço" na página: 
+                                 - respeita o primeiro elemento que tenha position relative ou absolute
+
+position: fixed                  - se baseia pela viewport   
+                                 - com um header que possue altura definida, deve-se informar padding no body
+
+---------------
+
+Centralização
+
+.fora {
+    left: 50%;
+    top: 50%
+    transform: translateX(-50%), translateY(-50%);
+}
+
+---------------
+
+Âncoras
+
+Links para outras páginas utilizar sempre o target = "_blank" para que abra outra página ao invés de apenas redirecionar:
+            <a href="https://www.google.com.br" target="_blank">Google</a>
+
+Links para páginas do próprio
+            <a href="ancora-2-html"> Clique aqui </a>
+
+Links para a propria página utilizar o #id no href
+            <a href="#3"> Teste </a>

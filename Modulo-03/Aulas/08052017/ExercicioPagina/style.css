@@ -26,6 +26,9 @@ body{
     color: white;
     text-align: center;
     font-weight: bold;
+    font-size: 30px;
+
+    visibility: 
 }
 
 .col {
@@ -61,6 +64,6 @@ P:first-letter {
 }
 
 .imagem {
-width: 100px;
+width: 200px;
 float: right;
 }

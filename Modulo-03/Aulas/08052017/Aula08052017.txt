@@ -101,3 +101,44 @@ Links para páginas do próprio
 
 Links para a propria página utilizar o #id no href
             <a href="#3"> Teste </a>
+			
+			
+---------------
+10/05/2017
+
+--resposividade
+
+@media screen (max-width: 800px) {
+
+	noticia-wrapper{
+		width: 100%;
+	}
+}
+
+
+---
+
+tabelas
+
+<table>
+	<thead>
+		<tr>
+			<th> Nome comida </th>
+			<th> Valor Calórico</th>
+			<th> Preço</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Pizza</td>
+			<td>Alto</td>
+			<td>R$ 40,00</td>
+		</tr>
+	</tbody>
+</table>
+
+-- 
+
+bootstrap
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 

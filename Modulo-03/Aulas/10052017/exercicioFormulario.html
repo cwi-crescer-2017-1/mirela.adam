@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Exercicio Formulario</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <style>
+        input[type="checkbox"]:checked+label {
+            color: blue;
+            font-style: italic;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Formulário de Cadastro </h1>
+        <hr>
+        <form>
+
+            <div class="form-group col-md-6">
+                <label for="nome"> Nome </label>
+                <input type="text" class="form-control" placeholder="Ex.: Pedro Henrique Pires">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email"> Email </label>
+                <input type="email" class="form-control" placeholder="Ex.: php@gmail.com">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="nome"> Data Nascimento </label>
+                <input type="date" class="form-control" placeholder="dd/mm/aaaa">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="estado"> Estado </label>
+                <select class="form-control" required> 
+                     <option disabled hidden selected value="">Selecione um Estado</option> 
+                     <option value="1">Rio Grande do Sul</option> 
+                     <option value="2">São Paulo</option> 
+                     </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="nome"> Cidade </label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="Sexo"> Gênero </label>
+                <select class="form-control" required> 
+                    <option disabled hidden selected value="">Selecione o Gênero</option>
+                     <option value="1"> Masculino </option> 
+                     <option value="2"> Feminino</option> 
+                     </select>
+            </div>
+
+            <div class="col-md-12">
+                <input type="reset" class="btn btn-default pull-right" value="Limpar">
+                <input type="submit" class="btn btn-primary pull-right" value="Enviar">
+            </div>
+        </form>
+
+        <hr>
+
+
+
+    </div>
+
+</body>
+
+</html>

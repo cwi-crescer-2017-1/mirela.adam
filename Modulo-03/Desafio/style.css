@@ -163,3 +163,14 @@ body {
 .textoficha-subtitulo {
 	padding-left: 10px;
 }
+
+.imagem-sobre {
+    float: left;
+    padding-left: 10px;
+    width: 100px;
+
+}
+
+.imagem-sobre img {
+    width: 270px;
+}

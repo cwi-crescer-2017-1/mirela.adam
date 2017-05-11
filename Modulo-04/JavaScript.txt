@@ -1,0 +1,24 @@
+11/05/2017
+
+JAVASCRIPT - Bernardo
+Linguagem de programação de scripts/roteiros
+
+Necessidade de dinamismo nas páginas sem que seja necessário enviar diversas requisições para o navegador.
+*** Código que é rodado no servidor != Código que é rodado no navegador ***
+pós    : produtividade
+contras: perda de controle, não garante obrigatoriedade, muito solto
+
+--
+
+comparação de valores, utilizar === , !==
+
+undefined = variável não declarada e/ou instanciada
+null      = variável definida como nula
+
+!mirela   =  valida se é undefined ou nulo
+mirela  === 'undefined' testa apenas undefined
+
+3 tipos de escopos = global, de função e bloco
+
+for-in : percorre propriedades de um objeto
+for-of: percorre valores de um objeto

@@ -22,3 +22,24 @@ mirela  === 'undefined' testa apenas undefined
 
 for-in : percorre propriedades de um objeto
 for-of: percorre valores de um objeto
+
+---
+12/05/2017
+
+Exemplo relógio/data atualizando:
+h1 = document.querySelector('h1')
+var atualizaHora = () => {h1.innerText = new Date().toLocaleString()}
+setInterval(atualizaHora, 1000)
+
+
+** for(let i; i < texto.length; i++){
+      //usar o let na declaração para que a variavel tenha escopo de bloco
+  }
+
+* const : obrigatoriamente deve ser dado o valor na declaração
+          um texto nao poderia ser alterado, mas um objeto poderia
+          protege a referência do objeto
+
+* delete seiya.nome (alteração de objetos)
+
+* clearInterval(5) - passar o id do intervalo para interrompê-lo.

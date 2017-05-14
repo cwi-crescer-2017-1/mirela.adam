@@ -54,6 +54,29 @@ function mascadaEmSerie(serie){
 }
 
 //ex6  
+function queroGenero(genero){
+	let lista = [];
+	for(let s of series){
+		for(let g of s.genero){
+			if(g.toLowerCase().includes(genero.toLowerCase())){
+				lista.push(s.titulo);
+			}
+		}
+	}
+	return lista;
+}
 
-//ex7 
+function queroTitulo(texto) {
+	let lista = [];
+	series.forEach((s) => {
+		if(s.titulo.toLowerCase().includes(texto.toLowerCase())){
+			lista.push(s.titulo); }
+	})
+	return lista;
+}
+
+//ex7
+
+
+
 //ex8 

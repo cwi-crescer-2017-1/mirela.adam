@@ -16,7 +16,7 @@ function seriesInvalidas(series) {
 			}
 		}
 		
-		if(invalida === true) {
+		if(invalida) {
 			arrayDeSeriesInvalidas.push(s.titulo);	
 		} 
 	}
@@ -25,6 +25,10 @@ function seriesInvalidas(series) {
 
 
 <!-- ex2 -->
+function filtrarSeriesPorAno(series, ano) {
+    return series.filter( (s) => s.anoEstreia >= ano );
+}
+
 <!-- ex3 -->
 <!-- ex4 -->
 <!-- ex5 -->

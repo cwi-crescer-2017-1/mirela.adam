@@ -30,14 +30,27 @@ function filtrarSeriesPorAno(series, ano) {
 }
 
 <!-- ex3 -->
-
 function mediaDeEpisodios(series) {
 	let quantidadeEpisodios = 0;
 	series.forEach( (serie) => quantidadeEpisodios += serie.numeroEpisodios );
 	return quantidadeEpisodios / series.length;
 }
+
 <!-- ex4 -->
+function procurarPorNome(series, nome){
+	for(let s of series){
+		for(let e of s.elenco){
+			if(e.toLowerCase().includes(nome.toLowerCase())){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 <!-- ex5 -->
+
 <!-- ex6 --> 
+
 <!-- ex7 --> 
 <!-- ex8 --> 

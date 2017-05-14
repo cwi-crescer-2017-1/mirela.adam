@@ -1,4 +1,4 @@
-<!-- ex1 -->
+//ex1
 function seriesInvalidas(series) {
 	let anoAtual = (new Date()).getFullYear();
 	let arrayDeSeriesInvalidas = [];
@@ -24,19 +24,19 @@ function seriesInvalidas(series) {
 }
 
 
-<!-- ex2 -->
+//ex2
 function filtrarSeriesPorAno(series, ano) {
     return series.filter( (s) => s.anoEstreia >= ano );
 }
 
-<!-- ex3 -->
+//ex3 
 function mediaDeEpisodios(series) {
 	let quantidadeEpisodios = 0;
 	series.forEach( (serie) => quantidadeEpisodios += serie.numeroEpisodios );
 	return quantidadeEpisodios / series.length;
 }
 
-<!-- ex4 -->
+// ex4
 function procurarPorNome(series, nome){
 	for(let s of series){
 		for(let e of s.elenco){
@@ -48,9 +48,12 @@ function procurarPorNome(series, nome){
 	return false;
 }
 
-<!-- ex5 -->
+//ex5
+function mascadaEmSerie(serie){
+	return (serie.diretor.length * 100000) + (serie.elenco.length * 40000);
+}
 
-<!-- ex6 --> 
+//ex6  
 
-<!-- ex7 --> 
-<!-- ex8 --> 
+//ex7 
+//ex8 

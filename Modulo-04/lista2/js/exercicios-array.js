@@ -99,3 +99,37 @@ function creditosIlluminatis(serie) {
   );
 }
 //ex8 
+function easterEgg (series) {
+	let letras = [];
+	let elencoComAbreviacao=[];
+
+	for (let s of series){
+		let todosNomesComAbreviacao = true;
+		let elenco = Object.values(s.elenco);
+		
+		for (let nome of elenco) {
+      		if (!nome.includes('.')) {
+        	todosNomesComAbreviacao = false;
+        	
+      	}
+
+      	if(todosNomesComAbreviacao && s.elenco.length-1 === elenco.length-1 ){
+      		elencoComAbreviacao.push(Object.values(s.elenco));
+      	}
+		}
+	}
+	elencoComAbreviacao = elencoComAbreviacao.toString().split(' ');
+  
+	for (let l of elencoComAbreviacao) {
+    	if (l.includes('.')) {
+      		letras.push(l[0]);
+    	}
+  	}
+
+  	 return console.log( `# ${letras.join('')}` );
+
+}
+
+
+
+

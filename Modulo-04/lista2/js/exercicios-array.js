@@ -76,7 +76,26 @@ function queroTitulo(texto) {
 }
 
 //ex7
+function creditosIlluminatis(serie) {
+  	function ordenaPorSobrenome(a,b){
+  		a = a.split(' ');
+    	b = b.split(' ');
+    	a = a[a.length - 1];
+    	b = b[b.length - 1];
+    	
+    	if (a < b) {
+      		return -1
+    	} else if (a > b) {
+      		return 1;
+    	} else {
+      		return 0;
+    	}
+	}
 
-
-
+	 return console.log(
+    `Título:\n${serie.titulo}\n
+    Diretores:\n${serie.diretor.sort(ordenaPorSobrenome).join(', ')}\n
+    Elenco:\n${serie.elenco.sort(ordenaPorSobrenome).join(', ')}`
+  );
+}
 //ex8 

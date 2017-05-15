@@ -2,23 +2,23 @@
 function seriesInvalidas(series) {
 	let anoAtual = (new Date()).getFullYear();
 	let arrayDeSeriesInvalidas = [];
-	
+
 	for (let s of series){
 		let invalida = false;
 		if( s.anoEstreia > anoAtual ) {
 			invalida = true;
 		}
-		
+
 		for (let campo in s) {
 			let valor = s[campo];
 			if(typeof valor === "undefined" || valor === null) {
 				invalida = true;
 			}
 		}
-		
+
 		if(invalida) {
-			arrayDeSeriesInvalidas.push(s.titulo);	
-		} 
+			arrayDeSeriesInvalidas.push(s.titulo);
+		}
 	}
 	return "Séries inválidas: " + (arrayDeSeriesInvalidas).join(" - ");
 }
@@ -29,7 +29,7 @@ function filtrarSeriesPorAno(series, ano) {
     return series.filter( (s) => s.anoEstreia >= ano );
 }
 
-//ex3 
+//ex3
 function mediaDeEpisodios(series) {
 	let quantidadeEpisodios = 0;
 	series.forEach( (serie) => quantidadeEpisodios += serie.numeroEpisodios );
@@ -53,7 +53,7 @@ function mascadaEmSerie(serie){
 	return (serie.diretor.length * 100000) + (serie.elenco.length * 40000);
 }
 
-//ex6  
+//ex6
 function queroGenero(genero){
 	let lista = [];
 	for(let s of series){
@@ -82,7 +82,7 @@ function creditosIlluminatis(serie) {
     	b = b.split(' ');
     	a = a[a.length - 1];
     	b = b[b.length - 1];
-    	
+
     	if (a < b) {
       		return -1
     	} else if (a > b) {
@@ -98,7 +98,7 @@ function creditosIlluminatis(serie) {
     Elenco:\n${serie.elenco.sort(ordenaPorSobrenome).join(', ')}`
   );
 }
-//ex8 
+//ex8
 function easterEgg (series) {
 	let letras = [];
 	let elencoComAbreviacao=[];
@@ -106,30 +106,25 @@ function easterEgg (series) {
 	for (let s of series){
 		let todosNomesComAbreviacao = true;
 		let elenco = Object.values(s.elenco);
-		
+
 		for (let nome of elenco) {
       		if (!nome.includes('.')) {
         	todosNomesComAbreviacao = false;
-        	
-      	}
 
-      	if(todosNomesComAbreviacao && s.elenco.length-1 === elenco.length-1 ){
-      		elencoComAbreviacao.push(Object.values(s.elenco));
       	}
+		}
+		if(todosNomesComAbreviacao && s.elenco.length-1 === elenco.length-1 ){
+			elencoComAbreviacao.push(Object.values(s.elenco));
 		}
 	}
 	elencoComAbreviacao = elencoComAbreviacao.toString().split(' ');
-  
-	for (let l of elencoComAbreviacao) {
-    	if (l.includes('.')) {
-      		letras.push(l[0]);
-    	}
-  	}
 
-  	 return console.log( `# ${letras.join('')}` );
+	for (let l of elencoComAbreviacao) {
+    	if ( l[(l.indexOf(" ") + 2)] === "." ) {
+      		letras.push(l[l.indexOf(".") - 1]);
+  	}
+	}
+
+  return console.log( `# ${letras.join('')}` );
 
 }
-
-
-
-

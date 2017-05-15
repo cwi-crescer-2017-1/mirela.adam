@@ -43,3 +43,10 @@ setInterval(atualizaHora, 1000)
 * delete seiya.nome (alteração de objetos)
 
 * clearInterval(5) - passar o id do intervalo para interrompê-lo.
+
+
+----
+
+15/05/2017
+*Usar o for in para percorrer campos/propriedades de um objeto
+*Exemplo expressão regular: "J.R.R. Tokien".match (/ [z-aA-Z][.]/g)

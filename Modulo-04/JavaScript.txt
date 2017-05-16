@@ -50,3 +50,25 @@ setInterval(atualizaHora, 1000)
 15/05/2017
 *Usar o for in para percorrer campos/propriedades de um objeto
 *Exemplo expressão regular: "J.R.R. Tokien".match (/ [z-aA-Z][.]/g)
+
+----
+16/05/2017
+* Como recuperar o 'this': Arrowfunctions, bind, self, call, apply.
+
+*JSON
+  goku = { nome: "Goku", temRabo: true }
+  JSON.stringify(goku)
+  `{"nome": "Gogu", "temRabo": true}`
+
+  JSON.parse(strGoku)    ----> transforma em objeto
+
+* API
+let url = " http:// endereco da url "
+fetch(url).then(response => response.json())
+
+
+documento.addEventListener('DOMContentLoaded', function(){
+  let btnPesquisar = document.getElementById('btnPesquisar');
+  btnPesquisar.onclick ( function () {
+                console.log("clicou..."); })
+}

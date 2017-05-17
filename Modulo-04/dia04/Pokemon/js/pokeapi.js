@@ -31,6 +31,17 @@ btnPesquisar.onclick = function () {
         	elemento.appendChild(textoElemento);
         	tiposPkm.appendChild(elemento);
     	}
+    
+    	json.stats.forEach (x => {
+            let s = document.createElement("h3");
+            s.innerText = x.stat.name;
+            let progress = document.createElement("progress");
+            progress.max = 100;
+            progress.value = x.base_stat;
+            div.appendChild(s);
+            div.appendChild(progress);
+        });
+
     })
    }
 })    

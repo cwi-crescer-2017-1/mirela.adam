@@ -11,14 +11,16 @@
 <body ng-app="Exercicio01">  
  
 <div class="container">
+
 <div ng-controller="Exercicio">
-    <label>Filtro: </label>
-    <input type="text" ng-model="filtro.nome"/>
-    <ul>
-        <li ng-repeat="pokemon in pokemons | filter: filtro" > 
-            Nome: {{ pokemon.nome }} - Tipo: {{ pokemon.tipo | uppercase }} 
-        </li>
-    </ul>
+		<label>Filtro: </label>
+		<input type="text" ng-model="filtro.nome"/>
+   
+		<ul>
+			<li ng-repeat="pokemon in pokemons | filter: filtro" > 
+				Nome: {{ pokemon.nome }} - Tipo: {{ pokemon.tipo | uppercase }} 
+			</li>
+		</ul>
 </div>
 </div>
 

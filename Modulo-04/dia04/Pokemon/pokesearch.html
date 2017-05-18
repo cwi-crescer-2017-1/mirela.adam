@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta charset="utf-8">
     <title>Pokesearch</title>
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
       <script type="text/javascript" src="js/pokeapi.js"></script>
-      <input type="text" id="numeroPkm" placeholder="Ex: 5 (Squirtle)" value="">
-      <button type="button" id="btnPesquisar">Pesquisar!</button>
-      <div id="detalhesPokemon">
-       
-
-       
-        
-       
+      <div class="container text-center">
+        <div class="form-group">
+        <label> Informe o código do Pokemon: </label>
+      <input  type="text" id="numeroPkm" placeholder="Ex: 5 (Squirtle)" value="">
+      <button class="btn btn-success" type="button" id="btnPesquisar">Pesquisar!</button>
+        </div>
+		
+      <div class="col md-6 clearfix" id="detalhesPokemon">      
         <ul id="tipos"></ul>
       </div>
-
+</div>
   </body>
 </html>

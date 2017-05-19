@@ -6,10 +6,14 @@ myApp.filter('mascada',function(){
   };
 });
 
+myApp.filter('formataNomeAula', function() {
+    return function(aula) {
+        return aula.numero.toString().padStart(3, '0') + " - " + aula.nome.toUpperCase();
+}
+});
 
 myApp.controller('Exemplo', function($scope) {
 $scope.instrutores = instrutores;
-
 
 var instrutores = [{
     nome: 'Bernardo',
@@ -45,6 +49,8 @@ var instrutores = [{
     }]
   }
 ];
+
+
 
 function insereAulaEProfessorEmArray() {
   var array = [];

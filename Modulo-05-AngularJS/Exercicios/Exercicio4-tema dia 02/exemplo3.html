@@ -11,43 +11,50 @@
 
 <body ng-app="Aula02">  
 
+<div class="container-fluid">
+    <div class="titulo text-uppercase page-header text-center">
+        <h1>Mirela Haag Adam - AngularJS</h1>
+    </div>
+
+
+<div class="row">
+<div class="col-md-4 col-md-push-1">
 <div ng-controller="Exemplo"> 
-    
-    <h1>Exercícios 1 e 2 </h1>
+    <h2 class="text-center">Exercícios 1 e 2 </h2>
     <hr>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Aula</th>
-                <th>Instrutor</th>
+                <th >Aula</th> <th>Instrutor</th>
             </tr>
         </thead>
         <tbody>
         <tr ng-repeat="dadosAulas in aulaInstrutor | orderBy: 'aula.numero' ">
-            <td>{{ dadosAulas.aula.nome }}</td>
-            <td>{{ dadosAulas.instrutor | mascada }}</td>
+            <td>{{ dadosAulas.aula.nome }}</td> <td>{{ dadosAulas.instrutor | mascada }}</td>
         </tr>
         </tbody>
     </table>
-
-    <h1> Exercício 3 </h1>
+</div>
+</div>
+<div  class="col-md-4 col-md-push-2">
+<div ng-controller="Exemplo"> 
+    <h2 class="text-center "> Exercício 3 </h2>
     <hr>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Aula</th>
-                <th>Instrutor</th>
+                <th>Aula</th> <th>Instrutor</th>
             </tr>
         </thead>
         <tbody>
         <tr ng-repeat="dadosAulas in aulaInstrutor | orderBy: 'aula.numero' ">
-            <td>{{ dadosAulas.aula | formataNomeAula }}</td>
-            <td>{{ dadosAulas.instrutor | mascada }}</td>
+            <td>{{ dadosAulas.aula | formataNomeAula }}</td> <td>{{ dadosAulas.instrutor | mascada }}</td>
         </tr>
         </tbody>
     </table>
-
-
+</div>
+</div>
+</div>
 </div>
 
 </body>

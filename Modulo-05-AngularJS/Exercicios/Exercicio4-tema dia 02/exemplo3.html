@@ -22,7 +22,7 @@
         <tbody>
         <tr ng-repeat="dadosAulas in aulaInstrutor | orderBy: 'aula.numero' ">
             <td>{{ dadosAulas.aula.nome }}</td>
-            <td>{{ dadosAulas.instrutor }}</td>
+            <td>{{ dadosAulas.instrutor | mascada }}</td>
         </tr>
         </tbody>
     </table>

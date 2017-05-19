@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 70%;
+    background: white;
+    text-align: center;
+}
+
+
+.formulario {
+    margin: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+#detalhesPokemon {
+    padding-top: 40px;
+    width: 100%;
+}
+
+.cabecalho{   
+    width: 100%;
+    padding: 10px;
+    background: #c4170c;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+

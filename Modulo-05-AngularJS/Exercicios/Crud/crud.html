@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title> Tema - CRUD </title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="js/exercicio.js"></script>
+    <script src="js/pt-br.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/style.css">
+</head> 
+
+<body ng-app="Aula3">  
+
+<div class="container" ng-controller="MainController">
+
+<div clas="row">
+
+    <div class="col-md-12">
+    <h1>CRUD</h1>
+    <hr>
+
+    <!-- Formulário inclusão de aula-->
+    <h4> Incluir/Alterar Aula</h4>
+    <div class="col-md-10">
+    <form novalidate name="formInclusaoAula" class="form-group" ng-submit="incluirAula(novaAula)">
+        <div class="row">
+        <div class="col-md-10">
+            <label for="idAula"> ID </label>
+            <input type="number" name="idAula" class="form-control" ng-model="novaAula.id" />
+        </div>
+        <div class="col-md-10">
+            <label for="nomeAula"> Nome </label>
+            <input type="text" name="nomeAula" class="form-control" ng-model="novaAula.nome" ng-minlength="3" ng-maxlength="20" required/>
+        </div>
+
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Incluir/Alterar Aula </button>
+        </div>
+        </div>
+    </form>
+    </div>
+<div class="row">
+<div class="col-md-10">
+    <h4> Excluir Aula</h4>
+    <form novalidate name="formExcluirAula" class="form-group" ng-submit="excluirAula(idAula)">
+        
+        <div class="col-md-4">
+            <label for="idAula"> ID </label>
+            <input type="number" name="idAula" class="form-control" ng-model="idAula" required/>
+        </div>
+        
+      
+        <div class="col-md-10">
+        <br>
+        <button class="btn btn-info btn-sm"> Excluir Aula </button>
+        </div>
+
+
+    </form>
+</div>
+</div>
+   
+    </div>
+    <!-- Lista de aulas-->
+    <hr>
+
+    <div class="col-md-4">
+    <h3>AULAS</h3>   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th> <th>Aula</th> 
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="aula in aulas | orderBy: 'nome' ">
+            <td>{{ aula.id }}</td> 
+            <td>{{ aula.nome }}</td> 
+        </tr>
+        </tbody>
+    </table>
+ 
+    </div>
+
+    <hr>
+
+
+        <div class="col-md-12">
+       <h4> Incluir/Alterar Instrutor</h4>
+        <div class="col-md-10">
+    <form novalidate name="formInclusaoInstrutor" class="form-group" ng-submit="incluirInstrutor(novoInstrutor)">
+        
+        <div class="col-md-10">
+            <label for="idInstrutor"> ID </label>
+            <input type="number" name="idInstrutor" class="form-control" ng-model="novoInstrutor.id" />
+        </div>
+
+        <div class="col-md-10">
+        <label for="nome"> Nome </label>
+        <input type="text" name="nomeInstrutor" class="form-control" ng-model="novoInstrutor.nome" ng-minlength="3" ng-maxlength="20" required/>
+      </div>
+
+        <div class="col-md-10">
+        <label for="sobrenome"> Sobrenome </label>
+        <input type="text" name="sobrenome" class="form-control" ng-model="novoInstrutor.sobrenome" ng-maxlength="30"/>
+</div>
+
+        <div class="col-md-10">
+        <label for="email"> Email </label>
+        <input type="email" name="email" class="form-control" ng-model="novoInstrutor.email" required/>
+        </div>
+
+        <div class="col-md-10">
+        <label for="idade"> Idade </label>
+        <input type="number" name="idade" class="form-control" ng-model="novoInstrutor.idade" required/>
+         </div>
+
+        <div class="col-md-10">
+        <label for="email"> URL Foto </label>
+        <input type="text" name="urlFoto" class="form-control" ng-model="novoInstrutor.urlFoto"/>
+        </div>
+
+         <div class="col-md-10">
+        <label for="aulas"> Selecione as aulas:   </label>
+
+        <div class="input-group">
+            <select multiple class="form-control" ng-model="novoInstrutor.aula">
+                <option  ng-repeat="opcaoAula in aulas" value="{{opcaoAula.id}}" > {{opcaoAula.nome}} </option>
+            </select>
+        </div>
+        </div>
+        <div class="col-md-10">
+        <label for="dandoAula">Está dando aula? </label>
+            <input  type="checkbox" ng-model="novoInstrutor.dandoAula">
+        </div>
+        
+        <br>
+        <div class="row">
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Incluir/Alterar Instrutor </button>
+        </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="row">
+<div class="col-md-10">
+    <h4> Excluir Instrutor</h4>
+    <form novalidate name="formExcluirInstrutor" class="form-group" ng-submit="excluirInstrutor(idInstrutor)">
+        <div class="row">
+        <div class="col-md-4">
+            <label for="idInstrutor"> ID </label>
+            <input type="number" name="idInstrutor" class="form-control" ng-model="idInstrutor" required/>
+        <br>
+        <div class="row">
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Excluir Instrutor </button>
+        </div></div>
+
+    </form>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+
+    <h3>INSTRUTORES</h3>
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th><th>Instrutor</th> <th >Idade</th> <th>Email</th> <th> Dando Aula?</th> <th>Aula(s)</th> <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="instrutor in instrutores | orderBy: 'nome'">
+            <td>{{instrutor.id}}</td>
+            <td>{{ instrutor.nome }} {{instrutor.sobrenome}}</td> 
+            <td>{{ instrutor.idade }}</td> 
+            <td>{{ instrutor.email }}</td> 
+            <td>{{ instrutor.dandoAula | transformaBoolean }}</td> 
+            
+            <td>
+            <div ng-repeat="i in instrutor.aula | orderBy: 'i.nome'">
+                {{ formataAula(i) }}
+            </div>
+            </td> 
+            
+            <td> <img ng-src="{{instrutor.urlFoto}}"> </td> 
+        </tr>
+        </tbody>
+</table>
+</div>
+</div>
+   </div>
+
+</body>
+</html>

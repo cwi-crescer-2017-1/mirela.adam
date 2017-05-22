@@ -33,11 +33,22 @@
         <div class="col-md-10">
             <label for="nomeAula"> Nome </label>
             <input type="text" name="nomeAula" class="form-control" ng-model="novaAula.nome" ng-minlength="3" ng-maxlength="20" required/>
+             <span ng-show="formInclusaoAula.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.required">
+            O campo é obrigatório.
         </div>
-
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.minlength">
+            O campo não possui o tamanho mínimo de 3 caracteres.
         </div>
-        <br>
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>    
+        </div>
+        
         <div class="row">
+        <br>
         <div class="col-md-3">
         <button class="btn btn-info btn-sm"> Incluir/Alterar Aula </button>
         </div>
@@ -103,21 +114,53 @@
         <div class="col-md-10">
         <label for="nome"> Nome </label>
         <input type="text" name="nomeInstrutor" class="form-control" ng-model="novoInstrutor.nome" ng-minlength="3" ng-maxlength="20" required/>
-      </div>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.minlength">
+            O campo não possui o tamanho mínimo de 3 caracteres.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>
 
         <div class="col-md-10">
         <label for="sobrenome"> Sobrenome </label>
         <input type="text" name="sobrenome" class="form-control" ng-model="novoInstrutor.sobrenome" ng-maxlength="30"/>
-</div>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.sobrenome.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>
 
         <div class="col-md-10">
         <label for="email"> Email </label>
         <input type="email" name="email" class="form-control" ng-model="novoInstrutor.email" required/>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.email.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.email.$invalid">
+            Email inválido
+        </div>
+        </span>
         </div>
 
         <div class="col-md-10">
         <label for="idade"> Idade </label>
-        <input type="number" name="idade" class="form-control" ng-model="novoInstrutor.idade" required/>
+        <input type="number" name="idade" max="90" class="form-control" ng-model="novoInstrutor.idade" required/>
+         <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.idade.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.idade.$error.max">
+            A idade não deve ultrapassar 90 anos.
+        </div>
+        </span>
          </div>
 
         <div class="col-md-10">

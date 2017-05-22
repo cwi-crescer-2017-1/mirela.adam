@@ -85,8 +85,13 @@ myApp.controller('MainController', function($scope) {
         instrutor.urlFoto = 'img/default.png';
       }
       instrutor.dandoAula = instrutor.dandoAula !== true ? false : true;
-      for (let i=0; i < instrutor.aula.length; i++) {
-          instrutor.aula[i] = Number(instrutor.aula[i]);
+    
+      if(typeof instrutor.aula === 'undefined'){
+        instrutor.aula = [];
+      } {
+        for (let i=0; i < instrutor.aula.length; i++) {
+            instrutor.aula[i] = Number(instrutor.aula[i]);
+        }
       }
       let copiaNovoInstrutor = angular.copy(instrutor);
       window.alert('Inclusão realizada com sucesso');

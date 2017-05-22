@@ -1,0 +1,75 @@
+<h4> Incluir/Alterar Aula</h4>
+    <div class="col-md-10">
+    <form novalidate name="formInclusaoAula" class="form-group" ng-submit="incluirAula(novaAula)">
+        <div class="row">
+        <div class="col-md-10">
+            <label for="idAula"> ID </label>
+            <input type="number" name="idAula" class="form-control" ng-model="novaAula.id" />
+        </div>
+        <div class="col-md-10">
+            <label for="nomeAula"> Nome </label>
+            <input type="text" name="nomeAula" class="form-control" ng-model="novaAula.nome" ng-minlength="3" ng-maxlength="20" required/>
+             <span ng-show="formInclusaoAula.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.minlength">
+            O campo não possui o tamanho mínimo de 3 caracteres.
+        </div>
+        <div class="alert" ng-show="formInclusaoAula.nomeAula.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>    
+        </div>
+        
+        <div class="row">
+        <br>
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Incluir/Alterar Aula </button>
+        </div>
+        </div>
+    </form>
+    </div>
+<div class="row">
+<div class="col-md-10">
+    <h4> Excluir Aula</h4>
+    <form novalidate name="formExcluirAula" class="form-group" ng-submit="excluirAula(idAula)">
+        
+        <div class="col-md-4">
+            <label for="idAula"> ID </label>
+            <input type="number" name="idAula" class="form-control" ng-model="idAula" required/>
+        </div>
+        
+      
+        <div class="col-md-10">
+        <br>
+        <button class="btn btn-info btn-sm"> Excluir Aula </button>
+        </div>
+
+
+    </form>
+</div>
+</div>
+   
+    </div>
+    <!-- Lista de aulas-->
+    <hr>
+
+    <div class="col-md-4">
+    <h3>AULAS</h3>   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th> <th>Aula</th> 
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="aula in aulas | orderBy: 'nome' ">
+            <td>{{ aula.id }}</td> 
+            <td>{{ aula.nome }}</td> 
+        </tr>
+        </tbody>
+    </table>
+ 
+    </div>

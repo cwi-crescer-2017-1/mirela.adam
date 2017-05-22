@@ -1,0 +1,141 @@
+ <div class="col-md-12">
+       <h4> Incluir/Alterar Instrutor</h4>
+        <div class="col-md-10">
+    <form novalidate name="formInclusaoInstrutor" class="form-group" ng-submit="incluirInstrutor(novoInstrutor)">
+        
+        <div class="col-md-10">
+            <label for="idInstrutor"> ID </label>
+            <input type="number" name="idInstrutor" class="form-control" ng-model="novoInstrutor.id" />
+        </div>
+
+        <div class="col-md-10">
+        <label for="nome"> Nome </label>
+        <input type="text" name="nomeInstrutor" class="form-control" ng-model="novoInstrutor.nome" ng-minlength="3" ng-maxlength="20" required/>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.minlength">
+            O campo não possui o tamanho mínimo de 3 caracteres.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.nomeInstrutor.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>
+
+        <div class="col-md-10">
+        <label for="sobrenome"> Sobrenome </label>
+        <input type="text" name="sobrenome" class="form-control" ng-model="novoInstrutor.sobrenome" ng-maxlength="30"/>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.sobrenome.$error.maxlength">
+            O campo ultrapassa o limite de 20 caracteres.
+        </div>
+        </span>
+        </div>
+
+        <div class="col-md-10">
+        <label for="email"> Email </label>
+        <input type="email" name="email" class="form-control" ng-model="novoInstrutor.email" required/>
+        <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.email.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.email.$invalid">
+            Email inválido
+        </div>
+        </span>
+        </div>
+
+        <div class="col-md-10">
+        <label for="idade"> Idade </label>
+        <input type="number" name="idade" max="90" class="form-control" ng-model="novoInstrutor.idade" required/>
+         <span ng-show="formInclusaoInstrutor.$submitted" class="col-md-12"> 
+        <div class="alert" ng-show="formInclusaoInstrutor.idade.$error.required">
+            O campo é obrigatório.
+        </div>
+        <div class="alert" ng-show="formInclusaoInstrutor.idade.$error.max">
+            A idade não deve ultrapassar 90 anos.
+        </div>
+        </span>
+         </div>
+
+        <div class="col-md-10">
+        <label for="email"> URL Foto </label>
+        <input type="text" name="urlFoto" class="form-control" ng-model="novoInstrutor.urlFoto"/>
+        </div>
+
+         <div class="col-md-10">
+        <label for="aulas"> Selecione as aulas:   </label>
+
+        <div class="input-group">
+            <select multiple class="form-control" ng-model="novoInstrutor.aula">
+                <option  ng-repeat="opcaoAula in aulas" value="{{opcaoAula.id}}" > {{opcaoAula.nome}} </option>
+            </select>
+        </div>
+        </div>
+        <div class="col-md-10">
+        <label for="dandoAula">Está dando aula? </label>
+            <input  type="checkbox" ng-model="novoInstrutor.dandoAula">
+        </div>
+        
+        <br>
+        <div class="row">
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Incluir/Alterar Instrutor </button>
+        </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="row">
+<div class="col-md-10">
+    <h4> Excluir Instrutor</h4>
+    <form novalidate name="formExcluirInstrutor" class="form-group" ng-submit="excluirInstrutor(idInstrutor)">
+        <div class="row">
+        <div class="col-md-4">
+            <label for="idInstrutor"> ID </label>
+            <input type="number" name="idInstrutor" class="form-control" ng-model="idInstrutor" required/>
+        <br>
+        <div class="row">
+        <div class="col-md-3">
+        <button class="btn btn-info btn-sm"> Excluir Instrutor </button>
+        </div></div>
+
+    </form>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+
+    <h3>INSTRUTORES</h3>
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th><th>Instrutor</th> <th >Idade</th> <th>Email</th> <th> Dando Aula?</th> <th>Aula(s)</th> <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="instrutor in instrutores | orderBy: 'nome'">
+            <td>{{instrutor.id}}</td>
+            <td>{{ instrutor.nome }} {{instrutor.sobrenome}}</td> 
+            <td>{{ instrutor.idade }}</td> 
+            <td>{{ instrutor.email }}</td> 
+            <td>{{ instrutor.dandoAula | transformaBoolean }}</td> 
+            
+            <td>
+            <div ng-repeat="i in instrutor.aula | orderBy: 'i.nome'">
+                {{ formataAula(i) }}
+            </div>
+            </td> 
+            
+            <td> <img ng-src="{{instrutor.urlFoto}}"> </td> 
+        </tr>
+        </tbody>
+</table>
+</div>
+</div>
+   </div>

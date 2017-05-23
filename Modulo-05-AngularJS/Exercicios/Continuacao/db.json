@@ -1,0 +1,42 @@
+{
+  "aula": [
+    {
+      "id": 0,
+      "nome": "Orientação a Objetos"
+    },
+    {
+      "id": 2,
+      "nome": "Javascript"
+    },
+    {
+      "nome": "AngularJS",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Banco de Dados I"
+    }
+  ],
+  "instrutor": [
+    {
+      "id": 0,
+      "nome": "Nome",
+      "sobrenome": "Sobrenome",
+      "idade": 25,
+      "email": "email@cwi.com.br",
+      "dandoAula": true,
+      "aula": [
+        1,
+        4
+      ],
+      "urlFoto": "img/seta.png"
+    },
+    {
+      "nome": "mirela",
+      "sobrenome": "haag",
+      "email": "mirela@cwi.com.br",
+      "idade": 23,
+      "id": 1
+    }
+  ]
+}

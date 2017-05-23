@@ -5,7 +5,12 @@
  <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
    <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.4/angular-locale_pt-br.min.js"></script> 
-    <script src="js/exercicio.js"></script>
+    <script src="js/myApp.module.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/myApp.routes.js"></script>
+    <script src="aula/aula.controller.js"></script>
+    <script src="instrutor/instrutor.controller.js"></script>
+    <script src="home/home.controller.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -14,21 +19,9 @@
 
 <body>  
 
-<div class="container" ng-controller="MainController">
-
-<div clas="row">
-
-    <div class="col-md-12">
-    <h1>CRUD</h1>
-    <hr>
-    <a href="#!/aulas">Aulas</a> 
-    <a href="#!/instrutores">Instrutores</a> 
-    <ng-view>
-
-    </ng-view>
-
-    </div>
-</div>
+<div class="container">
+    <h1> CRUD</h1>
+    <ng-view>    </ng-view>
 </div>
 </body>
 </html>

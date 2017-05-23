@@ -1,7 +1,7 @@
- <div class="col-md-12">
-       <h4> Incluir/Alterar Instrutor</h4>
-        <div class="col-md-10">
-    <form novalidate name="formInclusaoInstrutor" class="form-group" ng-submit="incluirInstrutor(novoInstrutor)">
+<h4> Incluir/Alterar Instrutor</h4>
+
+<div class="col-md-10">
+    <form novalidate name="formInstrutor" class="form-group" ng-submit="salvar(novoInstrutor)">
         
         <div class="col-md-10">
             <label for="idInstrutor"> ID </label>
@@ -85,33 +85,9 @@
         <button class="btn btn-info btn-sm"> Incluir/Alterar Instrutor </button>
         </div>
         </div>
-    </form>
+</form>
 
-</div>
-
-<div class="row">
-<div class="col-md-10">
-    <h4> Excluir Instrutor</h4>
-    <form novalidate name="formExcluirInstrutor" class="form-group" ng-submit="excluirInstrutor(idInstrutor)">
-        <div class="row">
-        <div class="col-md-4">
-            <label for="idInstrutor"> ID </label>
-            <input type="number" name="idInstrutor" class="form-control" ng-model="idInstrutor" required/>
-        <br>
-        <div class="row">
-        <div class="col-md-3">
-        <button class="btn btn-info btn-sm"> Excluir Instrutor </button>
-        </div></div>
-
-    </form>
-</div>
-</div>
-
-<div class="row">
-<div class="col-md-12">
-
-    <h3>INSTRUTORES</h3>
-
+<h3>INSTRUTORES</h3>
 <table class="table table-striped">
         <thead>
             <tr>
@@ -120,7 +96,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="instrutor in instrutores | orderBy: 'nome'">
-            <td>{{instrutor.id}}</td>
+            <td>{{ instrutor.id}}</td>
             <td>{{ instrutor.nome }} {{instrutor.sobrenome}}</td> 
             <td>{{ instrutor.idade }}</td> 
             <td>{{ instrutor.email }}</td> 
@@ -133,9 +109,8 @@
             </td> 
             
             <td> <img ng-src="{{instrutor.urlFoto}}"> </td> 
+            <td><button class="btn btn-success" ng-click="editar(instrutor)">Editar</button></td>
+            <td><button class="btn btn-danger" ng-click="excluir(instrutor)">Excluir</button></td>
         </tr>
         </tbody>
 </table>
-</div>
-</div>
-   </div>

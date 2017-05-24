@@ -14,10 +14,14 @@ angular.module('myApp').controller('AulaController', function($scope, aulaServic
   }
 
   function excluir(aula){
+     let confirmou = confirm('Confirma exclusão do registro?');
+    if(confirmou){
     let promise = aulaService.excluir(aula);
     promise.then( function(){
+      window.alert('Aula excluída com sucesso!')
       carregarAulas();
     })
+    }
   };
 
   function salvar(aula){
@@ -26,13 +30,18 @@ angular.module('myApp').controller('AulaController', function($scope, aulaServic
     }
     
     let retorno;
+    var msg;
+    
     if(angular.isDefined(aula.id)){
       retorno = aulaService.editar(aula);
+      msg = 'Aula atualizada com sucesso!';
     } else {
       retorno = aulaService.incluir(aula);
+      msg = 'Aula incluída com sucesso!';
     }
 
     retorno.then(function(){
+      window.alert(msg);
       carregarAulas();
     })
     $scope.aulaNova = {};

@@ -16,25 +16,34 @@ angular.module('myApp').controller('InstrutorController', function($scope, instr
   };
  
    function excluir(instrutor){
-    let promise = instrutorService.excluir(instrutor);
-    promise.then( function(){
+    let confirmou = confirm('Confirma exclusão do registro?');
+    if(confirmou){
+      let promise = instrutorService.excluir(instrutor);
+      promise.then( function(){
+      window.alert('Instrutor excluído com sucesso!');
       carregarInstrutores();
     })
+    }
+
   };
 
   function salvar(instrutor){
     if($scope.formInstrutor.$invalid){
         return;
     }
-    
+
     let retorno;
+    var msg;
     if(angular.isDefined(instrutor.id)){
       retorno = instrutorService.editar(instrutor);
+      msg = 'Instrutor atualizado com sucesso!';
     } else {
       retorno = instrutorService.incluir(instrutor);
+      msg = 'Instrutor incluído com sucesso!';
     }
 
     retorno.then(function(){
+      window.alert(msg);
       carregarInstrutores();
     })
     $scope.novoInstrutor = {};
@@ -54,7 +63,7 @@ angular.module('myApp').controller('InstrutorController', function($scope, instr
  
   $scope.formataAula = function(id){
          for (a of $scope.aulas) {
-            if ( a.id === id ){
+            if ( a.id === Number(id) ){
               return a.nome;
             }
          }

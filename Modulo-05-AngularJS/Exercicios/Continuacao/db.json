@@ -2,11 +2,11 @@
   "aula": [
     {
       "id": 0,
-      "nome": "Orientação a Objetos"
+      "nome": "Orient. Objetos"
     },
     {
       "id": 2,
-      "nome": "Javascript"
+      "nome": "Javascript 1"
     },
     {
       "nome": "AngularJS",
@@ -23,7 +23,7 @@
       "nome": "Nome",
       "sobrenome": "Sobrenome",
       "idade": 33,
-      "email": "email@cwi.com.br",
+      "email": "email@cwi.com.braaaa",
       "dandoAula": true,
       "aula": [
         1,
@@ -32,11 +32,40 @@
       "urlFoto": "img/seta.png"
     },
     {
-      "nome": "mirela",
-      "sobrenome": "haag",
-      "email": "mirela@cwi.com.br",
-      "idade": 23,
-      "id": 1
+      "sobrenome": "Teste",
+      "email": "teste@fkasfhask.com",
+      "nome": "testeteste",
+      "idade": 44,
+      "aula": [
+        "2"
+      ],
+      "id": 5,
+      "urlFoto": "img/default.png"
+    },
+    {
+      "nome": "Teste msg",
+      "sobrenome": "Teste",
+      "email": "teste@msg",
+      "idade": 22,
+      "aula": [
+        "3"
+      ],
+      "urlFoto": "img/default.png",
+      "id": 6
+    },
+    {
+      "nome": "Carlos",
+      "sobrenome": "Teixeira",
+      "email": "carlos@cwi.rbr",
+      "idade": 54,
+      "aula": [
+        "0",
+        "3",
+        "4"
+      ],
+      "dandoAula": true,
+      "urlFoto": "img/default.png",
+      "id": 7
     }
   ]
 }

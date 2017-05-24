@@ -34,16 +34,24 @@ angular.module('myApp').factory('instrutorService', function ($http) {
     return $http.get(urlBase); 
   }; 
  
- function editar(instrutor) { 
+ function editar(instrutor) {
+    instrutor.urlFoto = verificarUrlFoto(instrutor); 
     return $http.put(urlBase + '/' + instrutor.id, instrutor);
   }; 
 
   function incluir(instrutor){
+    instrutor.urlFoto = verificarUrlFoto(instrutor); 
     return $http.post(urlBase, instrutor);
   }
 
   function excluir(instrutor) {
     return $http.delete(urlBase + '/' + instrutor.id);
+  }
+
+  function verificarUrlFoto(instrutor){
+    if( !angular.isDefined(instrutor.urlFoto) ){
+      return 'img/default.png';
+    }
   }
 
     return { 

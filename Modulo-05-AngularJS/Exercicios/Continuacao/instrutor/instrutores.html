@@ -2,12 +2,6 @@
 
 <div class="col-md-10">
     <form novalidate name="formInstrutor" class="form-group" ng-submit="salvar(novoInstrutor)">
-        
-        <div class="col-md-10">
-            <label for="idInstrutor"> ID </label>
-            <input type="number" name="idInstrutor" class="form-control" ng-model="novoInstrutor.id" />
-        </div>
-
         <div class="col-md-10">
         <label for="nome"> Nome </label>
         <input type="text" name="nomeInstrutor" class="form-control" ng-model="novoInstrutor.nome" ng-minlength="3" ng-maxlength="20" required/>

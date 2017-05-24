@@ -103,7 +103,7 @@
             <td>{{ instrutor.dandoAula | transformaBoolean }}</td> 
             
             <td>
-            <div ng-repeat="i in instrutor.aula | orderBy: 'i.nome'">
+            <div ng-repeat="i in instrutor.aula">
                 {{ formataAula(i) }}
             </div>
             </td> 

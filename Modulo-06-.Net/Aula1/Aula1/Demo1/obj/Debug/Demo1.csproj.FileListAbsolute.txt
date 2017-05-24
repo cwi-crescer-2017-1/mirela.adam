@@ -1,0 +1,6 @@
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\bin\Debug\Demo1.exe.config
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\obj\Debug\Demo1.csprojResolveAssemblyReference.cache
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\bin\Debug\Demo1.exe
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\bin\Debug\Demo1.pdb
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\obj\Debug\Demo1.exe
+C:\Users\mirela.adam\Documents\mirela.adam\Modulo-06-.Net\Aula1\Aula1\Demo1\obj\Debug\Demo1.pdb

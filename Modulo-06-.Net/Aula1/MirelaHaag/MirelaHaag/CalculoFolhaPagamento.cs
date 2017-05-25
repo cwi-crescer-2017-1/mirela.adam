@@ -11,10 +11,10 @@ namespace MirelaHaag
 
         public Demonstrativo GerarDemonstrativo (int horasCategoria, double salarioBase, double horasExtras, double horasDescontadas)
         {
-            double valorHora = Math.Round(salarioBase / horasCategoria, 2);
+            double valorHora = Math.Truncate(100 * (salarioBase / horasCategoria)) / 100;
             HorasCalculadas totalHorasExtras = new HorasCalculadas(horasExtras, horasExtras*valorHora);
             HorasCalculadas totalHorasDescontadas = new HorasCalculadas(horasDescontadas, horasDescontadas*valorHora);
-            double totalProventos = Math.Round(salarioBase + totalHorasExtras.ValorTotalHoras - totalHorasDescontadas.ValorTotalHoras, 2);
+            double totalProventos = Math.Truncate(100 * (salarioBase + totalHorasExtras.ValorTotalHoras - totalHorasDescontadas.ValorTotalHoras)) / 100;
             //INSS
             double aliqINSS = aliquotaINSS(totalProventos);
             Desconto INSS = new Desconto(aliqINSS, calculaImposto(totalProventos, aliqINSS));
@@ -37,7 +37,7 @@ namespace MirelaHaag
 
         public double calculaImposto(double baseCalculo, double aliquota)
         {
-            return Math.Round(baseCalculo * aliquota, 2);
+            return Math.Truncate( 100 * (baseCalculo * aliquota) ) / 100;
         }
 
         public double aliquotaINSS(double totalProventos)

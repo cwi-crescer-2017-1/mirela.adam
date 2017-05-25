@@ -55,7 +55,7 @@
     <Compile Include="Desconto.cs" />
     <Compile Include="HorasCalculadas.cs" />
     <Compile Include="IFolhaPagamento.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Testes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>

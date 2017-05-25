@@ -8,7 +8,7 @@ namespace MirelaHaag
 {
     public interface IFolhaPagamento
     {
-        Demonstrativo GerarDemonstrativo(int horasCategoria, double salarioBase, 
-                                         double horasExtras, double horasDescontadas);
+        Demonstrativo GerarDemonstrativo(int horasCategoria, double salarioBase, double horasExtras, 
+                                        double horasDescontadas);
     }
 }

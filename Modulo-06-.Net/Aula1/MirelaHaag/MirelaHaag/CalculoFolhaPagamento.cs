@@ -24,9 +24,9 @@ namespace MirelaHaag
             //DESCONTOS
             Double totalDescontos = INSS.Valor + IRRF.Valor;
             //LIQUIDO
-            Double salarioLiquido = totalProventos - totalDescontos;
+            Double salarioLiquido = Math.Truncate(100* (totalProventos - totalDescontos)) / 100;
             //FGTS: Fundo de garantia sobre tempo de serviço deve ser apenas discriminado 11% fixo.
-            Desconto valorFgts = new Desconto(0.11, totalProventos*0.11);
+            Desconto valorFgts = new Desconto(0.11, Math.Truncate(100 * (totalProventos*0.11))/100);
 
             Demonstrativo demonstrativo = new Demonstrativo(salarioBase, horasCategoria, totalHorasExtras, totalHorasDescontadas, totalProventos, 
                                                    INSS, IRRF, totalDescontos, salarioLiquido, valorFgts);

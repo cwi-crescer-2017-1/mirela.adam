@@ -104,42 +104,77 @@ namespace Repositorio
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            var funcionariosEncontrados =
+                Funcionarios
+                .Where(funcionario => funcionario.Nome.IndexOf(nome, StringComparison.OrdinalIgnoreCase) > 0)
+                .ToList();
+            return funcionariosEncontrados;
         }        
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
         {
-            throw new NotImplementedException();
+            if(turnos.Length == 0)
+            {
+                return Funcionarios;
+            }
+            else
+            {
+                return Funcionarios
+                    .Where(funcionario => turnos.Contains(funcionario.TurnoTrabalho))
+                    .ToList();
+            }
+            
         }        
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
-            throw new NotImplementedException();
+            return Funcionarios
+                .Where(funcionario => CalcularIdade(funcionario.DataNascimento) >= idade - 5
+                                        && CalcularIdade(funcionario.DataNascimento) <= idade + 5)
+                .ToList();
         }
 
         private int CalcularIdade(DateTime dataNascimento)
         {
-            throw new NotImplementedException();
+            int idade = DateTime.Now.Year - dataNascimento.Year;
+            if (DateTime.Now.Month < dataNascimento.Month || 
+                (DateTime.Now.Month == dataNascimento.Month && DateTime.Now.Day < dataNascimento.Day))
+            {
+                idade--;
+            }
+            return idade;
         }
+    
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            throw new NotImplementedException();
+            var funcionariosConsiderados = turno == null ? Funcionarios :
+               BuscarPorTurno(new TurnoTrabalho[] { (TurnoTrabalho)turno });
+
+            return funcionariosConsiderados.Sum(funcionario => funcionario.Cargo.Salario) / funcionariosConsiderados.Count; 
         }
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
+            return Funcionarios
+               .Where(funcionario => funcionario.DataNascimento.Month == DateTime.Now.Month)
+               .ToList();
         }
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+            return Funcionarios
+                .Select(funcionario => new { NomeFuncionario = funcionario.Nome, TituloCargo = funcionario.Cargo.Titulo })
+                .ToArray();
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            return Funcionarios
+                .GroupBy(funcionario => funcionario.TurnoTrabalho)
+                .Select(funcionario => new { Turno = funcionario.FirstOrDefault().TurnoTrabalho,
+                                             Quantidade = funcionario.Count() })
+                .ToArray();
         }
 
         public dynamic FuncionarioMaisComplexo()

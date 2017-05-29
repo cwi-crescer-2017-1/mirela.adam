@@ -1,10 +1,14 @@
 <div ng-controller="MensagensController">
+<h1> CHAT CRESCER</h1>
     <table class="table">
         <tr ng-repeat="mensagem in mensagens">
             <td>
-            <img ng-src="{{mensagem.usuario.foto}}">
+            <div class="imagem">
+            <img ng-src="{{mensagem.Usuario.UrlFoto}}">
+            </div>
+                {{mensagem.Usuario.Nome}}
                 {{mensagem.Texto}}
-                {{mensagem.DataEnvio}}
+                {{mensagem.Data | date:'dd/MM/yyyy HH:mm'}}
             </td>
         </tr>
     </table>

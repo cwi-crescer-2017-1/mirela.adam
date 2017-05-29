@@ -9,6 +9,7 @@ namespace Chat.Models
     {
         public int Id { get; set; }
         public string Texto { get; set; }
+        public Usuario Usuario { get; set; }
         public DateTime Data { get; set; }
     }
 }

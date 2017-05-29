@@ -10,8 +10,8 @@ angular.module('chatCrescer').controller('UsuariosController', function ($scope,
 
     function adicionarUsuario(usuario){
         UsuariosService.cadastrarUsuario(usuario).then(function (response){
-            localStorage.setItem('nome', usuario.Nome,toString());
-            localStorage.setItem('foto', usuario.UrlFoto,toString());
+            localStorage.setItem('nome', usuario.Nome, toString());
+            localStorage.setItem('foto', usuario.UrlFoto, toString());
             location.href = '#!/chat';
             listarUsuarios();
         });

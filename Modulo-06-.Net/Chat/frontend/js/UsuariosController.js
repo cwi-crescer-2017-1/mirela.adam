@@ -1,5 +1,6 @@
 angular.module('chatCrescer').controller('UsuariosController', function ($scope, $routeParams, $localStorage, UsuariosService){
     $scope.adicionarUsuario = adicionarUsuario; 
+    $scope.listarUsuarios = listarUsuarios;
 
     function listarUsuarios() {
             UsuariosService.listarUsuarios().then(function (response) {
@@ -12,7 +13,7 @@ angular.module('chatCrescer').controller('UsuariosController', function ($scope,
             localStorage.setItem('nome', usuario.Nome,toString());
             localStorage.setItem('foto', usuario.UrlFoto,toString());
             location.href = '#!/chat';
-            listaUsuarios();
+            listarUsuarios();
         });
     }
 })

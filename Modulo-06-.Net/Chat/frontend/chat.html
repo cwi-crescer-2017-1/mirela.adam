@@ -4,11 +4,11 @@
         <tr ng-repeat="mensagem in mensagens">
             <td>
             <div class="imagem">
-            <img ng-src="{{mensagem.Usuario.UrlFoto}}">
+                <img ng-src="{{mensagem.Usuario.UrlFoto}}">
             </div>
-                {{mensagem.Usuario.Nome}}
-                {{mensagem.Texto}}
+               <strong> {{mensagem.Usuario.Nome}} </strong>
                 {{mensagem.Data | date:'dd/MM/yyyy HH:mm'}}
+                <span>{{mensagem.Texto}} </span>
             </td>
         </tr>
     </table>

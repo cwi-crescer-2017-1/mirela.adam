@@ -1,0 +1,67 @@
+29/05/2017
+
+ADO.NET (ActiveX Data Objetcs for .NET)
+
+Conjunto de classes/bibliotecas/interfaces/abstrações que facilitam o acesso para consumo de banco de dados,
+arquivos xml, etc...
+*Maneira mais rapida/eficiente para escrita e leitura de dados.
+
+connection / command / data reader / data adapter
+
+---
+Usar métodos HttpRequestmessage ou IHttpActionResult
+Request.CreateResponse(HttpStatusCode.BadRequest,...) -> pode manipular o response
+De preferência utilizar o IHttpActionResult
+---
+
+
+ADO 
+
+1 - primeiro abrir uma conexão
+SqlConnection - usar dentro de um using para que ele mesmo faça o dispose(), desalocando memória.
+Objetos que implementem a interface IDISPOSABLE devem ser utilizados dentro de uma clausula USING
+
+**regras de negócio devem ficar no projeto 'domínio'
+**infraestrutura - métodos de acesso a dados
+
+**responsabilidade da api : comunicar com o front, não deve controlar acesso a dados
+
+
+---
+
+REPOSITÓRIO
+padrão que permite realizar o isolamento entre a camada de acesso a dados e sua camada de apresetanção (webapi) 
+e camada de negócios (domínio).
+
+---
+
+MANDAR NO POSTMAN
+
+Lembrar: Content-Type = application/json (aba Headers)
+Abaixo exemplo de conteúdo para enviar no Body de um método POST:
+{
+"id":0,
+"nome":"",
+"preco": 0,
+"estoque":0
+}
+
+{
+"id":0,
+"nome":"Mouse sem fio",
+"preco":10.98,
+"estoque":15
+}
+
+----------------
+
+JSON PARA PEDIDO + ITEM PEDIDO
+
+{
+    "id":0,
+    "nomecliente":"CWI Software",
+    "Itens":
+        [
+            {"ProdutoId":1, "Quantidade":3}
+        ]
+}

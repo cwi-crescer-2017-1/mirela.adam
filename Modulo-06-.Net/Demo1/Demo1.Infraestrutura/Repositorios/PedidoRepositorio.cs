@@ -35,21 +35,6 @@ namespace Demo1.Infraestrutura.Repositorios
                         VALUES (@nomecliente)";
 
                     comandoInsertPedido.Parameters.AddWithValue("@nomecliente", pedido.NomeCliente);
-
-                    foreach (var item in pedido.Itens)
-                    {
-                        using (var comandoInsertItemPedido = conexao.CreateCommand())
-                        {
-                            comandoInsertItemPedido.CommandText =
-                                @"INSERT INTO ItemPedido (PedidoId, ProdutoId, Quantidade)
-                                  VALUES (@pedidoid, @produtoid, @quantidade)";
-                            comandoInsertItemPedido.Parameters.AddWithValue("@pedidoid", pedido.Id);
-                            comandoInsertItemPedido.Parameters.AddWithValue("@produtoid", item.ProdutoId);
-                            comandoInsertItemPedido.Parameters.AddWithValue("@quantidade", item.Quantidade);
-                            comandoInsertItemPedido.ExecuteNonQuery();
-                        }
-                    }
-
                     comandoInsertPedido.ExecuteNonQuery();
                 }
 
@@ -62,6 +47,25 @@ namespace Demo1.Infraestrutura.Repositorios
                     pedido.Id = (int)result;
                 }
 
+                foreach (var item in pedido.Itens)
+                {
+                    using (var comandoInsertItemPedido = conexao.CreateCommand())
+                    {
+                        comandoInsertItemPedido.CommandText =
+                            @"INSERT INTO ItemPedido (PedidoId, ProdutoId, Quantidade)
+                                  VALUES (@pedidoid, @produtoid, @quantidade)";
+                        comandoInsertItemPedido.Parameters.AddWithValue("@pedidoid", pedido.Id);
+                        comandoInsertItemPedido.Parameters.AddWithValue("@produtoid", item.ProdutoId);
+                        comandoInsertItemPedido.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                        comandoInsertItemPedido.ExecuteNonQuery();
+
+                        comandoInsertItemPedido.CommandText = 
+                            @"UPDATE Produto SET Estoque -= @quantidade WHERE Id = @produtoId";
+
+                        comandoInsertItemPedido.Parameters.AddWithValue("@itemProdutoId", item.ProdutoId);
+                        comandoInsertItemPedido.ExecuteNonQuery();
+                    }
+                }
             }
         }
 

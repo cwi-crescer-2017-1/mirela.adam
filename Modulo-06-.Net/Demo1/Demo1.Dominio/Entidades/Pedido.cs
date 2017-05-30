@@ -11,5 +11,24 @@ namespace Demo1.Dominio.Entidades
         public int Id { get; set; }
         public string NomeCliente { get; set; }
         public List<ItemPedido> Itens { get; set; }
+
+        public Pedido()
+        {
+            Itens = new List<ItemPedido>();
+        }
+        public bool Validar(out List<string> mensagens)
+        {
+            mensagens = new List<string>();
+
+            foreach (var item in Itens)
+            {
+                if (item.Quantidade <= 0)
+                {
+                    mensagens.Add("Quantidade deve ser maior que zero.");
+                }
+            }
+
+            return mensagens.Count() == 0;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Demo1.Infraestrutura.Repositorios
             using (var conexao = new SqlConnection(stringConexao))
             {
                 conexao.Open();
+
                 using (var comandoUpdatePedido = conexao.CreateCommand())
                 {
                     comandoUpdatePedido.CommandText =
@@ -36,6 +37,8 @@ namespace Demo1.Infraestrutura.Repositorios
 
                 foreach (var item in pedido.Itens)
                 {
+
+                    //se id igual a 0 criar item de pedido e baixar estoque
                     using (var comandoUpdateItemPedido = conexao.CreateCommand())
                     {
                         comandoUpdateItemPedido.CommandText =

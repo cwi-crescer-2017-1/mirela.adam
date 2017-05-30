@@ -28,6 +28,11 @@ namespace Demo1.Dominio.Entidades
                 }
             }
 
+            if (string.IsNullOrWhiteSpace(NomeCliente))
+            {
+                mensagens.Add("Nome do cliente deve ser preenchido");
+            }
+
             return mensagens.Count() == 0;
         }
     }

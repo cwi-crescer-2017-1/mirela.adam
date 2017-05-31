@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class LivroRepositorio
+    public class LivroRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto();
         
@@ -22,11 +22,38 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public void Excluir(int id)
+        public void Excluir(int isbn)
         {
-            var livro = contexto.Livros.FirstOrDefault(x => x.Isbn == id);
+            var livro = contexto.Livros.FirstOrDefault(x => x.Isbn == isbn);
             contexto.Livros.Remove(livro);
             contexto.SaveChanges();
+        }
+
+        public List<Livro> ObterPorIsbn(int isbn)
+        {
+            return contexto.Livros.Where(x => x.Isbn == isbn).ToList();
+        }
+
+        public List<Livro> ObterPorGenero(string genero)
+        {
+            return contexto.Livros.Where(x => x.Genero == genero).ToList();
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
+        }
+
+        public void Editar(Livro livro)
+        {
+            var original = contexto.Livros.Find(livro.Isbn);
+            contexto.Entry(original).CurrentValues.SetValues(livro);
+            contexto.SaveChanges();
+        }
+
+        public bool VerificaExistenciaLivro(int isbn)
+        {
+            return contexto.Livros.Count(x => x.Isbn == isbn) > 0;
         }
     }
 }

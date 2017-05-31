@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class AutorRepositorio
+    public class AutorRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto();
 
@@ -27,6 +27,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             var autor = contexto.Autores.FirstOrDefault(x => x.Id == id);
             contexto.Autores.Remove(autor);
             contexto.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
 
         public List<Livro> ObterPorGenero(string genero)
         {
-            return contexto.Livros.Where(x => x.Genero == genero).ToList();
+            return contexto.Livros.Where(x => x.Genero.Contains(genero)).ToList();
         }
 
         public void Editar(Livro livro)

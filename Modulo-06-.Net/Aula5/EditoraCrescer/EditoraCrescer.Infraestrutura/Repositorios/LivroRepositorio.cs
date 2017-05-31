@@ -48,9 +48,17 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return contexto.Livros.Where(x => x.Isbn == isbn).ToList();
         }
 
-        public List<Livro> ObterPorGenero(string genero)
+        public object ObterPorGenero(string genero)
         {
-            return contexto.Livros.Where(x => x.Genero.Contains(genero)).ToList();
+            return contexto.Livros.Where(x => x.Genero.Contains(genero)).Select(x => new
+            {
+                Isbn = x.Isbn,
+                Titulo = x.Titulo,
+                NomeAutor = x.Autor.Nome,
+                Genero = x.Genero,
+                Capa = x.Capa
+            }).ToList(); ;
+                
         }
 
         public void Editar(Livro livro)

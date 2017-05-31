@@ -1,0 +1,11 @@
+REST - padrão
+RESTful - segue o padrão
+ORM - 
+
+
+-------------------
+
+Contains() - transforma em LIKE select do sqlserver
+
+
+Include()

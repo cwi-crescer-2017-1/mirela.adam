@@ -29,9 +29,25 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
+        public List<Revisor> ObterRevisorPorId(int id)
+        {
+            return contexto.Revisores.Where(x => x.Id == id).ToList();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();
+        }
+
+        public bool VerificaExistenciaRevisor(int id)
+        {
+            return contexto.Revisores.Count(x => x.Id == id) > 0;
+        }
+
+        public void Editar(Revisor revisor)
+        {
+            contexto.Entry(revisor).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
         }
     }
 }

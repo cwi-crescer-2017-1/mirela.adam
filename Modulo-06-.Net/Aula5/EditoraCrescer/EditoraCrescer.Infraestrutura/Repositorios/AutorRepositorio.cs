@@ -29,9 +29,30 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
+        public List<Autor> ObterPorId(int id)
+        {
+            return contexto.Autores.Where(x => x.Id == id).ToList();
+        }
+
+        public List<Livro> ObterLivrosDoAutor(int id)
+        {
+            return contexto.Livros.Where(x => x.IdAutor == id).ToList();
+        }
+
+        public bool VerificaExistenciaAutor(int id)
+        {
+            return contexto.Autores.Count(x => x.Id == id) > 0;
+        }
+
+        public void Editar(Autor autor)
+        {
+            contexto.Entry(autor).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();
-        }
+        } 
     }
 }

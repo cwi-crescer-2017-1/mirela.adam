@@ -39,21 +39,20 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return contexto.Livros.Where(x => x.Genero == genero).ToList();
         }
 
-        public void Dispose()
-        {
-            contexto.Dispose();
-        }
-
         public void Editar(Livro livro)
         {
-            var original = contexto.Livros.Find(livro.Isbn);
-            contexto.Entry(original).CurrentValues.SetValues(livro);
+            contexto.Entry(livro).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
 
         public bool VerificaExistenciaLivro(int isbn)
         {
             return contexto.Livros.Count(x => x.Isbn == isbn) > 0;
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
         }
     }
 }

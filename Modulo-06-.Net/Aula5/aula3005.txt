@@ -1,0 +1,62 @@
+
+solution -> EditoraCrescer
+
+-> class library -> EditoraCrescer.Infraestrutura
+                    *ENTIDADES (Autor)
+
+Instalar pelo nuget o EntityFramework
+pelo console do nuget: Install-Package EntityFramework
+
+--classe contexto que herda de dbcontext com construtor : base(name="ExemploEF")
+
+- criar no app.config a tag <connectionStrings>
+
+LIVROS
+[
+  {
+    "Isbn": 2,
+    "Titulo": "O senhor dos anéis",
+    "Descricao": "Um livro bem legal",
+    "Genero": "Aventura",
+    "DataPublicacao": "2017-05-30T17:27:51.207",
+    "IdAutor": 5,
+    "Autor": null,
+    "IdRevisor": 0,
+    "Revisor": null,
+    "DataRevisao": "1900-01-01T00:00:00"
+  }
+]
+
+----------
+AUTORES
+[
+  {
+    "Id": 5,
+    "Nome": "Tolkien"
+  },
+  {
+    "Id": 6,
+    "Nome": "Machado de Assis"
+  },
+  {
+  "Id": 7,
+  "Nome": "Mirela"
+    }
+]
+
+----------
+REVISORES
+[
+  {
+    "Id": 1,
+    "Nome": "Amanda"
+  },
+  {
+    "Id": 3,
+    "Nome": "Marcos"
+  },
+  {
+    "Id": 4,
+    "Nome": "Jonathan"
+  }
+]

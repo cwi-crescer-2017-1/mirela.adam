@@ -58,13 +58,36 @@
     <Compile Include="Migrations\201705301932047_CriacaoDoBanco.Designer.cs">
       <DependentUpon>201705301932047_CriacaoDoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705311238294_CriacaoTabelaRevisor.cs" />
+    <Compile Include="Migrations\201705311238294_CriacaoTabelaRevisor.Designer.cs">
+      <DependentUpon>201705311238294_CriacaoTabelaRevisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311244482_AlteracaoNomeTabelaRevisor.cs" />
+    <Compile Include="Migrations\201705311244482_AlteracaoNomeTabelaRevisor.Designer.cs">
+      <DependentUpon>201705311244482_AlteracaoNomeTabelaRevisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311312044_CriarForeignKeyRevisorNaTabelaLivro.cs" />
+    <Compile Include="Migrations\201705311312044_CriarForeignKeyRevisorNaTabelaLivro.Designer.cs">
+      <DependentUpon>201705311312044_CriarForeignKeyRevisorNaTabelaLivro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\AutorRepositorio.cs" />
     <Compile Include="Repositorios\LivroRepositorio.cs" />
+    <Compile Include="Repositorios\RevisorRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705301932047_CriacaoDoBanco.resx">
       <DependentUpon>201705301932047_CriacaoDoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311238294_CriacaoTabelaRevisor.resx">
+      <DependentUpon>201705311238294_CriacaoTabelaRevisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311244482_AlteracaoNomeTabelaRevisor.resx">
+      <DependentUpon>201705311244482_AlteracaoNomeTabelaRevisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311312044_CriarForeignKeyRevisorNaTabelaLivro.resx">
+      <DependentUpon>201705311312044_CriarForeignKeyRevisorNaTabelaLivro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

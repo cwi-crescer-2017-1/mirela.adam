@@ -1,0 +1,30 @@
+<div ng-controller="LivrosController">
+<div class="row">
+
+ <div class="lancamentos">
+     <h3> Lançamentos </h3>
+        <div class="col-md-4 divisaolivro" ng-repeat="lancamento in lancamentos">
+            <div class="imagem">
+                <img ng-src="{{lancamento.Capa}}">
+            </div>
+            <div><strong>Título:</strong> {{ lancamento.Titulo }}</div>
+            <div><strong>Gênero:</strong> {{ lancamento.Genero }}</div>
+            <div><strong>Autor:</strong> {{ lancamento.NomeAutor}}</div>
+        </div>
+ </div>
+</div>
+
+<div class="row">
+    <h3> Livros </h3>
+    <div class="livros">
+        <div class="col-md-4 divisaolivro" ng-repeat="livro in livros">
+            <div class="imagem">
+                <img ng-src="{{livro.Capa}}">
+            </div>
+             <div><strong>Título:</strong> {{ livro.Titulo }}</div>
+             <div><strong>Gênero:</strong> {{ livro.Genero }}</div>
+             <div><strong>Autor:</strong> {{ livro.NomeAutor}}</div>
+        </div>
+    </div>
+</div>
+</div>

@@ -23,7 +23,7 @@ namespace EditoraCrescer.Api.Controllers
             return Ok(new { dados = livros });
         }
 
-        // api/livros/isbn
+        // api/livros/isbn=
         [HttpGet]
         [Route("{isbn:int}")]
         public IHttpActionResult ObterLivroPorIsbn(int isbn)
@@ -39,6 +39,15 @@ namespace EditoraCrescer.Api.Controllers
         {
             var livros = repositorio.ObterPorGenero(genero);
             return Ok(new { dados = livros });
+        }
+
+
+        [HttpGet]
+        public IHttpActionResult ObterLivrosPublicadosExcetoLancamentos(int quantidadePular, int quantidadeTrazer)
+        {
+            var livros = repositorio.ObterLivrosPublicadosExcetoLancamentos(quantidadePular, quantidadeTrazer);
+            return Ok(new { dados = livros });
+
         }
 
         [HttpGet]

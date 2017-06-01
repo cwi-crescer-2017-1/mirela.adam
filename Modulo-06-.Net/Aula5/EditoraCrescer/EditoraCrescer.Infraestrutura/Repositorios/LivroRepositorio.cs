@@ -61,9 +61,14 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                 
         }
 
+        public object ObterLivrosPublicadosExcetoLancamentos(int quantidadePular, int quantidadeTrazer)
+        {
+            throw new NotImplementedException();
+        }
+
         public object ObterLancamentos()
         {
-            var dataDoFiltro = DateTime.Now.AddDays(-7);
+            var dataDoFiltro = DateTime.Now.Date.AddDays(-7);
 
             return contexto.Livros
                        .Where(x => x.DataPublicacao >= dataDoFiltro)

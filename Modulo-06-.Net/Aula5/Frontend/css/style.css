@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.container {
+    width: 100%;
+    background: #fafafa;
+    margin: 0 auto;
+}
+
+.container:after {
+                content: "";           
+                display: block;
+                clear: both;
+} 
+
+.cabecalho{   
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.formularioLogin {
+    color: white;
+}
+
+img {
+    width: 100px;
+}
+
+.divisaolivro {
+    border-width: medium;
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+
+}
+
+.lancamentos {
+    left: 30px;
+    width: 100%;
+}

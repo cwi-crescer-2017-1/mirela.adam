@@ -61,6 +61,22 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                 
         }
 
+        public object ObterLancamentos()
+        {
+            var dataDoFiltro = DateTime.Now.AddDays(-7);
+
+            return contexto.Livros
+                       .Where(x => x.DataPublicacao >= dataDoFiltro)
+                                   .Select(x => new
+                                   {
+                                       Isbn = x.Isbn,
+                                       Titulo = x.Titulo,
+                                       NomeAutor = x.Autor.Nome,
+                                       Genero = x.Genero,
+                                       Capa = x.Capa
+                                   }).ToList();
+        }
+
         public void Editar(Livro livro)
         {
             contexto.Entry(livro).State = System.Data.Entity.EntityState.Modified;

@@ -1,0 +1,25 @@
+   <h3>Livros</h3>  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Isbn</th> 
+                <th>Título</th> 
+                <th>Gênero</th>
+                <th>Autor</th>
+                <th>Publicacao</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="livro in livros">
+            <td>{{ livro.Isbn }}</td> 
+            <td>{{ livro.Titulo }}</td> 
+            <td>{{ livro.Genero }}</td> 
+            <td>{{ livro.NomeAutor }}</td> 
+            <td><button class="btn btn-success" ng-click="revisar(livro)">Revisar</button></td>
+            <td><button class="btn btn-success" ng-click="publicar(livro)">Excluir</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-success" ng-click="cadastrarLivro()">Cadastrar Livro</button>
+    <button class="btn btn-success" ng-click="cadastrarAutor()">Cadastrar Autor</button>

@@ -30,6 +30,7 @@ body {
 
 .formularioLogin {
     color: white;
+ 
 }
 
 img {
@@ -47,4 +48,9 @@ img {
 .lancamentos {
     left: 30px;
     width: 100%;
+}
+
+form {
+    display: inline;
+    margin-top: 0em;
 }

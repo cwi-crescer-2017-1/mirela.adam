@@ -1,4 +1,13 @@
-<div ng-controller="LivrosController">
+<form class="form-inline" name="login" ng-submit="efetuarLogin(usuario)">
+                <div class="form-group formularioLogin">
+                    <label for="nome">Login:</label>
+                    <input name="nome" type="text" class="form-control" ng-model="usuario.Login" />
+                    <label for="Senha">Senha:</label>
+                    <input name="Senha" type="password" class="form-control" ng-model="usuario.Senha" />
+                    <button type="submit" class="btn btn-default">Entrar</button>
+                </div>
+</form>
+
 <div class="row">
 
  <div class="lancamentos">
@@ -33,5 +42,3 @@
 <ul class="pagination">
     <li><a href="" ng-repeat="pagina in paginas" ng-click="CarregarPagina(pagina.indice)">{{pagina.indice}}</a></li>
 </ul>
-
-</div>

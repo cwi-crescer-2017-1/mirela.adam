@@ -10,12 +10,17 @@ angular.module('editoraCrescer').controller('LivrosController',
     $scope.ListarLivros = ListarLivros;
     $scope.VerDetalhes = VerDetalhes;
     $scope.CarregarPagina = CarregarPagina;
+    $scope.efetuarLogin = efetuarLogin;
     
     
     ListarLancamentos();
     ListarLivros();
 
     let paginaAtual = 1;
+
+    function efetuarLogin(){
+      $location.path('/administrativo');
+    }
 
     function ListarLancamentos() {
         LivrosService

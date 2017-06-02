@@ -19,7 +19,7 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult ObterAutores()
         {
             var autores = repositorio.Obter();
-            return Ok(autores);
+            return Ok(new { dados = autores });
         }
 
         //GET api/Autores/{id}

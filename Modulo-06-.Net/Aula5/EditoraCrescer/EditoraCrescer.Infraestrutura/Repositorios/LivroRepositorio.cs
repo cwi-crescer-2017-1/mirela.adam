@@ -10,6 +10,7 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
     public class LivroRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto();
+
         
         public object Obter()
         {
@@ -58,12 +59,24 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                 Genero = x.Genero,
                 Capa = x.Capa
             }).ToList(); ;
-                
+
         }
 
+        //nao esta pronto
         public object ObterLivrosPublicadosExcetoLancamentos(int quantidadePular, int quantidadeTrazer)
         {
-            throw new NotImplementedException();
+            return contexto.Livros
+                       .OrderByDescending(x => x.DataPublicacao)
+                       .Skip(quantidadeTrazer*quantidadePular)
+                       .Take(quantidadeTrazer)
+                       .Select(x => new
+                                   {
+                                       Isbn = x.Isbn,
+                                       Titulo = x.Titulo,
+                                       NomeAutor = x.Autor.Nome,
+                                       Genero = x.Genero,
+                                       Capa = x.Capa
+                                   }).ToList();
         }
 
         public object ObterLancamentos()

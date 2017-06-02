@@ -3,7 +3,7 @@ angular.module('editoraCrescer').controller('LivrosController',
 
     $scope.ListarLancamentos = ListarLancamentos;
     $scope.ListarLivros = ListarLivros;
-
+    $scope.VerDetalhes = VerDetalhes;
     ListarLancamentos();
     ListarLivros();
 
@@ -21,6 +21,11 @@ angular.module('editoraCrescer').controller('LivrosController',
         .then(response => {
             $scope.livros = response.data.dados;
         })
+    }
+
+    function VerDetalhes(livro){
+        $sope.livroDetalhado = livro;
+        location.href = '#!/detalhesLivro';
     }
 })
 

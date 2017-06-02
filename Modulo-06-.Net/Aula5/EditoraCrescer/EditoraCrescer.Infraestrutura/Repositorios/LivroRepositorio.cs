@@ -44,9 +44,9 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public List<Livro> ObterPorIsbn(int isbn)
+        public Livro ObterPorIsbn(int isbn)
         {
-            return contexto.Livros.Where(x => x.Isbn == isbn).ToList();
+            return contexto.Livros.Where(x => x.Isbn == isbn).FirstOrDefault();
         }
 
         public object ObterPorGenero(string genero)
@@ -63,11 +63,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
         }
 
         //nao esta pronto
-        public object ObterLivrosPublicadosExcetoLancamentos(int quantidadePular, int quantidadeTrazer)
+        public object ObterLivrosPublicados(int quantidadePular, int quantidadeTrazer)
         {
             return contexto.Livros
                        .OrderByDescending(x => x.DataPublicacao)
-                       .Skip(quantidadeTrazer*quantidadePular)
+                       .Skip(quantidadePular)
                        .Take(quantidadeTrazer)
                        .Select(x => new
                                    {

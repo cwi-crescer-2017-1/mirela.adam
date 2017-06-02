@@ -21,12 +21,22 @@ angular.module('editoraCrescer').factory('LivrosService', function ($http) {
         return $http.put(urlBase, livro);
     };
 
+    
+    function listarLivrosPaginacao(parametros) {
+        return $http({
+            url: urlBase,
+            method: 'GET',
+            params: parametros
+          });
+    };
+
     return {
         listarLivros: listarLivros,
         listarLancamentos: listarLancamentos,
         detalharLivro: detalharLivro,
         cadastrarLivro: cadastrarLivro,
-        alterarLivro: alterarLivro
+        alterarLivro: alterarLivro,
+        listarLivrosPaginacao: listarLivrosPaginacao
     };
 
 })

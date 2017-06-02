@@ -43,9 +43,9 @@ namespace EditoraCrescer.Api.Controllers
 
 
         [HttpGet]
-        public IHttpActionResult ObterLivrosPublicadosExcetoLancamentos(int quantidadePular, int quantidadeTrazer)
+        public IHttpActionResult ObterLivrosPublicados(int quantidadePular, int quantidadeTrazer)
         {
-            var livros = repositorio.ObterLivrosPublicadosExcetoLancamentos(quantidadePular, quantidadeTrazer);
+            var livros = repositorio.ObterLivrosPublicados(quantidadePular, quantidadeTrazer);
             return Ok(new { dados = livros });
 
         }

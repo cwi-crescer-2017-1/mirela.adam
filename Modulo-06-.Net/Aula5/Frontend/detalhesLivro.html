@@ -1,17 +1,25 @@
-<div ng-controller="LivrosController" class="detalhes">
+<div ng-controller="DetalhesLivroController" class="detalhes">
 	<div class="row">
-		<h1>{{livro.Titulo}}</h1>
+		<h1>Título: {{livroDetalhado.Titulo}}</h1>
+	</div>
+	<div class="imagem">
+                <img ng-src="{{livroDetalhado.Capa}}">
+    </div>
+	<div class="row">
+		<span>Isbn: {{livroDetalhado.Isbn}}</span>
 	</div>
 	<div class="row">
-		<span>{{livro.Capa}}</span>
+		<span>Genero: {{livroDetalhado.Genero}}</span>
 	</div>
 	<div class="row">
-		<span>{{livro.Isbn}}</span>
+		<span>Nome Autor: {{livroDetalhado.NomeAutor}}</span>
 	</div>
 	<div class="row">
-		<span>{{livro.Genero}}</span>
+		<span>Descrição: {{livroDetalhado.Descricao}}</span>
 	</div>
 	<div class="row">
-		<span>{{livro.NomeAutor}}</span>
+		<span>Data de Publicação: {{livroDetalhado.DataPublicacao | date : "dd/MM/yyyy"}}</span>
 	</div>
+
+	<button class="btn btn-success" ng-click="Voltar()">Voltar</button>
 </div>

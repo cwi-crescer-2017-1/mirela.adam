@@ -6,7 +6,7 @@ angular.module('editoraCrescer')
 
     function buscarLivro(isbn) {
         LivrosService.detalharLivro(isbn).then(function (response) {
-             $scope.livroDetalhado = response.data.dados;
+             $scope.livroDetalhado = response.data.dados[0];
       })
     };
 

@@ -44,9 +44,20 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public Livro ObterPorIsbn(int isbn)
+        public object ObterPorIsbn(int isbn)
         {
-            return contexto.Livros.Where(x => x.Isbn == isbn).FirstOrDefault();
+            return contexto.Livros.Where(x => x.Isbn == isbn)
+                .Select(x => new
+                {
+                    Isbn = x.Isbn,
+                    Titulo = x.Titulo,
+                    NomeAutor = x.Autor.Nome,
+                    Genero = x.Genero,
+                    Capa = x.Capa,
+                    Descricao = x.Descricao,
+                    DataPublicacao = x.DataPublicacao
+                    
+                });
         }
 
         public object ObterPorGenero(string genero)

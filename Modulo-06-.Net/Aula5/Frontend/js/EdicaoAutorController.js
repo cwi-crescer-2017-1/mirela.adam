@@ -11,9 +11,9 @@ angular.module('editoraCrescer')
       })
     };
 
-    function editar(autorEdicao){
+    function editar(autor){
         AutoresService  .alterarAutor(autor).then(function (response){
-            window.alert('Autor alterado com sucesso!');
+             window.alert('Autor alterado com sucesso!');
              $location.path('/administrativo');
         })
     }

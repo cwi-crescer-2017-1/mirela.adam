@@ -82,7 +82,7 @@ angular.module('editoraCrescer').controller('AdministrativoController',
         };
     });
 
-    };
+};
 
     function cadastrarAutor(){
          $location.path('/cadastrarAutor');

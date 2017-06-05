@@ -1,11 +1,11 @@
 <h2>Editar Autor</h2>
 <hr>
-<form novalidate name="formAutor" class="form-group" ng-submit="editar(autorEdicao)">
+<form novalidate name="formAutor" class="form-group" ng-submit="editar(autor)">
  <div class="row">
         <div class="col-md-10">
         <label for="nome"> Nome </label>
-        <input type="text" name="nome" class="form-control" ng-model="autorEdicao.Nome" 
-         value= "{{ autor.Nome }}" ng-minlength="3" ng-maxlength="50" required/>
+        <input type="text" name="nome" class="form-control" ng-model="autor.Nome" 
+        ng-minlength="3" ng-maxlength="50" required/>
         </div>
  </div>
   <div class="row">

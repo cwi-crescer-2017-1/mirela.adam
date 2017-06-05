@@ -10,7 +10,7 @@ angular.module('editoraCrescer').factory('AutoresService', function ($http) {
     };
 
     function alterarAutor(autor) {
-        return $http.put(urlBase, autor.Id, autor);
+        return $http.put(urlBase + "/" + autor.Id, autor);
     };
 
     function excluirAutor(id) {

@@ -1,9 +1,9 @@
-<h2>Cadastrar Livro</h2>
+<h2>Editar Livro</h2>
 <hr>
-<form novalidate name="formLivro" class="form-group" ng-submit="cadastrar(novoLivro)">
+<form novalidate name="formLivro" class="form-group" ng-submit="editar(livro)">
         <div class="col-md-10">
         <label for="titulo"> Título </label>
-        <input type="text" name="titulo" class="form-control" ng-model="novoLivro.titulo" ng-minlength="3" ng-maxlength="50" required/>
+        <input type="text" name="titulo" class="form-control" ng-model="livro.titulo" ng-minlength="3" ng-maxlength="50" required/>
         </div>
 
         <div class="col-md-10">
@@ -34,7 +34,7 @@
         <br>
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-info btn-sm"> Cadastrar Livro </button>
+                <button class="btn btn-info btn-sm"> Salvar </button>
             </div>
         </div>
 </form>

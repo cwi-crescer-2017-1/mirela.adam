@@ -22,7 +22,7 @@ angular.module('editoraCrescer').factory('LivrosService', function ($http) {
     };
 
     function alterarLivro(livro) {
-        return $http.put(urlBase, livro);
+        return $http.put(urlBase + "/" + livro.Isbn, livro);
     };
 
     

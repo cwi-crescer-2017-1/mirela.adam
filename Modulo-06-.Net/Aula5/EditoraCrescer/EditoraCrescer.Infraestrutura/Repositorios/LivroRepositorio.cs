@@ -55,7 +55,9 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                     Genero = x.Genero,
                     Capa = x.Capa,
                     Descricao = x.Descricao,
-                    DataPublicacao = x.DataPublicacao
+                    DataPublicacao = x.DataPublicacao,
+                    IdAutor = x.IdAutor,
+                    DataRevisao = x.DataRevisao
                     
                 });
         }

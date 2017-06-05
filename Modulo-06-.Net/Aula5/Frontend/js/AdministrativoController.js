@@ -47,14 +47,40 @@ angular.module('editoraCrescer').controller('AdministrativoController',
                             window.alert('Autor excluído com sucesso!');
                             ListarAutores();
                         })
-    }}
-
+    }};
 
     function revisar(livro){
-
-    };
+        LivrosService.detalharLivro(livro.Isbn).then(function (response) {
+        $scope.livroRevisao = response.data.dados[0];
+        let confirmou = confirm('Confirma revisar o livro?');
+        if(confirmou){
+            let dataAtual = new Date(); 
+            dataAtual = dataAtual.getFullYear() + '-' + (dataAtual.getMonth() + 1) + '-' +  dataAtual.getDate();
+            $scope.livroRevisao.DataRevisao = dataAtual;
+            LivrosService .alterarLivro($scope.livroRevisao)
+                          .then (response => {
+                              window.alert('Livro revisado com sucesso!');
+                              ListarLivros();
+                          } );
+        };
+    });
+};
 
     function publicar(livro){
+        LivrosService.detalharLivro(livro.Isbn).then(function (response) {
+        $scope.livroPublicacao = response.data.dados[0];
+        let confirmou = confirm('Confirma publicar o livro?');
+        if(confirmou){
+            let dataAtual = new Date(); 
+            dataAtual = dataAtual.getFullYear() + '-' + (dataAtual.getMonth() + 1) + '-' +  dataAtual.getDate();
+            $scope.livroPublicacao.DataPublicacao = dataAtual;
+            LivrosService .alterarLivro($scope.livroPublicacao)
+                          .then (response => {
+                              window.alert('Livro publicado com sucesso!');
+                              ListarLivros();
+                          } );
+        };
+    });
 
     };
 

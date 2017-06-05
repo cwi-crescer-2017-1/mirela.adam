@@ -20,5 +20,9 @@ angular.module('editoraCrescer').config(function ($routeProvider) {
             controller: 'CadastroAutorController',
             templateUrl: 'cadastrarAutor.html'
             })
+            .when('/editarAutor/:id', {
+            controller: 'EdicaoAutorController',
+            templateUrl: 'editarAutor.html'
+            })
             .otherwise({redirectTo:'/homepage'}); 
     });

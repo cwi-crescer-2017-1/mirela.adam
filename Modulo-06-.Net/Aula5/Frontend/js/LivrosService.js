@@ -5,6 +5,10 @@ angular.module('editoraCrescer').factory('LivrosService', function ($http) {
         return $http.get(urlBase);
     };
 
+    function excluirLivro(isbn) {
+        return $http.delete(urlBase + "/" + isbn);
+    };
+
     function listarLancamentos() {
         return $http.get(urlBase + "/Lancamentos");
     };
@@ -36,7 +40,8 @@ angular.module('editoraCrescer').factory('LivrosService', function ($http) {
         detalharLivro: detalharLivro,
         cadastrarLivro: cadastrarLivro,
         alterarLivro: alterarLivro,
-        listarLivrosPaginacao: listarLivrosPaginacao
+        listarLivrosPaginacao: listarLivrosPaginacao,
+        excluirLivro: excluirLivro
     };
 
 })

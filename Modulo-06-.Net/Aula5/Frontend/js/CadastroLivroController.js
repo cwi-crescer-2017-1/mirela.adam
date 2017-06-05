@@ -16,13 +16,13 @@ angular.module('editoraCrescer').controller('CadastroLivroController',
     function cadastrar(livro){
         livro.Isbn = 0;
         livro.IdRevisor = 0;
-        let codAutor = livro.idAutor;
-        console.log(codAutor);
-        console.log(livro.idautor);
+        let codAutor = livro.idautor[0];
+        livro.idautor = codAutor;
+        livro.IdRevisor = null;
         LivrosService.cadastrarLivro(livro)
                     .then( function() {
                         window.alert('Cadastrado com sucesso!')
-                        $location.path('/administrativo' + livro.Isbn); 
+                        $location.path('/administrativo'); 
                     });
     };
 

@@ -1,2 +1,17 @@
 <h2>Cadastrar Autor</h2>
 <hr>
+<form novalidate name="formAutor" class="form-group" ng-submit="cadastrar(novoAutor)">
+ <div class="row">
+        <div class="col-md-10">
+        <label for="nome"> Nome </label>
+        <input type="text" name="nome" class="form-control" ng-model="novoAutor.nome" ng-minlength="3" ng-maxlength="50" required/>
+        </div>
+ </div>
+  <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-info btn-sm"> Cadastrar Autor </button>
+            </div>
+        </div>
+</form>
+
+      

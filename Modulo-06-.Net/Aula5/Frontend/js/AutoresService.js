@@ -10,14 +10,14 @@ angular.module('editoraCrescer').factory('AutoresService', function ($http) {
     };
 
     function alterarAutor(autor) {
-        return $http.put(urlBase, autor);
+        return $http.put(urlBase, autor.Id, autor);
     };
 
-    function deletarAutor(autor) {
-        return $http.delete(urlBase, autor);
+    function excluirAutor(id) {
+        return $http.delete(urlBase + "/" + id);
     };
 
-    function detalharAutor(autor) {
+    function detalharAutor(id) {
         return $http.get(urlBase +  "/" + id);
     }
 
@@ -25,7 +25,7 @@ angular.module('editoraCrescer').factory('AutoresService', function ($http) {
         listarAutores: listarAutores,
         cadastrarAutor: cadastrarAutor,
         alterarAutor: alterarAutor,
-        deletarAutor: deletarAutor,
+        excluirAutor: excluirAutor,
         detalharAutor: detalharAutor
     };
 

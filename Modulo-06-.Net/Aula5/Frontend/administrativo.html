@@ -6,7 +6,7 @@
                 <th>Título</th> 
                 <th>Gênero</th>
                 <th>Autor</th>
-                <th>Publicacao</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +16,26 @@
             <td>{{ livro.Genero }}</td> 
             <td>{{ livro.NomeAutor }}</td> 
             <td><button class="btn btn-success" ng-click="revisar(livro)">Revisar</button></td>
-            <td><button class="btn btn-success" ng-click="publicar(livro)">Excluir</button></td>
+            <td><button class="btn btn-success" ng-click="publicar(livro)">Publicar</button></td>
+            <td><button class="btn btn-success" ng-click="excluirLivro(livro)">Excluir</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+     <h3>Autores</h3>  
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th> 
+                <th>Nome</th> 
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="autor in autores">
+            <td>{{ autor.Id }}</td> 
+            <td>{{ autor.Nome }}</td> 
+            <td><button class="btn btn-success" ng-click="excluirAutor(autor)">Excluir</button></td>
+            <td><button class="btn btn-success" ng-click="editarAutor(autor)">Editar</button></td>
         </tr>
         </tbody>
     </table>

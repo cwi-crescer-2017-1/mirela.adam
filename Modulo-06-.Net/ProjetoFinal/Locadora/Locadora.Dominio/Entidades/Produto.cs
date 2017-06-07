@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio.Entidades
 {
-    public class Console
+    public class Produto
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
         public int QtdEstoque { get; set; }
         public double ValorDiaria { get; set; }
+
+        protected Produto() { } //EF 
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio.Entidades
 {
     public class Pacote
     {
@@ -12,7 +12,8 @@ namespace Locadora.Infraestrutura.Entidades
         public string Descricao { get; set; }
         public double Valor { get; set; }
         public int QtdDias { get; set; }
-        public int IdConsole { get; set; }
-        public Console Console { get; set; }
+        public List<Opcional> Opcionais { get; set; }
+
+        protected Pacote() { } //EF 
     }
 }

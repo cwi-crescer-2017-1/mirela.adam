@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio.Entidades
 {
     public class Locacao
     {
@@ -14,7 +14,12 @@ namespace Locadora.Infraestrutura.Entidades
         public double ValorPrevisao { get; set; }
         public DateTime? DataRealEntrega { get; set; }
         public double? ValorRealLocacao { get; set; }
-        public int idCliente { get; set; }
         public Cliente Cliente { get; set; }
+        public Produto Produto { get; set; }
+        public Pacote Pacote { get; set; }
+        public List<Opcional> Opcionais { get; set; }
+
+        protected Locacao() { } //EF 
+
     }
 }

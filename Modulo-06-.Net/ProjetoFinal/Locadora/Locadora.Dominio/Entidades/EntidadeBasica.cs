@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio.Entidades
 {
     public abstract class EntidadeBasica
     {

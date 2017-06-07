@@ -1,19 +1,17 @@
-﻿using System;
+﻿using Locadora.Dominio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Api.Models
 {
-    public class Cliente
+    public class ClienteModel
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Endereco { get; set; }
         public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }
-        public int IdGenero { get; set; }
         public Genero Genero { get; set; }
     }
 }

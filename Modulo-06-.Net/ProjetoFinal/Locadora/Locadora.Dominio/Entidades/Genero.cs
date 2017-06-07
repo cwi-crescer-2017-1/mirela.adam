@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura
+namespace Locadora.Dominio.Entidades
 {
-    public class Contexto
+    public enum Genero
     {
+        F,
+        M,
+        N
     }
 }

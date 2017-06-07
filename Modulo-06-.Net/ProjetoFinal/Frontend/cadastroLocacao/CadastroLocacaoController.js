@@ -1,7 +1,11 @@
 angular.module('app').controller('CadastroLocacaoController', 
-            function ($scope, $routeParams, $localStorage, LocacoesService, $location) {
-
+            function ($scope, $routeParams, $localStorage, LocacoesService, ClientesService, 
+                    ProdutosService, PacotesService, OpcionaisService, $location) {
+    buscarConsoles();
+    buscarPacotes();
+    buscarOpcionais();
     $scope.cadastrar = cadastrar;
+    $scope.buscarCliente = buscarCliente;
 
     function cadastrar(locacao){
         locacao.Id = 0;
@@ -12,4 +16,35 @@ angular.module('app').controller('CadastroLocacaoController',
                     });
     };
 
+    function gerarOrcamento(){
+
+    }
+
+    function buscarCliente(cpf){
+        ClientesService.buscarPorCpf(cpf)
+        .then( response =>  {
+            $scope.clienteBuscado = response.data.dados;               
+        });
+    };
+
+    function buscarConsoles() {
+        ProdutosService.listarProdutos()
+            .then (response => {
+                $scope.produtos = response.data.dados;
+            })        
+    };
+
+    function buscarPacotes() {
+        PacotesService.listarPacotes()
+            .then (response => {
+                $scope.pacotes = response.data.dados;
+            })        
+    };
+
+    function buscarOpcionais() {
+        OpcionaisService.listarOpcionais()
+            .then (response => {
+                $scope.opcionais = response.data.dados;
+            })        
+    };
 });

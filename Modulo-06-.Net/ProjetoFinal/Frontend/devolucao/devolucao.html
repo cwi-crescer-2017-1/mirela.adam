@@ -1,0 +1,27 @@
+<h3>Locações Pendentes</h3>  
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th> 
+                <th>Data</th> 
+                <th>Nome</th>
+                <th>Produto</th> 
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="locacao in locacoesNaoDevolvidas">
+            <td>{{ locacao.Id }}</td> 
+            <td>{{ locacao.DataRetirada | date: "dd/MM/yyyy" }}</td> 
+            <td>{{ locacao.Cliente.Nome }}</td> 
+            <td>{{ locacao.Produto.Descricao }}</td> 
+            <td><button class="btn btn-success" ng-click="devolver(locacao)">Devolver</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+<div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-info btn-sm" ng-click="voltar()"> Voltar </button>
+            </div>
+</div>

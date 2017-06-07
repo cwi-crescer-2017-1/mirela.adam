@@ -16,6 +16,22 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Opcionais.ToList();
         }
 
+        public List<Opcional> ObterOpcionaisPorId(List<int> listaOpcionais)
+        {
+            List<Opcional> retorno = null;
+            foreach (var id in listaOpcionais)
+            {
+                var opcional = ObterPorId(id);
+                retorno.Add(opcional);
+            }
+            return retorno;
+        }
+
+        public Opcional ObterPorId(int id)
+        {
+            return contexto.Opcionais.Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

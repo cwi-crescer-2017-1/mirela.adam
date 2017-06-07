@@ -9,9 +9,19 @@ angular.module('app').factory('LocacoesService', function ($http) {
         return $http.post(urlBase, locacao);
     };
 
+    function listarLocacoesNaoDevolvidas(){
+        return $http.get(urlBase + '/devolucoes');
+    };
+
+    function devolver(locacao){
+        return $http.put(urlBase + '/' + locacao.Id, locacao);
+    };
+
     return {
         listarLocacoes: listarLocacoes,
-        cadastrarLocacao: cadastrarLocacao
+        devolver: devolver,
+        cadastrarLocacao: cadastrarLocacao,
+        listarLocacoesNaoDevolvidas: listarLocacoesNaoDevolvidas
     };
 
 })

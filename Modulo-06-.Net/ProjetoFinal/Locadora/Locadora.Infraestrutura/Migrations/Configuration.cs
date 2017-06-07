@@ -1,5 +1,6 @@
 namespace Locadora.Infraestrutura.Migrations
 {
+    using Locadora.Dominio.Entidades;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,22 @@ namespace Locadora.Infraestrutura.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            if (!context.Usuarios.Where(i => i.Email == "colaborador@cwi").Any())
+            {
+                var usuario = new Usuario("colaborador@cwi", "123456");
+                usuario.AtribuirPermissoes("Colaborador");
+                context.Usuarios.Add(usuario);
+                context.SaveChanges();
+            }
+
+            if (!context.Usuarios.Where(i => i.Email == "gerente@cwi").Any())
+            {
+                var usuario = new Usuario("gerente@cwi", "123456");
+                usuario.AtribuirPermissoes("Gerente");
+                context.Usuarios.Add(usuario);
+                context.SaveChanges();
+            }
         }
     }
 }

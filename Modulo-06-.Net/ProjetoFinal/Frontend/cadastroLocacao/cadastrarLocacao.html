@@ -1,1 +1,59 @@
 <h1> Nova Locação </h1>
+<hr>
+
+<form>
+        <div class="row">
+            <label for="idCliente"> Informe o CPF do cliente: </label>
+            <input type="text" class="form-control" ng-model="cpfCliente" ng-minlength="3" ng-maxlength="50" required>
+        </div>
+        <div class="row">
+        <button class="btn btn-info btn-sm" ng-click="buscarCliente(cpfCliente)">Buscar Cliente</button>
+        </div>
+</form>
+
+<hr>
+
+<form novalidate name="formCliente" class="form-group" ng-submit="cadastrar(novaLocacao)">
+        <div class="col-md-10">
+
+        <h3>Cliente: {{clienteBuscado.Nome}}</h3>
+            
+        <label for="nome"> Selecione o console </label>
+        <div class="input-group">
+        <select class="form-control" ng-model="novaLocacao.Produto">
+        <option  ng-repeat="produto in produtos" value="{{produto.Id}}" > {{produto.Descricao}} </option>
+        </select>
+        </div>
+
+        <label for="nome"> Selecione o pacote </label>
+        <div class="input-group">
+        <select class="form-control" ng-model="novaLocacao.Pacote">
+        <option  ng-repeat="pacote in pacotes" value="{{pacote.Id}}" > {{pacote.Descricao}} </option>
+        </select>
+        </div>
+
+        <label for="nome"> Selecione o opcional </label>
+        <div class="input-group">
+        <select class="form-control" ng-model="novaLocacao.Opcional">
+        <option  ng-repeat="opcional in opcionais" value="{{opcional.Id}}" > {{opcional.Descricao}} </option>
+        </select>
+        </div>
+
+        </div>
+        
+        <br>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-info btn-sm" ng-click="gerarOrcamento()"> Gerar Orçamento </button>
+                <h3>{{valorOrcamento}}</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-info btn-sm"> Cadastrar </button>
+            </div>
+        </div>
+</form>
+

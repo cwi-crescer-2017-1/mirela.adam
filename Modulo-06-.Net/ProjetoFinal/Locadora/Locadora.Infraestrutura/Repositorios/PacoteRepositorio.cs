@@ -16,6 +16,11 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Pacotes.ToList();
         }
 
+        public Pacote ObterPacotePorId(int id)
+        {
+            return contexto.Pacotes.Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

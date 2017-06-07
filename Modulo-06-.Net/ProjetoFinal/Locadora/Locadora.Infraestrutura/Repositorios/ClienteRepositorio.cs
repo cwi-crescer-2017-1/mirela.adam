@@ -29,9 +29,14 @@ namespace Locadora.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public List<Cliente> ObterClientePorCpf(string cpf)
+        public Cliente ObterClientePorCpf(string cpf)
         {
-            return contexto.Clientes.Where(x => x.CPF == cpf).ToList();
+            return contexto.Clientes.Where(x => x.CPF == cpf).FirstOrDefault();
+        }
+
+        public Cliente ObterClientePorId(int id)
+        {
+            return contexto.Clientes.Where(x => x.Id == id).FirstOrDefault();
         }
 
         public void Dispose()
@@ -44,10 +49,5 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Clientes.Count(x => x.Id == id) > 0;
         }
 
-        public void Editar(Cliente cliente)
-        {
-            contexto.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
-            contexto.SaveChanges();
-        }
     }
 }

@@ -24,7 +24,7 @@ namespace Locadora.Api.Controllers
         }
 
         [HttpGet, Route("usuario")]
-        [BasicAuthorization(Roles = "Revisor")]
+        [BasicAuthorization]
         public IHttpActionResult Obter()
         {
             var usuarioDaSessao = _usuarioRepositorio.Obter(Thread.CurrentPrincipal.Identity.Name);
@@ -38,4 +38,4 @@ namespace Locadora.Api.Controllers
         }
     }
 
-    }
+}

@@ -16,6 +16,11 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Produtos.ToList();
         }
 
+        public Produto ObterProdutoPorId(int id)
+        {
+            return contexto.Produtos.Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

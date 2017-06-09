@@ -6,11 +6,21 @@ angular.module('app').config(function ($routeProvider) {
             })
             .when('/homepage', { 
             controller: 'HomepagesController', 
-            templateUrl: 'homepage/homepage.html' 
+            templateUrl: 'homepage/homepage.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
         	})
             .when('/relatorioMensal', { 
             controller: 'RelatoriosController', 
-            templateUrl: 'relatorios/relatorioMensal.html' 
+            templateUrl: 'relatorios/relatorioMensal.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
         	})
             .when('/relatorioAtrasos', { 
             controller: 'RelatoriosController', 

@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Locadora.Api.App_Start;
 
 namespace Locadora.Api.Controllers
 {
+    [BasicAuthorization]
     [RoutePrefix("api/Locacoes")]
     public class LocacoesController : ApiController
     {

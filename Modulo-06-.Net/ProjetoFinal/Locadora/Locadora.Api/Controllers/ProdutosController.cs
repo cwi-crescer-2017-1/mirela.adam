@@ -1,4 +1,5 @@
-﻿using Locadora.Infraestrutura.Repositorios;
+﻿using Locadora.Api.App_Start;
+using Locadora.Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Http;
 
 namespace Locadora.Api.Controllers
 {
+    [BasicAuthorization]
     [RoutePrefix("api/Produtos")]
     public class ProdutosController : ApiController
     {

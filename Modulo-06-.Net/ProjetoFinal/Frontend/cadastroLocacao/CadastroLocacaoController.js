@@ -1,9 +1,7 @@
 angular.module('app').controller('CadastroLocacaoController', 
             function ($scope, $routeParams, $localStorage, LocacoesService, ClientesService, 
                     ProdutosService, PacotesService, OpcionaisService, $location, toastr) {
-    buscarConsoles();
-    buscarPacotes();
-    buscarOpcionais();
+
     $scope.cadastrar = cadastrar;
     $scope.buscarCliente = buscarCliente;
     $scope.voltar = voltar;
@@ -44,17 +42,24 @@ angular.module('app').controller('CadastroLocacaoController',
         .then( response =>  {
             $scope.clienteBuscado = response.data.dados;  
             if ($scope.clienteBuscado !== null) {
+                    buscarConsoles();
+                    buscarPacotes();
+                    buscarOpcionais();
                 $scope.exibirFormulario = true;
             } else if(typeof cpf !== 'undefined'){
                 toastr.warning('Cliente não localizado');
             };
         });
     };
-
+    $scope.produtos = [];
     function buscarConsoles() {
         ProdutosService.listarProdutos()
             .then (response => {
-                $scope.produtos = response.data.dados;
+                for (var produto of response.data.dados) {
+                    if (produto.QtdEstoque !== 0){
+                        $scope.produtos.push(produto);
+                    };
+                };
             })        
     };
 
@@ -65,10 +70,15 @@ angular.module('app').controller('CadastroLocacaoController',
             });        
     };
 
+    $scope.opcionais = [];
     function buscarOpcionais() {
         OpcionaisService.listarOpcionais()
             .then (response => {
-                $scope.opcionais = response.data.dados;
+                for (var opcional of response.data.dados) {
+                    if (opcional.QtdEstoque !== 0){
+                        $scope.opcionais.push(opcional);
+                    };
+                };
             });        
     };
 });

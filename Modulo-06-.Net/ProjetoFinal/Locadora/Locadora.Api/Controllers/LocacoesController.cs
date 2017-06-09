@@ -48,6 +48,7 @@ namespace Locadora.Api.Controllers
         }
 
         [HttpGet]
+        [BasicAuthorization(Roles ="Gerente")]
         [Route("{dataFiltro}")]
         public IHttpActionResult ObterLocacoesMensais(DateTime dataFiltro)
         {

@@ -1,7 +1,12 @@
 angular.module('app').controller('RelatoriosController', 
             function ($scope, $routeParams, $localStorage, $location, LocacoesService) {
     
-    listarLocacoesAtrasadas();
+    if ($location.$$path === '/relatorioMensal'){
+        usuarioNaoGerenteAcessaPagina();
+    } else {
+        listarLocacoesAtrasadas();
+    }
+
     $scope.voltar = voltar;
     $scope.listarLocacoes = listarLocacoesMensais;
     $scope.exibirRelatorioMensal = false;
@@ -32,6 +37,12 @@ angular.module('app').controller('RelatoriosController',
             valorTotal += l.ValorRealLocacao;
         };
         return valorTotal;
-    }
+    };
+
+    function usuarioNaoGerenteAcessaPagina() {
+    let usuarioLogado = JSON.parse(localStorage.getItem('ngStorage-usuarioLogado'));
+    if (usuarioLogado.Permissoes[0].Nome != 'Gerente')
+      $location.path('/homepage')
+  }
 
 });

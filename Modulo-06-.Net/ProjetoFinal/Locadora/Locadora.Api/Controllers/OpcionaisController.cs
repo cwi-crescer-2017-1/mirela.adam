@@ -13,12 +13,20 @@ namespace Locadora.Api.Controllers
     {
         private OpcionalRepositorio repositorio = new OpcionalRepositorio();
 
-        //GET api/Clientes
+        //GET api/Opcionais
         [HttpGet]
         public IHttpActionResult ObterOpcionais()
         {
             var opcionais = repositorio.Obter();
             return Ok(new { dados = opcionais });
+        }
+
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                repositorio.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

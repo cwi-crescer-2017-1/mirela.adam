@@ -13,12 +13,19 @@ namespace Locadora.Api.Controllers
     {
         private PacoteRepositorio repositorio = new PacoteRepositorio();
 
-        //GET api/Clientes
+        //GET api/Pacotes
         [HttpGet]
         public IHttpActionResult ObterPacotes()
         {
             var pacotes = repositorio.Obter();
             return Ok(new { dados = pacotes });
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                repositorio.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

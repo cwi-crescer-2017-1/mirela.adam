@@ -31,11 +31,6 @@ namespace Locadora.Infraestrutura.Repositorios
             contexto.Entry(locacao.Produto).State = EntityState.Unchanged;
             contexto.Entry(locacao.Pacote).State = EntityState.Unchanged;
             
-            //foreach (var opcional in locacao.Pacote.Opcionais)
-            //{
-            //    contexto.Entry(opcional).State = EntityState.Unchanged;
-            //}
-
             foreach (var opcional in locacao.Opcionais)
             {
                 contexto.Entry(opcional).State = EntityState.Unchanged;
@@ -72,7 +67,7 @@ namespace Locadora.Infraestrutura.Repositorios
         {
             DateTime dataAtual = DateTime.UtcNow;
             return contexto.Locacoes
-                            .Where(x => x.DataRealEntrega == null && x.DataPrevisaoEntrega < dataAtual)
+                            .Where(x => x.DataRealEntrega == null && x.DataPrevisaoEntrega < dataAtual.Date)
                             .OrderBy(x => x.DataPrevisaoEntrega)
                             .Select(x => new {
                                 Id = x.Id,

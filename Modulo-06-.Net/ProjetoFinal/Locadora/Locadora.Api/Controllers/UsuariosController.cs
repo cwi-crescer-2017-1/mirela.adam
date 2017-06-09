@@ -37,5 +37,4 @@ namespace Locadora.Api.Controllers
             return Ok(new { dados = usuario });
         }
     }
-
 }

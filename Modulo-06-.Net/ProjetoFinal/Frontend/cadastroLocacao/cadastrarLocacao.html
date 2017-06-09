@@ -15,14 +15,14 @@
 <hr>
 <br> 
 
-<form ng-if="exibirFormulario === true" novalidate name="formCliente" class="form-group" ng-submit="cadastrar(novaLocacao)">
+<form  name="formLocacao" ng-if="exibirFormulario === true" novalidate class="form-group" ng-submit="cadastrar(novaLocacao)" >
         <div class="col-md-10">
 
         <h3>Cliente: {{clienteBuscado.Nome}}</h3>
             
         <label for="nome"> Selecione o console </label>
         <div class="input-group">
-        <select class="form-control" ng-model="novaLocacao.Produto">
+        <select class="form-control" ng-model="novaLocacao.Produto" required>
         <option  ng-repeat="produto in produtos" ng-value="{{produto}}"> {{produto.Descricao}} </option>
         </select>
         </div>
@@ -47,14 +47,14 @@
         
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-info" ng-click="gerarOrcamento()"> Gerar Orçamento </button>
-                <h3>{{valorOrcamento}}</h3>
+                <button type="button" class="btn btn-info" ng-click="gerarOrcamento(novaLocacao)"> Gerar Orçamento </button>
+                <h3 ng-if="mostrarValor === true">Valor orçamento: {{valorOrcamento | currency}}</h3>
             </div>
         </div>
-
+        <br>
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-info"> Cadastrar </button>
+                <button type="submit" class="btn btn-info"> Cadastrar </button>
             </div>
         </div>
 </form>

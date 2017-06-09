@@ -103,7 +103,7 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Locacoes.Where(x => x.Id == id)
                 .Include(x => x.Cliente)
                 .Include(x => x.Produto)
-                .Include(x => x.Pacote)
+                .Include(x => x.Pacote.Opcionais)
                 .Include(x => x.Opcionais)
                 .FirstOrDefault();
         }

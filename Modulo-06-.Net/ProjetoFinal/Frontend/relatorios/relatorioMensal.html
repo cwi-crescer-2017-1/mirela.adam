@@ -39,11 +39,11 @@
             <td>{{ locacao.Cliente.Nome }}</td> 
             <td>{{ locacao.Produto.Descricao }}</td> 
             <td>{{ locacao.Pacote.Descricao }}</td> 
-            <td>{{ locacao.ValorPrevisao }}</td> 
+            <td>{{ locacao.ValorPrevisao | currency}}</td> 
             <td>{{ locacao.DataRetirada | date: "dd/MM/yyyy" }}</td> 
             <td>{{ locacao.DataPrevisaoEntrega | date: "dd/MM/yyyy" }}</td>
             <td>{{ locacao.DataRealEntrega | date: "dd/MM/yyyy" }}</td>
-            <td>{{ locacao.ValorRealLocacao }}</td>
+            <td>{{ locacao.ValorRealLocacao | currency}}</td>
         </tr>
         </tbody>
 </table>

@@ -8,6 +8,8 @@ angular.module('app').controller('CadastroLocacaoController',
     $scope.buscarCliente = buscarCliente;
     $scope.voltar = voltar;
     $scope.exibirFormulario = false;
+    $scope.gerarOrcamento = gerarOrcamento;
+    $scope.mostrarValor = false;
 
     function voltar(){
          $location.path('/homepage');
@@ -23,15 +25,29 @@ angular.module('app').controller('CadastroLocacaoController',
                     });
     };
 
-    function gerarOrcamento(){
+    function gerarOrcamento(locacao){
+        var total = 0;
+        var totalDias = locacao.Pacote.QtdDias;
 
+        for (var opcional of locacao.Opcionais) {
+           total += opcional.ValorDiaria * totalDias;
+        };
+        total += locacao.Pacote.Valor;
+        total += locacao.Produto.ValorDiaria * totalDias;
+        
+        $scope.valorOrcamento = total;
+        $scope.mostrarValor = true;
     }
 
     function buscarCliente(cpf){
         ClientesService.buscarPorCpf(cpf)
         .then( response =>  {
             $scope.clienteBuscado = response.data.dados;  
-            $scope.exibirFormulario = true;
+            if ($scope.clienteBuscado !== null) {
+                $scope.exibirFormulario = true;
+            } else if(typeof cpf !== 'undefined'){
+                toastr.warning('Cliente não localizado');
+            };
         });
     };
 
@@ -46,13 +62,13 @@ angular.module('app').controller('CadastroLocacaoController',
         PacotesService.listarPacotes()
             .then (response => {
                 $scope.pacotes = response.data.dados;
-            })        
+            });        
     };
 
     function buscarOpcionais() {
         OpcionaisService.listarOpcionais()
             .then (response => {
                 $scope.opcionais = response.data.dados;
-            })        
+            });        
     };
 });

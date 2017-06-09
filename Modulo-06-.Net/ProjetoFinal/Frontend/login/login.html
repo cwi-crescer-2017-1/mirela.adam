@@ -3,15 +3,15 @@
 <div class="login">
    <div class="row">
       <div class="col-md-3">
-         <div class="form-login">
-            <input id="email" class="form-control input-sm" ng-model="usuario.email" type="email" placeholder="joao@gmail.com" />
+         <form novalidate name="formLogin" class="form-group">
+            <input id="email" class="form-control input-sm" ng-model="usuario.email" type="email" placeholder="joao@gmail.com" required />
             </br>
-            <input id="senha" class="form-control input-sm" ng-model="usuario.senha" type="password"/>
+            <input id="senha" class="form-control input-sm" ng-model="usuario.senha" type="password" required/>
             </br>
             <div class="wrapper">
                <button type="submit" class="btn btn-primary btn-md" ng-click="login(usuario)">Login</button>
             </div>
-         </div>
+         </form>
       </div>
    </div>
 </div>

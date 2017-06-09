@@ -19,7 +19,7 @@
             <td>{{ locacao.Cliente.Nome }}</td> 
             <td>{{ locacao.Produto.Descricao }}</td> 
             <td>{{ locacao.Pacote.Descricao }}</td>
-            <td>{{ locacao.ValorPrevisao }}</td>  
+            <td>{{ locacao.ValorPrevisao | currency }}</td>  
             <td><button class="btn btn-success" ng-click="devolver(locacao)">Devolver</button></td>
         </tr>
         </tbody>

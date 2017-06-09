@@ -18,7 +18,7 @@
             <td>{{ locacao.Id }}</td> 
             <td>{{ locacao.Cliente.Nome }}</td> 
             <td>{{ locacao.Produto }}</td> 
-            <td>{{ locacao.ValorPrevisto }}</td> 
+            <td>{{ locacao.ValorPrevisto | currency}}</td> 
             <td>{{ locacao.DataRetirada | date: "dd/MM/yyyy" }}</td> 
             <td>{{ locacao.DataPrevisaoEntrega | date: "dd/MM/yyyy" }}</td>
             <td>{{ locacao.DiasAtraso }} </td>

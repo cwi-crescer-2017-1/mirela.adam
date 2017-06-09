@@ -91,7 +91,10 @@ namespace Locadora.Api.Controllers
         {
             if (disposing)
                 repositorioLocacao.Dispose();
-
+                repositorioCliente.Dispose();
+                repositorioProduto.Dispose();
+                repositorioPacote.Dispose();
+                repositorioOpcionais.Dispose();
             base.Dispose(disposing);
         }
     }

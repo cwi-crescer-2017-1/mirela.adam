@@ -14,7 +14,7 @@ namespace Locadora.Dominio.Entidades
         public double ValorPrevisao { get; private set; }
         public DateTime? DataRealEntrega { get; private set; }
         public double? ValorRealLocacao { get; private set; }
-        public Cliente Cliente { get; private set; }
+        public Cliente Cliente { get; set; }
         public Produto Produto { get; private set; }
         public Pacote Pacote { get; private set; }
         public List<Opcional> Opcionais { get; private set; }
@@ -48,23 +48,30 @@ namespace Locadora.Dominio.Entidades
 
         public void Devolver()
         {
-            DataRealEntrega = DateTime.Now.Date;
-            ValorRealLocacao = CalcularValorRealLocacao();
+            DataRealEntrega = DateTime.UtcNow;
+            ValorRealLocacao = ValorPrevisao + CalcularValorRealLocacao();
         }
 
         private double CalcularValorRealLocacao()
         {
             var diasExcedidos = Convert.ToInt32(DataRealEntrega.Value.Subtract(DataPrevisaoEntrega).TotalDays);
             var valorProdutoAtualizado = 0D;
-            var valorOpcionalAtualizado = 0D;
+            var valorOpcionaisAtualizado = 0D;
+            var valorPacoteAtualizado = 0D;
 
             if (diasExcedidos > 0)
             {
-                valorProdutoAtualizado = Produto.ValorDiaria * diasExcedidos;
-                
+                valorProdutoAtualizado = this.Produto.ValorDiaria * diasExcedidos;
+
+                foreach (var opcional in this.Opcionais)
+                {
+                    valorOpcionaisAtualizado += opcional.ValorDiaria * diasExcedidos;
+                }
+
+                valorPacoteAtualizado = (Pacote.Valor / Pacote.QtdDias) * diasExcedidos; 
             }
            
-            return ValorPrevisao;
+            return valorProdutoAtualizado + valorPacoteAtualizado + valorOpcionaisAtualizado;
         }
     }
 }

@@ -36,26 +36,52 @@ namespace Locadora.Api.Controllers
             return Ok(new { dados = locacoesNaoDevolvidas });
         }
 
+        //GET api/Locacoes
+        [HttpGet]
+        [Route("atrasadas")]
+        public IHttpActionResult ObterLocacoesAtrasadas()
+        {
+            var locacoesAtrasadas = repositorioLocacao.ObterLocacoesAtrasadas();
+            return Ok(new { dados = locacoesAtrasadas });
+        }
+
+        [HttpGet]
+        [Route("{dataFiltro}")]
+        public IHttpActionResult ObterLocacoesMensais(DateTime dataFiltro)
+        {
+            var locacoesMensais = repositorioLocacao.ObterLocacoesMensais(dataFiltro);
+            return Ok(new { dados = locacoesMensais });
+        }
+
         //POST api/Locacoes 
         [HttpPost]
         public IHttpActionResult IncluirLocacao(LocacaoModel locacaoModel)
         {
-            var cliente = repositorioCliente.ObterClientePorId(locacaoModel.IdCliente);
-            var produto = repositorioProduto.ObterProdutoPorId(locacaoModel.IdProduto);
-            var pacote = repositorioPacote.ObterPacotePorId(locacaoModel.IdPacote);
-            var opcionais = repositorioOpcionais.ObterOpcionaisPorId(locacaoModel.IdsOpcionais);
+            var cliente = locacaoModel.Cliente;
+            var produto = locacaoModel.Produto;
+            var pacote = locacaoModel.Pacote;
 
-            var locacao = new Locacao(cliente, produto, pacote, opcionais);
+            var locacao = new Locacao(cliente, produto, pacote, locacaoModel.Opcionais);
             repositorioLocacao.Criar(locacao);
+
+            repositorioProduto.DiminuirEstoque(produto.Id);
+            repositorioOpcionais.DiminuirEstoque(locacaoModel.Opcionais);
+            repositorioOpcionais.DiminuirEstoque(locacaoModel.Pacote.Opcionais);
+
             return Ok(locacao);
         }
 
+        //devolucao
         [HttpPut]
+        [Route("{id}")]
         public IHttpActionResult DevolverLocacao(int id)
         {
             var locacao = repositorioLocacao.ObterLocacaoPorId(id);
 
             locacao.Devolver();
+            repositorioProduto.AumentarEstoque(locacao.Produto.Id);
+            repositorioOpcionais.AumentarEstoque(locacao.Opcionais);
+            repositorioOpcionais.AumentarEstoque(locacao.Pacote.Opcionais);
 
             repositorioLocacao.Editar(locacao);
             return Ok(locacao);

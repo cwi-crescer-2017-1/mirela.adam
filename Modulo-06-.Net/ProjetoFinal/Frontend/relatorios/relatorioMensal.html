@@ -1,7 +1,61 @@
 <h1> Relatório Mensal </h1>
 
+<hr>
+
+<form>
+        <div class="row">
+            <div class="col-md-3">
+            <label for="dataFiltro"> Informe a Data: </label>
+            <input type="date" class="form-control" ng-model="dataFiltro" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+        <button class="btn btn-info" ng-click="listarLocacoes(dataFiltro)">Buscar Locações</button>
+        </div>
+        </div>
+</form>
+
+<hr ng-if="exibirRelatorioMensal === true">
+
+<table ng-if="exibirRelatorioMensal === true" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th> 
+                <th>Cliente</th>
+                <th>Produto</th>
+                <th>Pacote</th>
+                <th>Valor Previsto</th>
+                <th>Data Locação</th> 
+                <th>Data Previsão Entrega</th>
+                <th>Data Real Entrega</th>
+                <th>Valor Pago</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="locacao in locacoes">
+            <td>{{ locacao.Id }}</td> 
+            <td>{{ locacao.Cliente.Nome }}</td> 
+            <td>{{ locacao.Produto.Descricao }}</td> 
+            <td>{{ locacao.Pacote.Descricao }}</td> 
+            <td>{{ locacao.ValorPrevisao }}</td> 
+            <td>{{ locacao.DataRetirada | date: "dd/MM/yyyy" }}</td> 
+            <td>{{ locacao.DataPrevisaoEntrega | date: "dd/MM/yyyy" }}</td>
+            <td>{{ locacao.DataRealEntrega | date: "dd/MM/yyyy" }}</td>
+            <td>{{ locacao.ValorRealLocacao }}</td>
+        </tr>
+        </tbody>
+</table>
+
+<hr  ng-if="exibirRelatorioMensal === true">
+
+<h3 ng-if="exibirRelatorioMensal === true"> Valor total das locações no período informado: {{ valorTotal }}</h3>
+
+<hr>
+
 <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-info btn-sm" ng-click="voltar()"> Voltar </button>
+                <button class="btn btn-info" ng-click="voltar()"> Voltar </button>
             </div>
 </div>

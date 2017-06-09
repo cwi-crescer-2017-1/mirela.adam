@@ -21,9 +21,25 @@ namespace Locadora.Infraestrutura.Repositorios
             return contexto.Produtos.Where(x => x.Id == id).FirstOrDefault();
         }
 
+        public void DiminuirEstoque(int id)
+        {
+            var produto = contexto.Produtos.Where(x => x.Id == id).FirstOrDefault();
+            --produto.QtdEstoque;
+            contexto.SaveChanges();
+            return;
+        }
+
         public void Dispose()
         {
             contexto.Dispose();
+        }
+
+        public void AumentarEstoque(int id)
+        {
+            var produto = contexto.Produtos.Where(x => x.Id == id).FirstOrDefault();
+            ++produto.QtdEstoque;
+            contexto.SaveChanges();
+            return;
         }
     }
 }

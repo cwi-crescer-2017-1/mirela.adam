@@ -36,5 +36,32 @@ namespace Locadora.Infraestrutura.Repositorios
         {
             contexto.Dispose();
         }
+
+        public Opcional BuscarPorId(int id)
+        {
+            return contexto.Opcionais.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public void DiminuirEstoque(List<Opcional> listaOpcionais)
+        {
+            foreach (var opcional in listaOpcionais)
+            {
+               var opc = contexto.Opcionais.Where(x => x.Id == opcional.Id).FirstOrDefault();
+               --opc.QtdEstoque;
+            }
+            contexto.SaveChanges();
+            return;
+        }
+
+        public void AumentarEstoque(List<Opcional> listaOpcionais)
+        {
+            foreach (var opcional in listaOpcionais)
+            {
+                var opc = contexto.Opcionais.Where(x => x.Id == opcional.Id).FirstOrDefault();
+                ++opc.QtdEstoque;
+            }
+            contexto.SaveChanges();
+            return;
+        }
     }
 }

@@ -8,12 +8,12 @@ namespace Locadora.Dominio.Entidades
 {
     public class Cliente
     {
-        public int Id { get; private set; }
-        public string Nome { get; private set; }
-        public string Endereco { get; private set; }
-        public string CPF { get; private set; }
-        public DateTime DataNascimento { get; private set; }
-        public Genero Genero { get; private set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Endereco { get; set; }
+        public string CPF { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public Genero Genero { get; set; }
 
         protected Cliente() { }
 

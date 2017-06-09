@@ -13,15 +13,25 @@ angular.module('app').factory('LocacoesService', function ($http) {
         return $http.get(urlBase + '/devolucoes');
     };
 
+    function listarLocacoesAtrasadas(){
+        return $http.get(urlBase + '/atrasadas');
+    }
+
     function devolver(locacao){
         return $http.put(urlBase + '/' + locacao.Id, locacao);
     };
+
+    function listarLocacoesMensais(dataFiltro) {
+        return $http.get(`${urlBase}/${dataFiltro.toISOString().split('T')[0]}`);
+    }
 
     return {
         listarLocacoes: listarLocacoes,
         devolver: devolver,
         cadastrarLocacao: cadastrarLocacao,
-        listarLocacoesNaoDevolvidas: listarLocacoesNaoDevolvidas
+        listarLocacoesNaoDevolvidas: listarLocacoesNaoDevolvidas,
+        listarLocacoesAtrasadas: listarLocacoesAtrasadas,
+        listarLocacoesMensais: listarLocacoesMensais
     };
 
 })

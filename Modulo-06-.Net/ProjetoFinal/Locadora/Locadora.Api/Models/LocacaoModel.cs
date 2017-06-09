@@ -8,9 +8,9 @@ namespace Locadora.Api.Models
 {
     public class LocacaoModel
     {
-        public int IdCliente { get; set; }
-        public int IdProduto { get; set; }
-        public int IdPacote { get; set; }
-        public List<int> IdsOpcionais { get; set; }
+        public Cliente Cliente { get; set; }
+        public Produto Produto { get; set; }
+        public Pacote Pacote { get; set; }
+        public List<Opcional> Opcionais { get; set; }
     }
 }

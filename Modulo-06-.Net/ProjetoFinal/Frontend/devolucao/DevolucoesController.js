@@ -1,5 +1,5 @@
 angular.module('app').controller('DevolucoesController', 
-            function ($scope, $routeParams, $localStorage, LocacoesService, $location) {
+            function ($scope, $routeParams, $localStorage, LocacoesService, $location,toastr) {
     
     listarLocacoesNaoDevolvidas()
     $scope.devolver = devolver;
@@ -13,12 +13,11 @@ angular.module('app').controller('DevolucoesController',
     };
 
     function devolver(locacao){
-        console.log(locacao);
         let confirmou = confirm('Confirma devolução da locação?');
         if(confirmou){
             LocacoesService.devolver(locacao)
                 .then (response => {
-                window.alert('Devolução efetuada com sucesso!');
+                toastr.success('Devolução efetuada com sucesso!');
                 listarLocacoesNaoDevolvidas();
             });
         };    

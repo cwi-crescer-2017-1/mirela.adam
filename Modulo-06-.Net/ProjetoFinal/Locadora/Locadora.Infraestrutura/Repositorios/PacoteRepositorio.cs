@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace Locadora.Infraestrutura.Repositorios
@@ -13,7 +14,9 @@ namespace Locadora.Infraestrutura.Repositorios
 
         public List<Pacote> Obter()
         {
-            return contexto.Pacotes.ToList();
+            return contexto.Pacotes
+                .Include(x => x.Opcionais)
+                .ToList();
         }
 
         public Pacote ObterPacotePorId(int id)

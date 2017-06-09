@@ -18,14 +18,14 @@
 
         <div class="col-md-10">
         <label for="dataNascimento"> Data de Nascimento </label>
-        <input type="date" name="dataNascimento" class="form-control" ng-model="novoCliente.DataNascimento"/>
+        <input type="date" name="dataNascimento" class="form-control" ng-model="novoCliente.DataNascimento" required/>
         </div>
 
         <div class="col-md-10">
         <label for="autores"> Selecione o Gênero:   </label>
 
         <div class="input-group">
-            <select class="form-control" ng-model="novoCliente.Genero">
+            <select class="form-control" ng-model="novoCliente.Genero" required>
                 <option value="0" > Feminino </option>
                 <option value="1" > Masculino </option>
                 <option value="2" > Não Informado </option>

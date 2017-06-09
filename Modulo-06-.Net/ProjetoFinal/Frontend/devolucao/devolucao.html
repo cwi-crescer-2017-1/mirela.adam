@@ -1,4 +1,6 @@
 <h3>Locações Pendentes</h3>  
+<hr>
+<br>
      <table class="table table-striped">
         <thead>
             <tr>
@@ -6,6 +8,8 @@
                 <th>Data</th> 
                 <th>Nome</th>
                 <th>Produto</th> 
+                <th>Pacote</th> 
+                <th>Valor Previsto</th> 
             </tr>
         </thead>
         <tbody>
@@ -14,14 +18,17 @@
             <td>{{ locacao.DataRetirada | date: "dd/MM/yyyy" }}</td> 
             <td>{{ locacao.Cliente.Nome }}</td> 
             <td>{{ locacao.Produto.Descricao }}</td> 
+            <td>{{ locacao.Pacote.Descricao }}</td>
+            <td>{{ locacao.ValorPrevisao }}</td>  
             <td><button class="btn btn-success" ng-click="devolver(locacao)">Devolver</button></td>
         </tr>
         </tbody>
     </table>
 
-
+<hr>
+<br>
 <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-info btn-sm" ng-click="voltar()"> Voltar </button>
+                <button class="btn btn-info" ng-click="voltar()"> Voltar </button>
             </div>
 </div>

@@ -1,4 +1,4 @@
-angular.module('app').controller('LoginController', function ($scope, authService, $location) {
+angular.module('app').controller('LoginController', function ($scope, authService, $location, toastr) {
 
 if(authService.isAutenticado()){
   $location.path('/homepage');
@@ -8,11 +8,11 @@ if(authService.isAutenticado()){
     authService.login(usuario)
       .then(
         function (response) {
-          alert('Login com sucesso!');
+          toastr.success('Login com sucesso!');
 
         },
         function (response) {
-          alert('Erro no Login!');
+          toastr.error('Erro no Login!');
         });
   };
 

@@ -4,18 +4,15 @@ Atualmente a tabela de Cidade tem registros duplicados (nome e UF).
 Faça um código (PL/SQL) que liste quais são as cidades duplicadas. 
 Após isso liste todos os clientes que estão relacionados com estas cidades
 */
-
-DECLARE
+ DECLARE
  CURSOR C_CidadesDuplicadas IS
      Select Nome, 
-            UF, 
-            count(1) as quantidade
+            UF
      From   Cidade
      group by nome, uf
-     having count(1) > 1
-     Order  by 1;
+     having count(1) > 1;
      
-  CURSOR C_ClientesRelacionados(pNomeCidade in varchar, pUF in varchar) IS
+  CURSOR C_ClientesRelacionados(pNomeCidade in varchar2, pUF in varchar2) IS
   select cli.nome
     from cliente cli
       inner join cidade cid on cli.idcidade = cid.idcidade
@@ -24,12 +21,13 @@ DECLARE
   
 BEGIN
    FOR cidade IN C_CidadesDuplicadas LOOP
+        DBMS_OUTPUT.PUT_LINE( 'Cidade: ' || cidade.Nome || ' - UF: ' || cidade.UF);
      FOR cliente IN C_ClientesRelacionados(cidade.Nome, cidade.UF) LOOP
-        DBMS_OUTPUT.PUT_LINE( 'Cliente: ' || cliente.Nome || ' - Cidade: ' || cidade.Nome || ' - UF: ' || cidade.UF);
+        DBMS_OUTPUT.PUT_LINE( 'Cliente: ' || cliente.Nome);
      END LOOP;
    END LOOP;
 END;
-
+    
 -------------------------------------------------------------------------------------------
 
 /*

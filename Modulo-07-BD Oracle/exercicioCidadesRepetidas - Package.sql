@@ -25,25 +25,22 @@ PROCEDURE Busca_Cidades_Duplicadas AS
  vIdMinimo Cidade.IDCidade%type;
 
 BEGIN
-   FOR cidade IN C_CidadesDuplicadas LOOP
+   FOR c IN C_CidadesDuplicadas LOOP
 
-    vIdMinimo := BuscaIDMinimo(cidade.nome, cidade.uf);
+    vIdMinimo := BuscaIDMinimo(c.nome, c.uf);
 
-    FOR cliente IN C_ClientesRelacionados(cidade.Nome, cidade.UF) LOOP
+    FOR cli IN C_ClientesRelacionados(c.Nome, c.UF) LOOP
            update cliente
            set idcidade = vIdMinimo
-           where idcliente = cliente.idcliente
+           where idcliente = cli.idcliente
            and idcidade != vIdMinimo;
-           print('linhas alterados: '|| sql%rowcount );
-           dbms_output.put_line(to_char(cliente.idcliente) || '-' || to_char(vIdMinimo) || '-' || cidade.nome);
      END LOOP;
 
           delete from cidade
-           where nome = cidade.nome
-           and uf = cidade.uf
+           where nome = c.nome
+           and uf = c.uf
            and idcidade != vIdMinimo;
 
-          print('linhas excluidas: '|| sql%rowcount );
    END LOOP;
 END;
 ---------------------

@@ -12,6 +12,9 @@ public class MeuCalendarioUtils implements CalendarUtils {
 
     @Override
     public DiaSemana diaSemana(Date date) {
+        if (date == null){
+            return null;
+        }
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return DiaSemana.values()[calendar.get(Calendar.DAY_OF_WEEK) - 1];       

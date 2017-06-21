@@ -7,13 +7,12 @@ public class MeuStringUtils implements StringUtils {
 
     @Override
     public boolean isEmpty(String string) {
-        return (string == null || string.isEmpty());
+        return (string == null || string.trim().isEmpty());
     }
 
     @Override
     public String inverter(String string) {
-        StringBuffer sb = new StringBuffer(string);
-        return sb.reverse().toString();
+        return isEmpty(string) ? string: new StringBuilder(string).reverse().toString();
     }
 
     @Override

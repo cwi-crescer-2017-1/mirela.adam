@@ -1,4 +1,3 @@
-
 package br.com.crescer.exerciciosaula1;
 
 import java.util.Calendar;
@@ -9,21 +8,20 @@ import static java.util.Calendar.YEAR;
 import java.util.Date;
 
 /**
- *
- * @author Mirela
+ * @author carloshenrique
  */
-public class MeuCalendarioUtils implements CalendarUtils {
+public class CalendarUtilsImpl implements CalendarUtils {
+
     private static final Calendar CALENDAR = Calendar.getInstance();
     private static final String TEMPLATE = "%s ano(s), %s messe(s) e %s dia(s)";
 
     @Override
     public DiaSemana diaSemana(Date date) {
-        if (date == null){
+        if (date == null) {
             return null;
         }
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return DiaSemana.values()[calendar.get(Calendar.DAY_OF_WEEK) - 1];       
+        CALENDAR.setTime(date);
+        return CalendarUtils.DiaSemana.values()[CALENDAR.get(DAY_OF_WEEK) - 1];
     }
 
     @Override
@@ -43,5 +41,5 @@ public class MeuCalendarioUtils implements CalendarUtils {
         CALENDAR.set(CALENDAR.get(YEAR), CALENDAR.get(MONTH), CALENDAR.get(DAY_OF_MONTH), 0, 0, 0);
         return CALENDAR.getTime();
     }
-    
+
 }

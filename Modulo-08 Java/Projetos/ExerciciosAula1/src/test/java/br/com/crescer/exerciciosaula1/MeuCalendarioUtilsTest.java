@@ -41,9 +41,5 @@ public class MeuCalendarioUtilsTest {
     /**
      * Test of tempoDecorrido method, of class MeuCalendarioUtils.
      */  
-    @Test
-    public void testTempoDecorrido0Anos0Meses0Dias() throws ParseException {
-       MeuCalendarioUtils teste = new MeuCalendarioUtils();
-       assertEquals("0 ano(s), 0 mese(s) e 0 dia(s)", teste.tempoDecorrido(new Date()));   
-    }
+
 }

@@ -23,7 +23,7 @@ public class MeuStringUtilsTest {
     /**
      * Test of isEmpty method, of class MeuStringUtils.
      */
-    @org.junit.Test
+    @Test
     public void testIsEmpty() {
         String string = "";
         MeuStringUtils instance = new MeuStringUtils();
@@ -32,14 +32,14 @@ public class MeuStringUtilsTest {
         assertTrue(instance.isEmpty(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testIsNull() {
         String string = null;
         MeuStringUtils instance = new MeuStringUtils();
         assertTrue(instance.isEmpty(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testIsNullRetornaFalso() {
         String string = "Teste";
         MeuStringUtils instance = new MeuStringUtils();
@@ -49,7 +49,7 @@ public class MeuStringUtilsTest {
     /**
      * Test of inverter method, of class MeuStringUtils.
      */
-    @org.junit.Test
+    @Test
     public void testInverter() {
         String string = "abc";
         MeuStringUtils instance = new MeuStringUtils();
@@ -59,27 +59,27 @@ public class MeuStringUtilsTest {
     /**
      * Test of contaVogais method, of class MeuStringUtils.
      */
-    @org.junit.Test
+    @Test
     public void testContaVogaisPalavraComLetrasMinusculas() {
         String string = "testando";
         MeuStringUtils instance = new MeuStringUtils();
         assertEquals(3, instance.contaVogais(string));
     }
-    @org.junit.Test
+    @Test
     public void testContaVogaisPalavraComLetrasMaiusculas() {
         String string = "PARALELEPIPEDO";
         MeuStringUtils instance = new MeuStringUtils();
         assertEquals(7, instance.contaVogais(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testContaVogaisPalavraComLetrasMaiusculasEMinusculas() {
         String string = "Letras MAIUscuLAs";
         MeuStringUtils instance = new MeuStringUtils();
         assertEquals(7, instance.contaVogais(string));
     }
     
-    @org.junit.Test
+    @Test
      public void testContaVogaisPalavraComAcentos() {
         String string = "Letras MAIúscuLAs AcentuAÇÃo";
         MeuStringUtils instance = new MeuStringUtils();
@@ -89,28 +89,28 @@ public class MeuStringUtilsTest {
     /**
      * Test of isPalindromo method, of class MeuStringUtils.
      */
-    @org.junit.Test
+    @Test
     public void testIsPalindromoAmeAEma() {
         String string = "Ame a ema";
         MeuStringUtils instance = new MeuStringUtils();
         assertTrue(instance.isPalindromo(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testIsPalindromoASograMaEAmargosa() {
         String string = "A sogra má e amargosa";
         MeuStringUtils instance = new MeuStringUtils();
         assertTrue(instance.isPalindromo(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testIsPalindromoOvo() {
         String string = "ovo";
         MeuStringUtils instance = new MeuStringUtils();
         assertTrue(instance.isPalindromo(string));
     }
     
-    @org.junit.Test
+    @Test
     public void testIsPalindromoRetornaFalseQuandoNaoEhPalindromo() {
         String string = "Oi tudo bem";
         MeuStringUtils instance = new MeuStringUtils();

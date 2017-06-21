@@ -296,3 +296,4 @@ __pycache__/
 *.xsd.cs
 
 # End of https://www.gitignore.io/api/visualstudio
+/Modulo-08 Java/Projetos/ExerciciosAula1/target/

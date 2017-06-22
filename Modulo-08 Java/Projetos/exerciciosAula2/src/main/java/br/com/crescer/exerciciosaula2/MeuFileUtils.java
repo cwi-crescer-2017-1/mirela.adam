@@ -20,10 +20,10 @@ public class MeuFileUtils implements FileUtils {
         //O método mk deve criar um arquivo ou diretório.
         try {
             File file = new File(string);
-            if(file.isDirectory()){
-                return file.mkdir();
-            } else {
+            if(string.contains(".")){
                 return file.createNewFile();
+            } else {
+                return file.mkdir();
             }
         } catch (IOException e) {
             return false;

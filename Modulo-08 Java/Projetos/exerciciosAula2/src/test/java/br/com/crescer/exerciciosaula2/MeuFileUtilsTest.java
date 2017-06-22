@@ -22,7 +22,6 @@ public class MeuFileUtilsTest {
     public void testMkCriaDiretorio() {
         MeuFileUtils mfu = new MeuFileUtils();
         assertTrue(mfu.mk("TesteCriacaoDiretorio"));
-        mfu.rm("TesteCriacaoDiretorio");
     }
     
     @Test

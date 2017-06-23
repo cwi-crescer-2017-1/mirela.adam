@@ -31,13 +31,12 @@ public class SQLUtilsImpl implements SQLUtils {
 
         if (filename.contains(".sql")) {
             try {
+                Statement statement = ConnectionUtils.getConnection().createStatement();
                 arquivo = Files.readAllLines(path);
                 for (String linha : arquivo) {
-                    comando = comando + linha + "\n";
+                    comando = linha.replace(";","");
+                    statement.executeQuery(comando);
                 }
-                Statement statement = ConnectionUtils.getConnection().createStatement();
-                statement.executeQuery(comando);
-
             } catch (Exception e) {
                 Logger.getLogger(SQLUtilsImpl.class.getName()).log(Level.SEVERE, null, e);
             }

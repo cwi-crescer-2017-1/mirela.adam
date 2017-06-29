@@ -1,7 +1,7 @@
 package br.com.crescer.aula7.controllers;
 
-import br.com.crescer.aula7.entidades.Genero;
-import br.com.crescer.aula7.services.GeneroService;
+import br.com.crescer.aula7.entidades.Video;
+import br.com.crescer.aula7.services.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,40 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 /*
- * @author mirela.adam
+ * @author Mirela
  */
 @RestController
-@RequestMapping(value = "/Genero")
-public class GeneroController {
-
+@RequestMapping(value = "/Video")
+public class VideoController {
     @Autowired
-    GeneroService service;
+    VideoService service;
 
     @GetMapping
-    public Iterable<Genero> listarGeneros() {
+    public Iterable<Video> listarVideos() {
         return service.listar();
     }
 
     @PostMapping
-    public Genero cadastrarGenero(@RequestBody Genero g) {
-        service.cadastrar(g);
-        return g;
+    public Video cadastrarVideo(@RequestBody Video v) {
+        service.cadastrar(v);
+        return v;
     }
 
     @DeleteMapping
-    public Genero deletarGenero(@RequestBody Genero g){
-        service.excluir(g);
-        return g;
+    public Video deletarVideo(@RequestBody Video v){
+        service.excluir(v);
+        return v;
     }
     
     @PutMapping
-    public Genero atualizarGenero(@RequestBody Genero g){
-        service.cadastrar(g);
-        return g;
+    public Video atualizarVideo(@RequestBody Video v){
+        service.cadastrar(v);
+        return v;
     }
     
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Genero buscarGeneroPorID(@PathVariable("id") Long id) {
+    public Video buscarVideoPorID(@PathVariable("id") Long id) {
         return service.buscarPorID(id);
     }
 }

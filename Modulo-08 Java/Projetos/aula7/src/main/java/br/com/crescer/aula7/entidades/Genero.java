@@ -19,15 +19,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "GENERO")
 public class Genero implements Serializable{
-    @Id
+     @Id
     @Basic(optional = false)
-    @Column(name = "ID_GENERO")
-    @GeneratedValue(strategy = SEQUENCE, generator = "SQ_GENERO")
-    @SequenceGenerator(name = "SQ_GENERO", sequenceName = "SQ_GENERO", allocationSize = 1)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_GENERO")
+    @SequenceGenerator(name = "SEQ_GENERO", sequenceName = "SEQ_GENERO", allocationSize = 1)
     private Long id;
     
     @Basic(optional=false)
-    @Column(name = "DS_GENERO")
+    @Column(name = "DESCRICAO")
     private String descricao;
 
     public Long getId() {

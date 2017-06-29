@@ -1,7 +1,6 @@
 package br.com.crescer.aula7.services;
 import br.com.crescer.aula7.entidades.Genero;
 import br.com.crescer.aula7.repositorios.GeneroRepositorio;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +24,9 @@ public class GeneroService {
     public void excluir(Genero g) {
         repositorio.delete(g);
     }
-    
-    
-    
+
+    public Genero buscarPorID(Long id) {
+        return repositorio.findById(id);
+    }  
     
 }

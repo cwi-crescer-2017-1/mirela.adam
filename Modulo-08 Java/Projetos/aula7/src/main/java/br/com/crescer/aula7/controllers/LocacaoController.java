@@ -1,7 +1,7 @@
 package br.com.crescer.aula7.controllers;
 
-import br.com.crescer.aula7.entidades.Genero;
-import br.com.crescer.aula7.services.GeneroService;
+import br.com.crescer.aula7.entidades.Locacao;
+import br.com.crescer.aula7.services.LocacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,40 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 /*
- * @author mirela.adam
+ * @author Mirela
  */
 @RestController
-@RequestMapping(value = "/Genero")
-public class GeneroController {
-
+@RequestMapping(value = "/Locacao")
+public class LocacaoController {
     @Autowired
-    GeneroService service;
+    LocacaoService service;
 
     @GetMapping
-    public Iterable<Genero> listarGeneros() {
+    public Iterable<Locacao> listarLocacoes() {
         return service.listar();
     }
 
     @PostMapping
-    public Genero cadastrarGenero(@RequestBody Genero g) {
-        service.cadastrar(g);
-        return g;
+    public Locacao cadastrarLocacao(@RequestBody Locacao l) {
+        service.cadastrar(l);
+        return l;
     }
 
     @DeleteMapping
-    public Genero deletarGenero(@RequestBody Genero g){
-        service.excluir(g);
-        return g;
+    public Locacao deletarLocacao(@RequestBody Locacao l){
+        service.excluir(l);
+        return l;
     }
     
     @PutMapping
-    public Genero atualizarGenero(@RequestBody Genero g){
-        service.cadastrar(g);
-        return g;
+    public Locacao atualizarLocacao(@RequestBody Locacao l){
+        service.cadastrar(l);
+        return l;
     }
     
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Genero buscarGeneroPorID(@PathVariable("id") Long id) {
+    public Locacao buscarLocacaoPorID(@PathVariable("id") Long id) {
         return service.buscarPorID(id);
     }
 }

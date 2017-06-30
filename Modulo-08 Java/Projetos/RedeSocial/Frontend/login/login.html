@@ -1,0 +1,18 @@
+<h1>LOGIN</h1>
+<hr>
+<div class="login">
+   <div class="row">
+      <div class="col-md-3">
+         <form novalidate name="formLogin" class="form-group">
+            <input id="email" class="form-control input-sm" ng-model="usuario.email" type="email" placeholder="joao@gmail.com" required />
+            </br>
+            <input id="senha" class="form-control input-sm" ng-model="usuario.senha" type="password" required/>
+            </br>
+            <div class="wrapper">
+               <button type="submit" class="btn btn-primary btn-md" ng-click="login(usuario)">Login</button>
+                <button type="submit" class="btn btn-primary btn-md" ng-click="cadasto()">Login</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

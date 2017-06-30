@@ -1,0 +1,20 @@
+<h1>CADASTRO DE USUÁRIO</h1>
+<hr>
+<div class="cadastro">
+   <div class="row">
+      <div class="col-md-3">
+         <form novalidate name="formCadastro" class="form-group">
+            <input id="nome" class="form-control input-sm" ng-model="usuario.nome" type="text" placeholder="Informe seu nome" required />
+            </br>
+            <input id="email" class="form-control input-sm" ng-model="usuario.email" type="email" placeholder="Informe seu e-mail" required />
+            </br>
+            <input id="senha" class="form-control input-sm" ng-model="usuario.senha" type="password" required/>
+            </br>
+            <div class="wrapper">
+               <button type="submit" class="btn btn-primary btn-md" ng-click="login(usuario)">Login</button>
+                <button type="submit" class="btn btn-primary btn-md" ng-click="cadasto()">Login</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

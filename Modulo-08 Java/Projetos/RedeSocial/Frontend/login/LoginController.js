@@ -4,12 +4,10 @@ angular.module('app').controller('LoginController', function ($scope, authServic
 
     if ($scope.formLogin.$valid) {
     authService.login(usuario)
-      .then(
-        function (response) {
-          toastr.success('Login com sucesso!');
-          if(authService.isAutenticado()){
+      .then(function (response) {
+            toastr.success('Login com sucesso!');
             $location.path('/homepage');
-          }
+          
         },
         function (response) {
           toastr.error('Login ou Senha inválidos!');
@@ -20,6 +18,6 @@ angular.module('app').controller('LoginController', function ($scope, authServic
   };
 
   $scope.cadastrar = function(){
-    $location.path('cadastroUsuario');
+    $location.path('/cadastroUsuario');
   };
 });

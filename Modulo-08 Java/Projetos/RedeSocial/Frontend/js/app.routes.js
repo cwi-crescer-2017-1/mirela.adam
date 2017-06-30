@@ -3,9 +3,13 @@ angular.module('app').config(function ($routeProvider) {
             .when('/login', {
             controller: 'LoginController',
             templateUrl: 'login/login.html'
-            })
+        })
+        .when('/cadastroUsuario', {
+            controller: 'CadastroUsuarioController',
+            templateUrl: 'cadastroUsuario/cadastroUsuario.html'
+        })
             .when('/homepage', { 
-            controller: 'HomepagesController', 
+            controller: 'HomepageController', 
             templateUrl: 'homepage/homepage.html',
             resolve: {
                 autenticado: function (authService) {
@@ -14,4 +18,4 @@ angular.module('app').config(function ($routeProvider) {
               } 
         	})
             .otherwise({redirectTo:'/login'}); 
-    });
+});

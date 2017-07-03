@@ -15,3 +15,14 @@ angular.module('app').constant('authConfig', {
     // Opcional - URL da aplicação para onde será redirecionado (se for informado) após o LOGOUT
     urlLogout: '/login'
 });
+
+angular.module('app').filter('formataSexo',function(){
+  return function(sexo){
+         if(sexo === 'F'){
+         	return 'Feminino';
+         } else if(sexo === 'M'){
+         	return 'Masculino';
+         }
+         return 'Não Informado';
+ };
+});

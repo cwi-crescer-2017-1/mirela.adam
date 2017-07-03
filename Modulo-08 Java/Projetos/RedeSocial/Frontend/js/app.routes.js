@@ -1,6 +1,6 @@
 angular.module('app').config(function ($routeProvider) { 
         $routeProvider 
-            .when('/login', {
+        .when('/login', {
             controller: 'LoginController',
             templateUrl: 'login/login.html'
         })
@@ -8,7 +8,7 @@ angular.module('app').config(function ($routeProvider) {
             controller: 'CadastroUsuarioController',
             templateUrl: 'cadastroUsuario/cadastroUsuario.html'
         })
-            .when('/homepage', { 
+        .when('/homepage', { 
             controller: 'HomepageController', 
             templateUrl: 'homepage/homepage.html',
             resolve: {
@@ -16,6 +16,33 @@ angular.module('app').config(function ($routeProvider) {
                   return authService.isAutenticadoPromise();
                 }
               } 
-        	})
-            .otherwise({redirectTo:'/login'}); 
+        })
+        .when('/buscaUsuarios', { 
+            controller: 'BuscaUsuariosController', 
+            templateUrl: 'buscaDeUsuarios/buscaUsuarios.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
+        })
+        .when('/verPerfil/:id', {
+            controller: 'PerfilController',
+            templateUrl: 'perfil/perfil.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
+        })
+        .when('/buscaAmigos', {
+            controller: 'AmigosController',
+            templateUrl: 'amigos/amigos.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
+        })
+        .otherwise({redirectTo:'/login'}); 
 });

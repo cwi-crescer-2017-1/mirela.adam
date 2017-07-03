@@ -1,0 +1,19 @@
+<div class="detalhes">
+	<div class="row">
+		<h1>Nome: {{usuario.nome}}</h1>
+	</div>
+	<div class="row">
+		<span>Email: {{usuario.email}}</span>
+	</div>
+	<div class="row">
+		<span>Sexo: {{usuario.sexo | formataSexo }}</span>
+	</div>
+	<div class="row">
+		<span>Data de Nascimento: {{usuario.nascimento | date: "dd/MM/yyyy"}}</span>
+	</div>
+	
+	<hr>
+
+	<button class="btn btn-success" ng-click="voltar()">Voltar</button>
+	<button class="btn btn-warning" ng-click="logout()">Logout</button>
+</div>

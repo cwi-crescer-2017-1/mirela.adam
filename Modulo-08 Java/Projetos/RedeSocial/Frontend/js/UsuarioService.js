@@ -9,7 +9,27 @@ angular.module('app').factory('UsuarioService', function ($http) {
         return $http.post(urlBase, usuario);
     };
 
+    function buscarPorNomeOuEmail(texto){
+        return $http.get(urlBase+"/buscar/"+texto);
+    }
+
+    function buscarUsuarioPorId(id){
+        return $http.get(urlBase + "/perfil/" + id);
+    }
+
+    function buscarAmigos(){
+        return $http.get(urlBase + "/amigos");
+    }
+
+    function buscarUsuarioPorEmail(email){
+        return $http.get(urlBase + "/" + email);
+    }
+
     return {
+        buscarUsuarioPorEmail: buscarUsuarioPorEmail,
+        buscarAmigos: buscarAmigos,
+        buscarUsuarioPorId: buscarUsuarioPorId,
+        buscarPorNomeOuEmail: buscarPorNomeOuEmail,
         listarUsuarios: listarUsuarios,
         cadastrarUsuario: cadastrarUsuario
     };

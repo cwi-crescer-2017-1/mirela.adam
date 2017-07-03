@@ -31,10 +31,14 @@ public class UsuarioService {
     }
 
     public Usuario buscarPorID(Long id) {
-        return repositorio.findById(id);
+        return repositorio.findOneById(id);
     }  
 
     public Usuario buscarPorEmail(String email) {
         return repositorio.findOneByEmail(email);
+    }
+
+    public Iterable<Usuario> buscarPorEmailOuNome(String texto) {
+        return repositorio.findByNomeContainingIgnoreCase(texto);
     }
 }

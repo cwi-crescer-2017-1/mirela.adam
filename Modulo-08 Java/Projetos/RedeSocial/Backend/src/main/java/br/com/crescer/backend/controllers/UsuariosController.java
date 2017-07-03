@@ -1,14 +1,17 @@
 package br.com.crescer.backend.controllers;
 
+import br.com.crescer.backend.entidades.Amizade;
 import br.com.crescer.backend.entidades.Usuario;
 import br.com.crescer.backend.services.UsuarioService;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,7 +42,7 @@ public class UsuariosController {
         hashMap.put("dados", u);
         return hashMap;
     }
-
+   
     @PostMapping 
     public Usuario cadastrarUsuario(@RequestBody Usuario u) {
         service.cadastrar(u);
@@ -58,13 +61,23 @@ public class UsuariosController {
         return u;
     }
     
-    @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Usuario buscarClientePorID(@PathVariable("id") Long id) {
+    @RequestMapping(value="/perfil/{id}", method=RequestMethod.GET)
+    public Usuario buscarUsuarioPorID(@PathVariable("id") Long id) {
         return service.buscarPorID(id);
     }
     
     @RequestMapping(value="/{email}", method=RequestMethod.GET)
-    public Usuario buscarClientePorID(@PathVariable("email") String email) {
+    public Usuario buscarUsuarioPorEmail(@PathVariable("email") String email) {
         return service.buscarPorEmail(email);
+    }
+    
+    @RequestMapping(value="/buscar/{texto}", method=RequestMethod.GET)
+    public Iterable<Usuario> buscarUsuariosPorTexto(@PathVariable("texto") String texto) {
+        return service.buscarPorEmailOuNome(texto);
+    }
+    
+   @GetMapping(value = "/amigos")
+    public Collection<Amizade> getAmigosUsuario(@AuthenticationPrincipal User user) {
+        return service.buscarPorEmail(user.getUsername()).getAmizadeCollection1();
     }
 }

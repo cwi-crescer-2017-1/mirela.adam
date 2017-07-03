@@ -1,0 +1,20 @@
+<h1> Busca de Usuários </h1>
+
+<hr>
+ <form novalidate name="formBusca" class="form-group">
+ 	<label for="nome"> Nome </label>
+	<input id="nome" class="form-control input-sm" ng-model="nome" type="text" required />
+	<br>
+	<button class="btn btn-success" ng-click="buscarUsuarios(nome)">Buscar</button>
+<br>
+
+
+<div ng-repeat="usuario in usuariosBuscados">
+  {{usuario.nome}} - {{usuario.email}}
+  <button ng-click="visualizarPerfil(usuario.id)">Visualizar Perfil</button>
+</div>
+
+<hr>
+
+<button class="btn btn-success" ng-click="voltar()">Voltar</button>
+<button class="btn btn-warning" ng-click="logout()">Logout</button>

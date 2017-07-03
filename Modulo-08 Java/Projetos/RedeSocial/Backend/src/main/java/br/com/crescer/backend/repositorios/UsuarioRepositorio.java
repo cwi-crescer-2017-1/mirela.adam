@@ -11,4 +11,8 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Long> {
     public Usuario findById(Long id);
 
     public Usuario findOneByEmail(String email);
+
+    public Iterable<Usuario> findByNomeContainingIgnoreCase(String texto);
+
+    public Usuario findOneById(Long id);
 }

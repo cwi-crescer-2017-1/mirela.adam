@@ -44,5 +44,14 @@ angular.module('app').config(function ($routeProvider) {
                 }
               } 
         })
+        .when('/editarPerfil', {
+            controller: 'EdicaoController',
+            templateUrl: 'editarPerfil/editarPerfil.html',
+            resolve: {
+                autenticado: function (authService) {
+                  return authService.isAutenticadoPromise();
+                }
+              } 
+        })
         .otherwise({redirectTo:'/login'}); 
 });

@@ -80,4 +80,9 @@ public class UsuariosController {
     public Collection<Amizade> getAmigosUsuario(@AuthenticationPrincipal User user) {
         return service.buscarPorEmail(user.getUsername()).getAmizadeCollection1();
     }
+    
+    @GetMapping(value = "/userLogado")
+    public Usuario buscarUsuarioLogado(@AuthenticationPrincipal User user) {
+        return service.buscarPorEmail(user.getUsername());
+    }
 }

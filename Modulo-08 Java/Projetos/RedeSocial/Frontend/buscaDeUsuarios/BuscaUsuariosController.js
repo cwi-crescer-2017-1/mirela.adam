@@ -1,9 +1,25 @@
 angular.module('app').controller('BuscaUsuariosController',
-	function ($scope, $routeParams, $localStorage, $location, authService, toastr, UsuarioService) {
+	function ($scope, $routeParams, $localStorage, $location, authService, toastr, UsuarioService, AmigoService) {
 		$scope.logout = authService.logout;
 		$scope.buscarUsuarios = buscarUsuarios;
 		$scope.voltar = voltar;
 		$scope.visualizarPerfil = visualizarPerfil;
+		$scope.adicionarAmigo = adicionarAmigo;
+		buscarUsuario();
+
+        function buscarUsuario() {
+            UsuarioService.buscarUsuarioLogado().then(response => {
+                $scope.usuarioLogado = response.data;
+            });
+        };
+
+
+		function adicionarAmigo(id){
+			AmigoService.adicionarAmizade(id)
+			.then (response => {
+				toastr.success('Solicitação de amizade enviada!');
+			})
+		}
 
 		function visualizarPerfil(id) {
 			$location.path('/verPerfil/' + id);

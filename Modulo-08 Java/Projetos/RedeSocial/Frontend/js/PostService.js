@@ -1,8 +1,8 @@
 angular.module('app').factory('PostService', function ($http) {
     var urlBase = 'http://localhost:9090/postagens';
 
-    function listarPosts() {
-        return $http.get(urlBase);
+    function buscarPostagens(id) {
+        return $http.get(urlBase + "/home/" + id);
     };
 
     function cadastrarPost(postagem) {
@@ -15,7 +15,7 @@ angular.module('app').factory('PostService', function ($http) {
 
     return {
         cadastrarPost: cadastrarPost,
-        buscarPostagens: listarPosts,
+        buscarPostagens: buscarPostagens,
         buscarPostagensPorUsuario: buscarPostagensPorUsuario
     };
 

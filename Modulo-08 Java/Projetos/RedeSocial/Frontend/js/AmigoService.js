@@ -5,7 +5,22 @@ angular.module('app').factory('AmigoService', function ($http) {
         return $http.get(urlBase);
     };
 
+    function adicionarAmizade(id){
+        return $http.post(urlBase + '/adicionar/' + id);
+    };
+
+    function aceitarSolicitacao(id){
+        return $http.post(urlBase + '/aceitar/' + id);
+    };
+
+    function recusarSolicitacao(id){
+        return $http.post(urlBase + '/recusar/' + id);
+    };
+
     return {
+        recusarSolicitacao: recusarSolicitacao,
+        adicionarAmizade: adicionarAmizade,
+        aceitarSolicitacao: aceitarSolicitacao,
         buscarAmigos: buscarAmigos
     };
-});
+}); 

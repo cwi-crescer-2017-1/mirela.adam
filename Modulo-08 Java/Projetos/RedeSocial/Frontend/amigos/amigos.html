@@ -1,6 +1,6 @@
 <h1> Amigos </h1>
-
-<table class="table table-striped">
+<hr>
+<table ng-if="exibirAmigos===true" class="table table-striped">
     <thead>
         <tr>
             <th>Nome</th>
@@ -17,7 +17,9 @@
             <td>{{ amigo.idamigo.sexo | formataSexo }}</td>
             <td><button class="btn btn-success" ng-click="verPerfil(amigo.idamigo.id)">Ver Perfil</button></td>
         </tr>
-    </tbody>
-
-    <button class="btn btn-success" ng-click="voltar()">Voltar</button>
+    </tbody>    
 </table>
+<h3 ng-if="exibirAmigos===false">Você ainda não possui amigos!</h3>
+<hr>
+<button class="btn btn-success" ng-click="voltar()">Voltar</button>
+<button class="btn btn-warning" ng-click="logout()">Logout</button>

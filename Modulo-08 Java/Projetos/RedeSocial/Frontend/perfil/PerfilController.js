@@ -4,6 +4,7 @@ angular.module('app').controller('PerfilController',
         buscarPosts($routeParams.id);
         $scope.logout = authService.logout;
         $scope.voltar = voltar;
+        $scope.exibirMensagem = false;
 
         function buscarUsuario(id) {
             UsuarioService.buscarUsuarioPorId(id).then(function (response) {
@@ -17,7 +18,12 @@ angular.module('app').controller('PerfilController',
 
         function buscarPosts(id) {
             PostService.buscarPostagensPorUsuario(id).then(function (response) {
-                $scope.posts = response.data;
+                if(response.data.length === 0){
+                    $scope.mensagem = 'Usuário ainda não tem nenhuma publicação!';
+                    $scope.exibirMensagem = true;
+                } else {
+                    $scope.posts = response.data;
+                }
             });
         };
 

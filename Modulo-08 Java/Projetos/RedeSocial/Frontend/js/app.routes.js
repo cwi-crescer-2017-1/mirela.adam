@@ -53,5 +53,14 @@ angular.module('app').config(function ($routeProvider) {
         }
       }
     })
+    .when('/solicitacoes', {
+      controller: 'SolicitacaoController',
+      templateUrl: 'solicitacoes/solicitacoes.html',
+      resolve: {
+        autenticado: function (authService) {
+          return authService.isAutenticadoPromise();
+        }
+      }
+    })
     .otherwise({ redirectTo: '/login' });
 });

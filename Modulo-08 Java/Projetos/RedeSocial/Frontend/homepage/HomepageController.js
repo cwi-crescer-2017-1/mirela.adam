@@ -5,19 +5,20 @@ angular.module('app').controller('HomepageController',
         $scope.buscarAmigos = buscarAmigos;
         $scope.editarPerfil = editarPerfil;
         $scope.enviarPost = enviarPost;
+        $scope.verSolicitacoes = verSolicitacoes;
 
         buscarUsuario();
-        buscarPosts();
 
         function buscarUsuario() {
             UsuarioService.buscarUsuarioLogado().then(response => {
                 $scope.usuario = response.data;
+                buscarPosts($scope.usuario.id);
             });
         };
 
-        function buscarPosts() {
-            PostService.buscarPostagens().then(function (response) {
-                $scope.posts = response.data;
+        function buscarPosts(id) {
+            PostService.buscarPostagens(id).then(function (response) {            
+                $scope.posts = response.data;                        
             });
         };
 
@@ -30,11 +31,15 @@ angular.module('app').controller('HomepageController',
                 PostService.cadastrarPost(post).then(function () {
                     toastr.success('Publicação realizada com sucesso!');
                     $scope.post.texto = "";
-                    buscarPosts();
+                    buscarPosts($scope.usuario.id);
                 });
             } else {
                 toastr.warning('Erro ao enviar post, tente novamente!');
             }
+        };
+
+        function verSolicitacoes(){
+            $location.path('/solicitacoes');
         }
 
         function buscarAmigos() {

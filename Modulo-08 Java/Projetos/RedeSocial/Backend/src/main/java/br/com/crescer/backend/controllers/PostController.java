@@ -4,6 +4,7 @@ import br.com.crescer.backend.entidades.Post;
 import br.com.crescer.backend.entidades.Usuario;
 import br.com.crescer.backend.services.PostService;
 import br.com.crescer.backend.services.UsuarioService;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,12 @@ public class PostController {
     public Iterable<Post> getPostagensPorUsuario(@PathVariable("id") Long id) {
         Usuario u = userService.buscarPorID(id);
         return service.buscarPorID(u);
+    }
+    
+    @RequestMapping(value = "/home/{id}", method = RequestMethod.GET)
+    public List<Post> getPostagensUsuarioEAmigos(@PathVariable("id") Long id) {
+        Usuario u = userService.buscarPorID(id);
+        return service.buscarPostagensUsuarioEAmigos(u);
     }
 
     @PostMapping(consumes = "application/json")

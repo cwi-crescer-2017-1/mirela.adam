@@ -3,6 +3,7 @@ angular.module('app').controller('AmigosController',
 		$scope.logout = authService.logout;
 		$scope.voltar = voltar;
 		$scope.verPerfil = visualizarPerfil;
+		$scope.exibirAmigos = false;
 
 		buscarAmigos();
 
@@ -16,7 +17,10 @@ angular.module('app').controller('AmigosController',
 
 		function buscarAmigos() {
 			AmigoService.buscarAmigos().then(response => {
-				$scope.amigos = response.data;
+				if(response.data.length !== 0){
+					$scope.amigos = response.data;
+					$scope.exibirAmigos = true;
+				} 
 			});
 		};
 

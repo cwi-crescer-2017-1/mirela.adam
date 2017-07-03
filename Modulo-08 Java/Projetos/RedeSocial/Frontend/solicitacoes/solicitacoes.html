@@ -1,0 +1,26 @@
+<h1> Solicitações Pendentes </h1>
+<hr>
+<table ng-if="existeSolicitacao===true" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data de Nascimento</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="s in solicitacoes">
+            <td>{{ s.idsolicitante.nome }}</td>
+            <td>{{ s.idsolicitante.email }}</td>
+            <td>{{ s.idsolicitante.nascimento | date: "dd/MM/yyyy" }}</td>
+            <td>{{ s.idsolicitante.sexo | formataSexo }}</td>
+            <td><button class="btn btn-success" ng-click="aceitar(s.idsolicitante.id)">Aceitar</button></td>
+            <td><button class="btn btn-success" ng-click="recusar(s.idsolicitante.id)">Recusar</button></td>
+        </tr>
+    </tbody>    
+</table>
+<h3 ng-if="existeSolicitacao===false">Sem solicitações pendentes!</h3>
+<hr>
+<button class="btn btn-success" ng-click="voltar()">Voltar</button>
+<button class="btn btn-warning" ng-click="logout()">Logout</button>

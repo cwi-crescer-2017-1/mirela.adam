@@ -5,13 +5,13 @@ $scope.logout = authService.logout;
 $scope.voltar = voltar;
 
 function buscarUsuario(id) {
-        UsuarioService.buscarUsuarioPorId(id).then(function (response) {
+      UsuarioService.buscarUsuarioPorId(id).then(function (response) {
              $scope.usuario = response.data;
       })
     };
 
 function voltar(){
-	$location.path('/buscaUsuarios');
+    window.history.go(-1);
 }
 
 });

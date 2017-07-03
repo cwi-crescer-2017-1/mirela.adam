@@ -4,7 +4,6 @@ import br.com.crescer.backend.entidades.Amizade;
 import br.com.crescer.backend.entidades.Usuario;
 import br.com.crescer.backend.services.AmizadeService;
 import br.com.crescer.backend.services.UsuarioService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;

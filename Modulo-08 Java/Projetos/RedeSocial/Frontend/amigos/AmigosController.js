@@ -16,9 +16,8 @@ function voltar(){
 
 function buscarAmigos() {
 	AmigoService.buscarAmigos().then (response => {
-		console.log(response.data);
 		$scope.amigos = response.data;
 	});
 };
 
-});
+}); 	

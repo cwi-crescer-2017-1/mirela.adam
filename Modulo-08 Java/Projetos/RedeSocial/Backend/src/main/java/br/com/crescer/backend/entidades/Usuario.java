@@ -1,5 +1,6 @@
 package br.com.crescer.backend.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -72,19 +73,26 @@ public class Usuario implements Serializable {
     @Size(min = 1, max = 200)
     @Column(name = "SENHA")
     private String senha;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Post> postCollection;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Comentario> comentarioCollection;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Curtida> curtidaCollection;
+     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Amizade> amizadeCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idamigo")
+     @JsonIgnore
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idamigo")
     private Collection<Amizade> amizadeCollection1;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idsolicitante")
+     @JsonIgnore
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idsolicitante")
     private Collection<Solicitacao> solicitacaoCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idreceptor")
+     @JsonIgnore
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idreceptor")
     private Collection<Solicitacao> solicitacaoCollection1;
 
     public Usuario() {

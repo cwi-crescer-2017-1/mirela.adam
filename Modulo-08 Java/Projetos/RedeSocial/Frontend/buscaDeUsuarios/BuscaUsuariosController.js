@@ -1,5 +1,5 @@
 angular.module('app').controller('BuscaUsuariosController', 
-            function ($scope, $routeParams, $localStorage, $location, authService, UsuarioService) {
+            function ($scope, $routeParams, $localStorage, $location, authService, toastr, UsuarioService) {
 $scope.logout = authService.logout;
 $scope.buscarUsuarios = buscarUsuarios;
 $scope.voltar = voltar;
@@ -14,9 +14,13 @@ function voltar(){
 };
 
 function buscarUsuarios(texto) {
-	UsuarioService.buscarPorNomeOuEmail(texto)
-	.then (response => {
-		$scope.usuariosBuscados = response.data;
-	});	
+	if ($scope.formBusca.$valid) {
+		UsuarioService.buscarPorNomeOuEmail(texto)
+		.then (response => {
+			$scope.usuariosBuscados = response.data;
+		});	
+	} else {
+		toastr.warning('Informe dados para a pesquisa!');
+	}
 };
 });

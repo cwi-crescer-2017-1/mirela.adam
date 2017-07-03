@@ -10,7 +10,7 @@
             </br>
 
             <label for="dataNascimento"> Data de Nascimento </label>
-            <input type="date" name="dataNascimento" class="form-control" ng-model="usuario.nascimento" value="{{dataTela}}" required/>
+            <input type="date" name="dataNascimento" class="form-control" ng-model="usuario.nascimento" required/>
             </br>
             
             <label for="genero"> Selecione o gênero </label>
@@ -25,12 +25,13 @@
             </br>
             
             <label for="senha">Nova Senha </label>
-            <input id="senha" class="form-control input-sm" ng-model="usuario.senha" type="password" required/>
+            <input id="senha" class="form-control input-sm" ng-model="novasenha" type="password" required/>
             </br>
             
             <div class="wrapper">
                <button type="submit" class="btn btn-primary btn-md" ng-click="alterar(usuario)">Alterar</button>
                <button type="submit" class="btn btn-primary btn-md" ng-click="voltar()">Voltar</button>
+               <button type="submit" class="btn btn-primary btn-md" ng-click="logout()">Logout</button>
             </div>
          </form>
       </div>

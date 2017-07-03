@@ -10,8 +10,9 @@
 
 
 <div ng-repeat="usuario in usuariosBuscados">
-  {{usuario.nome}} - {{usuario.email}}
-  <button ng-click="visualizarPerfil(usuario.id)">Visualizar Perfil</button>
+	<br>
+  Nome: {{usuario.nome}} - Email: {{usuario.email}}
+  <button class="btn btn-primary" ng-click="visualizarPerfil(usuario.id)">Visualizar Perfil</button>
 </div>
 
 <hr>

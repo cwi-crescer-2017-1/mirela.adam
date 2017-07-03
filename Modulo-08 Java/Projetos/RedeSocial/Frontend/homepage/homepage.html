@@ -1,6 +1,13 @@
 <h1> Dashboard </h1>
+<h3> Bem-vindo {{usuario.nome}} </h3>
 
 <hr>
+<form name="formTexto" ng-submit="enviarPost(post)">
+        <div class="form-group">
+            <textarea class="form-control" minlength="1" ng-model="post.texto"></textarea>
+            <button type="submit" class="btn btn-default" ng-disabled="formTexto.$invalid">Publicar</button>
+        </div>
+    </form>
 <hr>
 
 <button class="btn btn-success" ng-click="buscarContatos()">Buscar Contatos</button>

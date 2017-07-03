@@ -34,7 +34,7 @@ angular.module('app').factory('UsuarioService', function ($http) {
     };
 
     return {
-        buscarUsuarioLogado:buscarUsuarioLogado,
+        buscarUsuarioLogado: buscarUsuarioLogado,
         editarUsuario: editarUsuario,
         buscarUsuarioPorEmail: buscarUsuarioPorEmail,
         buscarAmigos: buscarAmigos,

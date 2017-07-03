@@ -26,7 +26,11 @@ public class PostService {
         repositorio.delete(p);
     }
 
-    public Post buscarPorID(Long id) {
-        return repositorio.findById(id);
+    public Iterable<Post> buscarPorID(Long idusuario) {
+        return repositorio.findAllByIdusuario(idusuario);
     }  
+
+    public Iterable<Post> listarTodos() {
+        return repositorio.findAll();
+    }
 }

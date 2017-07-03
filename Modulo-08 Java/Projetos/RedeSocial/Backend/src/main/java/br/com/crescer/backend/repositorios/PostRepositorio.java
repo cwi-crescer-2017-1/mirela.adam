@@ -8,7 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author mirela.adam
  */
 public interface PostRepositorio extends CrudRepository<Post, Long> {
-
-    public Post findById(Long id);
-
+    public Iterable<Post> findAllByIdusuario(Long idusuario);
 }

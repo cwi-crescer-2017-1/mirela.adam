@@ -11,11 +11,11 @@
         </thead>
         <tbody>
         <tr ng-repeat="amigo in amigos">
-            <td>{{ amigo.nome }}</td> 
-            <td>{{ amigo.email }}</td> 
-            <td>{{ amigo.nascimento | date: "dd/MM/yyyy" }}</td> 
-            <td>{{ amigo.sexo | formataSexo }}</td> 
-            <td><button class="btn btn-success" ng-click="verPerfil(amigo.id)">Ver Perfil</button></td>
+            <td>{{ amigo.idamigo.nome }}</td> 
+            <td>{{ amigo.idamigo.email }}</td> 
+            <td>{{ amigo.idamigo.nascimento | date: "dd/MM/yyyy" }}</td> 
+            <td>{{ amigo.idamigo.sexo | formataSexo }}</td> 
+            <td><button class="btn btn-success" ng-click="verPerfil(amigo.idamigo.id)">Ver Perfil</button></td>
         </tr>
         </tbody>
 </table>

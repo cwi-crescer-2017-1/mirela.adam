@@ -82,17 +82,17 @@ public class Usuario implements Serializable {
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Curtida> curtidaCollection;
-     @JsonIgnore
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private Collection<Amizade> amizadeCollection;
-     @JsonIgnore
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idamigo")
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idamigo")
     private Collection<Amizade> amizadeCollection1;
-     @JsonIgnore
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idsolicitante")
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idsolicitante")
     private Collection<Solicitacao> solicitacaoCollection;
-     @JsonIgnore
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idreceptor")
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idreceptor")
     private Collection<Solicitacao> solicitacaoCollection1;
 
     public Usuario() {
@@ -246,5 +246,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "br.com.crescer.backend.entidades.Usuario[ id=" + id + " ]";
     }
-    
+
 }

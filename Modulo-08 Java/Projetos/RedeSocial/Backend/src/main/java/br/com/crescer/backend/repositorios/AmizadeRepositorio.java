@@ -11,5 +11,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author Mirela
  */
 public interface AmizadeRepositorio extends CrudRepository<Amizade, Long> {
+
     public Iterable<Amizade> findByIdusuario(Usuario idusuario);
 }

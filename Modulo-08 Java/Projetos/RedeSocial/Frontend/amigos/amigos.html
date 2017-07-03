@@ -1,21 +1,23 @@
 <h1> Amigos </h1>
 
 <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nome</th> 
-                <th>Email</th> 
-                <th>Data de Nascimento</th>
-                <th>Sexo</th> 
-            </tr>
-        </thead>
-        <tbody>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Data de Nascimento</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
         <tr ng-repeat="amigo in amigos">
-            <td>{{ amigo.idamigo.nome }}</td> 
-            <td>{{ amigo.idamigo.email }}</td> 
-            <td>{{ amigo.idamigo.nascimento | date: "dd/MM/yyyy" }}</td> 
-            <td>{{ amigo.idamigo.sexo | formataSexo }}</td> 
+            <td>{{ amigo.idamigo.nome }}</td>
+            <td>{{ amigo.idamigo.email }}</td>
+            <td>{{ amigo.idamigo.nascimento | date: "dd/MM/yyyy" }}</td>
+            <td>{{ amigo.idamigo.sexo | formataSexo }}</td>
             <td><button class="btn btn-success" ng-click="verPerfil(amigo.idamigo.id)">Ver Perfil</button></td>
         </tr>
-        </tbody>
+    </tbody>
+
+    <button class="btn btn-success" ng-click="voltar()">Voltar</button>
 </table>

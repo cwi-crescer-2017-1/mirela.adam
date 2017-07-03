@@ -12,10 +12,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AmizadeService {
-     @Autowired
-     AmizadeRepositorio repositorio;
-     
+
+    @Autowired
+    AmizadeRepositorio repositorio;
+
     public Iterable<Amizade> buscarPorIdUsuario(Usuario idusuario) {
         return repositorio.findByIdusuario(idusuario);
-  }
+    }
 }

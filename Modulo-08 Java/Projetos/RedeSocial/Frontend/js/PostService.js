@@ -9,9 +9,14 @@ angular.module('app').factory('PostService', function ($http) {
         return $http.post(urlBase, postagem);
     };
 
+    function buscarPostagensPorUsuario(id){
+        return $http.get(urlBase + "/" + id);
+    }
+
     return {
         cadastrarPost: cadastrarPost,
-        buscarPostagens: listarPosts
+        buscarPostagens: listarPosts,
+        buscarPostagensPorUsuario: buscarPostagensPorUsuario
     };
 
 })

@@ -35,7 +35,7 @@ public class Curtida implements Serializable {
     @NotNull
     @Column(name = "ID")
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CURTIDA")
-@SequenceGenerator(name = "SEQ_CURTIDA", sequenceName = "SEQ_CURTIDA", allocationSize = 1)
+    @SequenceGenerator(name = "SEQ_CURTIDA", sequenceName = "SEQ_CURTIDA", allocationSize = 1)
     private Long id;
     @JoinColumn(name = "IDPOST", referencedColumnName = "ID")
     @ManyToOne(optional = false)
@@ -99,5 +99,5 @@ public class Curtida implements Serializable {
     public String toString() {
         return "br.com.crescer.backend.entidades.Curtida[ id=" + id + " ]";
     }
-    
+
 }

@@ -44,7 +44,7 @@ public class Post implements Serializable {
     @NotNull
     @Column(name = "ID")
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_POST")
-@SequenceGenerator(name = "SEQ_POST", sequenceName = "SEQ_POST", allocationSize = 1)
+    @SequenceGenerator(name = "SEQ_POST", sequenceName = "SEQ_POST", allocationSize = 1)
     private Long id;
     @Basic(optional = false)
     @NotNull
@@ -151,5 +151,5 @@ public class Post implements Serializable {
     public String toString() {
         return "br.com.crescer.backend.entidades.Post[ id=" + id + " ]";
     }
-    
+
 }

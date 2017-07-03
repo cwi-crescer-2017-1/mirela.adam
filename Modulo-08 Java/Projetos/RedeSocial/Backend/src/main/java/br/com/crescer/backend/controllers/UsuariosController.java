@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/usuarios")
 public class UsuariosController {
+
     @Autowired
     UsuarioService service;
 
@@ -41,45 +42,45 @@ public class UsuariosController {
         hashMap.put("dados", u);
         return hashMap;
     }
-   
-    @PostMapping 
+
+    @PostMapping
     public Usuario cadastrarUsuario(@RequestBody Usuario u) {
         service.cadastrar(u);
         return u;
     }
 
     @DeleteMapping
-    public Usuario deletarUsuario(@RequestBody Usuario u){
+    public Usuario deletarUsuario(@RequestBody Usuario u) {
         service.excluir(u);
         return u;
     }
-    
+
     @PutMapping
-    public Usuario atualizarUsuario(@RequestBody Usuario u){
+    public Usuario atualizarUsuario(@RequestBody Usuario u) {
         service.cadastrar(u);
         return u;
     }
-    
-    @RequestMapping(value="/perfil/{id}", method=RequestMethod.GET)
+
+    @RequestMapping(value = "/perfil/{id}", method = RequestMethod.GET)
     public Usuario buscarUsuarioPorID(@PathVariable("id") Long id) {
         return service.buscarPorID(id);
     }
-    
-    @RequestMapping(value="/{email}", method=RequestMethod.GET)
+
+    @RequestMapping(value = "/{email}", method = RequestMethod.GET)
     public Usuario buscarUsuarioPorEmail(@PathVariable("email") String email) {
         return service.buscarPorEmail(email);
     }
-    
-    @RequestMapping(value="/buscar/{texto}", method=RequestMethod.GET)
+
+    @RequestMapping(value = "/buscar/{texto}", method = RequestMethod.GET)
     public Iterable<Usuario> buscarUsuariosPorTexto(@PathVariable("texto") String texto) {
         return service.buscarPorEmailOuNome(texto);
     }
-    
-   @GetMapping(value = "/amigos")
+
+    @GetMapping(value = "/amigos")
     public Collection<Amizade> getAmigosUsuario(@AuthenticationPrincipal User user) {
         return service.buscarPorEmail(user.getUsername()).getAmizadeCollection1();
     }
-    
+
     @GetMapping(value = "/userLogado")
     public Usuario buscarUsuarioLogado(@AuthenticationPrincipal User user) {
         return service.buscarPorEmail(user.getUsername());

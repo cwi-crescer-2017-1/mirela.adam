@@ -98,5 +98,5 @@ public class Amizade implements Serializable {
     public String toString() {
         return "br.com.crescer.backend.entidades.Amizade[ id=" + id + " ]";
     }
-    
+
 }

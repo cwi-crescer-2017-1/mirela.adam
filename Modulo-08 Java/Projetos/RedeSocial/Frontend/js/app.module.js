@@ -16,13 +16,13 @@ angular.module('app').constant('authConfig', {
     urlLogout: '/login'
 });
 
-angular.module('app').filter('formataSexo',function(){
-  return function(sexo){
-         if(sexo === 'F'){
-         	return 'Feminino';
-         } else if(sexo === 'M'){
-         	return 'Masculino';
-         }
-         return 'Não Informado';
- };
+angular.module('app').filter('formataSexo', function () {
+    return function (sexo) {
+        if (sexo === 'F') {
+            return 'Feminino';
+        } else if (sexo === 'M') {
+            return 'Masculino';
+        }
+        return 'Não Informado';
+    };
 });

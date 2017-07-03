@@ -1,6 +1,7 @@
 package br.com.crescer.backend.services;
 
 import br.com.crescer.backend.entidades.Post;
+import br.com.crescer.backend.entidades.Usuario;
 import br.com.crescer.backend.repositorios.PostRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +12,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PostService {
+
     @Autowired
-    PostRepositorio repositorio;    
-    
+    PostRepositorio repositorio;
+
     public Iterable<Post> listar() {
         return repositorio.findAll();
     }
@@ -26,9 +28,9 @@ public class PostService {
         repositorio.delete(p);
     }
 
-    public Iterable<Post> buscarPorID(Long idusuario) {
+    public Iterable<Post> buscarPorID(Usuario idusuario) {
         return repositorio.findAllByIdusuario(idusuario);
-    }  
+    }
 
     public Iterable<Post> listarTodos() {
         return repositorio.findAll();

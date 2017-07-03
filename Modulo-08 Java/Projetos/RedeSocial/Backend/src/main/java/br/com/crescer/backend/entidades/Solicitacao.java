@@ -98,5 +98,5 @@ public class Solicitacao implements Serializable {
     public String toString() {
         return "br.com.crescer.backend.entidades.Solicitacao[ id=" + id + " ]";
     }
-    
+
 }

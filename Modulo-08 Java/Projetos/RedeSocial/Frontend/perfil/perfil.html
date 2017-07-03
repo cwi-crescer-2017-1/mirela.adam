@@ -11,8 +11,16 @@
 	<div class="row">
 		<span>Data de Nascimento: {{usuario.nascimento | date: "dd/MM/yyyy"}}</span>
 	</div>
-	
+
 	<hr>
+
+	<h3>Publicações</h3>
+	<div ng-repeat="post in posts | orderBy:'-datapost'">
+    <div class="postagem">
+        <p><strong>{{post.idusuario.nome}} - Data: {{post.datapost | date: "dd/MM/yyyy hh:mm"}}</strong></p>
+        <p>{{post.texto}}</p>
+    </div>
+	</div>
 
 	<button class="btn btn-success" ng-click="voltar()">Voltar</button>
 	<button class="btn btn-warning" ng-click="logout()">Logout</button>

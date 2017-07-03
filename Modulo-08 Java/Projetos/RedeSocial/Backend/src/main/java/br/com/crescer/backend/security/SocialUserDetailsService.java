@@ -10,15 +10,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
 /**
  *
  * @author mirela.adam
  */
 @Service
 public class SocialUserDetailsService implements UserDetailsService {
-    @Autowired 
+
+    @Autowired
     UsuarioService service;
-    
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario u = service.buscarPorEmail(username);

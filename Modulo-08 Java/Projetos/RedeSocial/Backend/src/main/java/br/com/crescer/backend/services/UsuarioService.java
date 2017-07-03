@@ -12,9 +12,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UsuarioService {
+
     @Autowired
-    UsuarioRepositorio repositorio;    
-    
+    UsuarioRepositorio repositorio;
+
     public Iterable<Usuario> listar() {
         return repositorio.findAll();
     }
@@ -32,7 +33,7 @@ public class UsuarioService {
 
     public Usuario buscarPorID(Long id) {
         return repositorio.findOneById(id);
-    }  
+    }
 
     public Usuario buscarPorEmail(String email) {
         return repositorio.findOneByEmail(email);

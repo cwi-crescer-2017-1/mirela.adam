@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 /**
  *
  * @author mirela.adam
@@ -22,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SocialWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Value("${social.security.public:/health}") 
+    @Value("${social.security.public:/health}")
     private String[] securityPublic;
 
     @Autowired
@@ -62,5 +63,3 @@ public class SocialWebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }
-
- 

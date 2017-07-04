@@ -4,6 +4,7 @@
 <hr>
 <form name="formTexto" ng-submit="enviarPost(post)">
     <div class="form-group">
+        <label>O que você está pensando?</label>
         <textarea class="form-control" minlength="1" ng-model="post.texto"></textarea>
         <br>
         <button type="submit" class="btn btn-default" ng-disabled="formTexto.$invalid">Publicar</button>

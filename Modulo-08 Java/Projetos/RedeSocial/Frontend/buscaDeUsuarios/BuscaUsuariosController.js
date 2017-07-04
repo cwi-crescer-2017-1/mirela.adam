@@ -17,6 +17,9 @@ angular.module('app').controller('BuscaUsuariosController',
         };
 
 		function verificaAmizade(id){
+			if(typeof $scope.amigos === 'undefined'){
+				return false;
+			}
 			for (let a of $scope.amigos) {
 				if (a.idamigo.id === id) {
 					return true;

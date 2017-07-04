@@ -13,7 +13,8 @@
 <div ng-repeat="usuario in usuariosBuscados">
 	<br> Nome: {{usuario.nome}} - Email: {{usuario.email}}
 	<button class="btn btn-primary" ng-click="visualizarPerfil(usuario.id)">Visualizar Perfil</button>
-	<button class="btn btn-primary" ng-if="usuario.id !== usuarioLogado.id" ng-click="adicionarAmigo(usuario.id)">Adicionar</button>
+	<button class="btn btn-primary" ng-if="!verificaAmizade(usuario.id)" 
+			ng-click="adicionarAmigo(usuario.id)">Adicionar</button>
 </div>
 
 <hr>

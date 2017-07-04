@@ -5,7 +5,10 @@ angular.module('app').controller('BuscaUsuariosController',
 		$scope.voltar = voltar;
 		$scope.visualizarPerfil = visualizarPerfil;
 		$scope.adicionarAmigo = adicionarAmigo;
+		$scope.verificaAmizade = verificaAmizade;
+
 		buscarUsuario();
+		buscarAmigos();
 
         function buscarUsuario() {
             UsuarioService.buscarUsuarioLogado().then(response => {
@@ -13,13 +16,30 @@ angular.module('app').controller('BuscaUsuariosController',
             });
         };
 
+		function verificaAmizade(id){
+			for (let a of $scope.amigos) {
+				if (a.idamigo.id === id) {
+					return true;
+				}
+			}
+			return id === $scope.usuarioLogado.id;
+		};
 
 		function adicionarAmigo(id){
 			AmigoService.adicionarAmizade(id)
 			.then (response => {
 				toastr.success('Solicitação de amizade enviada!');
+				
 			})
-		}
+		};
+
+		function buscarAmigos() {
+			AmigoService.buscarAmigos().then(response => {
+				if(response.data.length !== 0){
+					$scope.amigos = response.data;
+				} 
+			});
+		};
 
 		function visualizarPerfil(id) {
 			$location.path('/verPerfil/' + id);
